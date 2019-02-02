@@ -36,7 +36,7 @@
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btnInicio = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSalir = new DevExpress.XtraEditors.SimpleButton();
             this.faTemas = new DevExpress.XtraBars.FormAssistant();
             this.ckRecordar = new DevExpress.XtraEditors.CheckEdit();
             this.txtContraseña = new DevExpress.XtraEditors.TextEdit();
@@ -70,7 +70,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(103, 14);
             this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Nombre de usuario";
+            this.labelControl2.Text = "Nombre de &usuario";
             // 
             // labelControl3
             // 
@@ -80,7 +80,7 @@
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(61, 14);
             this.labelControl3.TabIndex = 3;
-            this.labelControl3.Text = "Contraseña";
+            this.labelControl3.Text = "&Contraseña";
             // 
             // txtUsuario
             // 
@@ -91,6 +91,7 @@
             this.txtUsuario.Properties.AutoHeight = false;
             this.txtUsuario.Size = new System.Drawing.Size(220, 23);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // labelControl4
             // 
@@ -106,21 +107,25 @@
             // 
             this.btnInicio.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnInicio.Appearance.Options.UseFont = true;
+            this.btnInicio.Enabled = false;
             this.btnInicio.Location = new System.Drawing.Point(182, 173);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(140, 33);
             this.btnInicio.TabIndex = 8;
-            this.btnInicio.Text = "Iniciar Sesión";
+            this.btnInicio.Text = "&Iniciar Sesión";
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
-            // btnCancelar
+            // btnSalir
             // 
-            this.btnCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.btnCancelar.Appearance.Options.UseFont = true;
-            this.btnCancelar.Location = new System.Drawing.Point(328, 173);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(74, 33);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnSalir.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnSalir.Appearance.Options.UseFont = true;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Location = new System.Drawing.Point(328, 173);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(74, 33);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // ckRecordar
             // 
@@ -128,7 +133,7 @@
             this.ckRecordar.Name = "ckRecordar";
             this.ckRecordar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ckRecordar.Properties.Appearance.Options.UseFont = true;
-            this.ckRecordar.Properties.Caption = "Recordar contraseña";
+            this.ckRecordar.Properties.Caption = "&Recordar contraseña";
             this.ckRecordar.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.ckRecordar.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ckRecordar.Size = new System.Drawing.Size(146, 19);
@@ -144,6 +149,7 @@
             this.txtContraseña.Properties.PasswordChar = '●';
             this.txtContraseña.Size = new System.Drawing.Size(220, 23);
             this.txtContraseña.TabIndex = 4;
+            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // LueAutentificacion
             // 
@@ -165,11 +171,12 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(453, 224);
             this.Controls.Add(this.LueAutentificacion);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.ckRecordar);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txtUsuario);
@@ -200,7 +207,7 @@
         private DevExpress.XtraEditors.TextEdit txtUsuario;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton btnInicio;
-        private DevExpress.XtraEditors.SimpleButton btnCancelar;
+        private DevExpress.XtraEditors.SimpleButton btnSalir;
         private DevExpress.XtraBars.FormAssistant faTemas;
         private DevExpress.XtraEditors.CheckEdit ckRecordar;
         private DevExpress.XtraEditors.TextEdit txtContraseña;

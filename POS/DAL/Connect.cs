@@ -21,14 +21,28 @@ namespace DAL
 
         public void Open()
         {
-            if (Cn.State == ConnectionState.Closed)
-                Cn.Open();
+            try
+            {
+                if (Cn.State == ConnectionState.Closed)
+                    Cn.Open();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Close()
         {
-            if (Cn.State == ConnectionState.Open)
-                Cn.Close();
+            try
+            {
+                if (Cn.State == ConnectionState.Open)
+                    Cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }        
     }
 }
