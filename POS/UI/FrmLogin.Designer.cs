@@ -50,7 +50,7 @@
             // difTemas
             // 
             this.difTemas.EnableBonusSkins = true;
-            this.difTemas.LookAndFeel.SkinName = "Office 2007 Blue";
+            this.difTemas.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
             // labelControl1
             // 

@@ -41,11 +41,46 @@ namespace UI
             if (File.Exists(Dir))
             {
                 ckRecordar.Checked = true;
-                StreamReader Sr = new StreamReader(Dir);
 
+                Security Secure = new Security();
+                StreamReader Sr = new StreamReader(Dir);
+                string Text = Sr.ReadToEnd();
+                Sr.Close();
+
+                txtContraseña.Text = Secure.Decrypt(Text);
             }
             else
+            {
                 ckRecordar.Checked = false;
+                txtContraseña.Text = "";
+            }
+                
+        }
+
+        private void CreateTempRecorder(string UserName, string Password)
+        {
+            string Dir = Path.GetTempPath() + "POS";
+            string FileName = UserName;
+
+            if (!File.Exists(Dir + "\\" + FileName + ".txt"))
+            {
+                Directory.CreateDirectory(Dir);
+                StreamWriter Sw = new StreamWriter(Dir + @"\" + FileName + ".txt");
+
+                Security Secure = new Security();
+                Sw.WriteLine(Secure.Encrypt(Password));
+                Sw.Close();
+            }
+        }
+
+        private void DeleteTempRecorder(string UserName)
+        {
+            string Dir = Path.GetTempPath() + "POS";
+            string FileName = UserName;
+
+            Dir = Dir + @"\" + FileName + ".txt";
+            if (File.Exists(Dir))
+                File.Delete(Dir);
         }
         #endregion
 
@@ -57,7 +92,7 @@ namespace UI
             Auth.Columns.Add("Name", typeof(string));
 
             Auth.Rows.Add(0, "Microsoft SQL Server");
-            Auth.Rows.Add(1, "Windows Active Directory");
+            //Auth.Rows.Add(1, "Windows Active Directory");
 
             LueAutentificacion.Properties.DataSource = Auth;
             LueAutentificacion.Properties.DisplayMember = "Name";
@@ -95,31 +130,21 @@ namespace UI
 
             if(LueAutentificacion.ItemIndex == 0)
             {
+                //Válidamos el usuario
                 Entity.User usr = Usuario.ListBy(obj);
                 if(usr.Active == true)
                 {
-                    string Dir = Path.GetTempPath() + "POS";
-                    string FileName = obj.Name;
-
                     if(ckRecordar.Checked == true)
-                    {
-                        if(!File.Exists(Dir + "\\" + FileName + ".txt"))
-                        {
-                            Directory.CreateDirectory(Dir);
-                            StreamWriter Sw = new StreamWriter(Dir + @"\" + FileName + ".txt");
-
-                            Security Secure = new Security();
-                            Sw.WriteLine(Secure.Encrypt(obj.Password));
-                            Sw.Close();
-                        }
-                    }
+                        CreateTempRecorder(obj.Name, obj.Password);
                     else
-                    {
-                        Dir = Dir + @"\" + FileName + ".txt";
-                        if (File.Exists(Dir))
-                            File.Delete(Dir);
-                    }
+                        DeleteTempRecorder(obj.Name);
+
                     this.Hide();
+                    
+                    //Cargamos el formulario Home
+                    FrmHome Home = new FrmHome();
+                    Home.Usuario = usr;
+                    Home.Show();
                 }
             }
         }

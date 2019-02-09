@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coding.cs" />
+    <Compile Include="Consult.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="Filter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

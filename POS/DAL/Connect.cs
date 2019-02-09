@@ -19,7 +19,7 @@ namespace DAL
             this.Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServer"].ToString());
         }
 
-        public void Open()
+        public SqlConnection Open()
         {
             try
             {
@@ -30,6 +30,8 @@ namespace DAL
             {
                 throw ex;
             }
+
+            return Cn;
         }
 
         public void Close()
