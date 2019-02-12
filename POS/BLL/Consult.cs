@@ -33,9 +33,9 @@ namespace BLL
             return obj.GetBy(IdContainer);
         }
 
-        public DataTable GetView(Entity.Container Container)
+        public DataTable GetView(int IdContainer, string Condition = "")
         {
-            return obj.GetView(Container);
+            return obj.GetView(IdContainer, Condition);
         }
     }
 }

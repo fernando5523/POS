@@ -12,6 +12,7 @@ namespace EL
         private int iduser;
         private int idconsult;
         private string condition;
+        private string conditiondev;
 
         public int Id
         {
@@ -62,6 +63,19 @@ namespace EL
             set
             {
                 condition = value;
+            }
+        }
+
+        public string ConditionDev
+        {
+            get
+            {
+                return conditiondev;
+            }
+
+            set
+            {
+                conditiondev = value;
             }
         }
     }

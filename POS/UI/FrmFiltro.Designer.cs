@@ -31,8 +31,7 @@
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAceptar = new DevExpress.XtraEditors.SimpleButton();
             this.fcFilter = new DevExpress.XtraEditors.FilterControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -51,7 +50,7 @@
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // fcFilter
             // 
@@ -63,19 +62,14 @@
             this.fcFilter.TabIndex = 3;
             this.fcFilter.Text = "filterControl1";
             // 
-            // textEdit1
+            // backgroundWorker1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(12, 319);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(463, 20);
-            this.textEdit1.TabIndex = 4;
             // 
             // FrmFiltro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 349);
-            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.fcFilter);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
@@ -86,7 +80,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS - Filtro";
             this.Load += new System.EventHandler(this.FrmFiltro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,6 +88,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.SimpleButton btnAceptar;
         private DevExpress.XtraEditors.FilterControl fcFilter;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

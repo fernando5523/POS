@@ -17,7 +17,7 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace UI
 {
-    public partial class FrmHome : DevExpress.XtraEditors.XtraForm
+    public partial class FrmHome : DevExpress.XtraEditors.XtraForm, IPages
     {
         public Entity.User Usuario;
         public FrmHome()
@@ -26,15 +26,20 @@ namespace UI
         }
 
         #region Métodos
-        private void LoadPage(string name, string text)
+        public void LoadPage(string name, string text, bool reset)
         {
             bool exist = false;
             for(int i = 0; i < xtcPages.TabPages.Count; i++)
             {
-                if(xtcPages.TabPages[i].Name == name)
+                if(xtcPages.TabPages[i].Name == name && reset == false)
                 {
                     xtcPages.SelectedTabPage = xtcPages.TabPages[i];
                     exist = true;
+                }
+                if (xtcPages.TabPages[i].Name == name && reset == true)
+                {
+                    xtcPages.TabPages.Remove(xtcPages.TabPages[i]);
+                    exist = false;
                 }
             }
 
@@ -50,13 +55,17 @@ namespace UI
 
                 //Obtenemos la consulta
                 Consult Consult = new Consult();
-                DataTable Dt = Consult.GetView(Contenedor);
+                Entity.Consult objConsult = Consult.GetBy(Contenedor.Id);
+                Filter Filter = new Filter();
+                Entity.Filter objFilter = Filter.GetBy(objConsult.Id);
+                DataTable Dt = Consult.GetView(Contenedor.Id, objFilter.Condition);
 
                 //Creamos el control tipo lista para el contenedor
                 GridView gView = new GridView();
                 gView.OptionsBehavior.ReadOnly = true;
 
                 GridControl Grid = new GridControl();
+                Grid.Name = name;
                 Grid.Dock = DockStyle.Fill;
                 Grid.ContextMenuStrip = cmsMenu;
 
@@ -70,7 +79,6 @@ namespace UI
                 gView.Columns["Id"].Visible = false;
                 gView.OptionsSelection.MultiSelect = true;
 
-                //gridControl1.DataSource = Dt;
                 Page.Controls.Add(Grid);
 
                 xtcPages.TabPages.Add(Page);
@@ -84,13 +92,31 @@ namespace UI
         {
             TreeView tree = (TreeView)sender;
             if(e.Node.Tag.ToString() != "0")
-                LoadPage(tree.SelectedNode.Name, tree.SelectedNode.Text);
+                LoadPage(tree.SelectedNode.Name, tree.SelectedNode.Text, false);
         }
 
         private void xtraTabControl_CloseButtonClick(object sender, EventArgs e)
         {
             ClosePageButtonEventArgs arg = e as ClosePageButtonEventArgs;
             xtcPages.TabPages.Remove(xtcPages.SelectedTabPage);
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            FrmFiltro Filtro = new FrmFiltro();
+            Filtro.Name = xtcPages.SelectedTabPage.Name;
+            Filtro.Text = xtcPages.SelectedTabPage.Text;
+            Filtro.Pages = this;
+            Filtro.Show();
+        }
+
+        private void button_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmFiltro Filtro = new FrmFiltro();
+            Filtro.Name = xtcPages.SelectedTabPage.Name;
+            Filtro.Text = xtcPages.SelectedTabPage.Text;
+            Filtro.Pages = this;
+            Filtro.Show();
         }
         #endregion
 
@@ -119,27 +145,31 @@ namespace UI
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
+            #region Eventos
             tvCompra.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             tvInventario.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             tvVenta.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             tvConfiguracion.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             xtcPages.CloseButtonClick += new EventHandler(xtraTabControl_CloseButtonClick);
 
+            //Filtro
+            btnFiltro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(button_ItemClick);
+            mnuFiltro.Click += new EventHandler(button_Click);
+
+            #endregion
+
+            //Footer
             btnUsuario.Caption = "Usuario :" + Usuario.Name;
             txtFecha.Caption = "Fecha : " + DateTime.Now.ToString("dd/MM/yyyy");
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void btnFiltro_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FrmFiltro Filtro = new FrmFiltro();
-            Filtro.Page = xtcPages.SelectedTabPage.Name;
-            Filtro.Show();
-        }
 
         private void tmTiempo_Tick(object sender, EventArgs e)
         {
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }
+
+        
     }
 }

@@ -147,15 +147,21 @@ namespace DAL
 
             return Consult;
         }
-        public DataTable GetView(Entity.Container Container, string Condition = "")
+        public DataTable GetView(int IdContainer, string Condition = "")
         {
             DataTable DtResult = new DataTable();
-            Entity.Consult Consult = GetBy(Container.Id);
+            Entity.Consult Consult = GetBy(IdContainer);
             SqlDataReader DrResult;
 
             try
             {
-                string Query = Consult.Select + " " + Consult.From + (Consult.Where == null ? "" : " " + Consult.Where) + (Consult.GroupBy == null ? "" : " " + Consult.GroupBy) + (Consult.Having == null ? "" : " " + Consult.Having) + (Consult.OrderBy == null ? "" : " " + Consult.OrderBy);
+                string Where = "";
+                if(Consult.Where == "" && Condition != "")
+                    Where = " WHERE " + Condition;
+                if(Consult.Where != "" && Condition != "")
+                    Where = Consult.Where + " AND " + Condition;
+
+                string Query = Consult.Select + " " + Consult.From + Where + (Consult.GroupBy == null ? "" : " " + Consult.GroupBy) + (Consult.Having == null ? "" : " " + Consult.Having) + (Consult.OrderBy == null ? "" : " " + Consult.OrderBy);
                 
                 using(SqlCommand Cmd = new SqlCommand(Query))
                 {

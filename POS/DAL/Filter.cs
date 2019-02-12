@@ -18,16 +18,16 @@ namespace DAL
 
             try
             {
-                string Query = "INSERT INTO [Filter] (Id, IdUser, IdConsult, Condition) VALUES(@id, @iduser, @idconsult, @condition)";
+                string Query = "INSERT INTO [Filter] (IdUser, IdConsult, Condition, ConditionDev) VALUES(@iduser, @idconsult, @condition, @conditiondev)";
                 using(SqlCommand Cmd = new SqlCommand(Query))
                 {
                     Connect Connection = new Connect();
                     Cmd.CommandType = CommandType.Text;
                     Cmd.Connection = Connection.Open();
-                    Cmd.Parameters.AddWithValue("@id", Filter.Id);
                     Cmd.Parameters.AddWithValue("@iduser", Filter.IdUser);
                     Cmd.Parameters.AddWithValue("@idconsult", Filter.IdConsult);
                     Cmd.Parameters.AddWithValue("@condition", Filter.Condition);
+                    Cmd.Parameters.AddWithValue("@conditiondev", Filter.ConditionDev);
                     Cmd.ExecuteNonQuery();
 
                     Connection.Close();
@@ -48,7 +48,7 @@ namespace DAL
 
             try
             {
-                string Query = "UPDATE [Filter] SET IdUser = @iduser, IdConsult = @idconsult, Condition = @condition WHERE Id = @id";
+                string Query = "UPDATE [Filter] SET IdUser = @iduser, IdConsult = @idconsult, Condition = @condition, ConditionDev = @conditiondev WHERE Id = @id";
                 using (SqlCommand Cmd = new SqlCommand(Query))
                 {
                     Connect Connection = new Connect();
@@ -58,6 +58,7 @@ namespace DAL
                     Cmd.Parameters.AddWithValue("@iduser", Filter.IdUser);
                     Cmd.Parameters.AddWithValue("@idconsult", Filter.IdConsult);
                     Cmd.Parameters.AddWithValue("@condition", Filter.Condition);
+                    Cmd.Parameters.AddWithValue("@conditiondev", Filter.ConditionDev);
                     Cmd.ExecuteNonQuery();
 
                     Connection.Close();
@@ -106,13 +107,13 @@ namespace DAL
 
             try
             {
-                string Query = "SELECT * FROM [Filter] WHERE Id = @id";
+                string Query = "SELECT * FROM [Filter] WHERE IdConsult = @idconsult";
                 using(SqlCommand Cmd = new SqlCommand(Query))
                 {
                     Connect Connection = new Connect();
                     Cmd.CommandType = CommandType.Text;
                     Cmd.Connection = Connection.Open();
-                    Cmd.Parameters.AddWithValue("@id", IdConsult);
+                    Cmd.Parameters.AddWithValue("@idconsult", IdConsult);
                     DrResult = Cmd.ExecuteReader();
 
                     while (DrResult.Read())
@@ -121,6 +122,7 @@ namespace DAL
                         obj.IdUser = (int)DrResult["IdUser"];
                         obj.IdConsult = (int)DrResult["IdConsult"];
                         obj.Condition = (string)DrResult["Condition"];
+                        obj.ConditionDev = (string)DrResult["ConditionDev"];
                     }
                 }
             }

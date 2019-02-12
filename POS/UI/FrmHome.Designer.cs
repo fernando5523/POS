@@ -29,63 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
+            treeNode33,
+            treeNode34});
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Producto");
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Marca");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Categoría");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Almacén");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Tipo de producto");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Plantilla de unidades");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Lista de precios");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Maestros", new System.Windows.Forms.TreeNode[] {
+            treeNode36,
+            treeNode37,
+            treeNode38,
+            treeNode39,
+            treeNode40,
+            treeNode41,
+            treeNode42});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Comprobante de compra");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Comprobante de gasto");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Producto");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Marca");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Categoría");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Almacén");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Tipo de producto");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Plantilla de unidades");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Lista de precios");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Maestros", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Proveedor");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Modalidad de crédito");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Mestros", new System.Windows.Forms.TreeNode[] {
             treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Punto de venta");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Cliente");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Caja");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Método de pago");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Mestros", new System.Windows.Forms.TreeNode[] {
             treeNode9,
-            treeNode10});
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Comprobante de compra");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Comprobante de gasto");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode13});
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Proveedor");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Modalidad de crédito");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Mestros", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Tipo de persona");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Empleado");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Cargo empleado");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Tipo de documento");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Sucursal");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Contenedores");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Mestros", new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14,
             treeNode15,
-            treeNode16});
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Punto de venta");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
+            treeNode16,
+            treeNode17,
             treeNode18});
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Cliente");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Caja");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Método de pago");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Mestros", new System.Windows.Forms.TreeNode[] {
-            treeNode20,
-            treeNode21,
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Tipo de persona");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Empleado");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Cargo empleado");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Tipo de documento");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Sucursal");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Contenedores");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Mestros", new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28,
-            treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Usuario");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
-            treeNode31});
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Usuario");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
+            treeNode20});
             this.difTemas = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.dmPanel = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.bmStatusMenu = new DevExpress.XtraBars.BarManager(this.components);
@@ -100,7 +100,6 @@
             this.btnUsuario = new DevExpress.XtraBars.BarButtonItem();
             this.txtFecha = new DevExpress.XtraBars.BarStaticItem();
             this.txtHora = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.btnImprimir = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
@@ -134,16 +133,14 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarSeparatorItem1 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
             this.xtcPages = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFiltro = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuActualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNuevo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEliminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuModificar = new System.Windows.Forms.ToolStripMenuItem();
             this.tmTiempo = new System.Windows.Forms.Timer(this.components);
-            this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             ((System.ComponentModel.ISupportInitialize)(this.dmPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bmStatusMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -156,10 +153,7 @@
             this.navBarGroupControlContainer3.SuspendLayout();
             this.navBarGroupControlContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtcPages)).BeginInit();
-            this.xtcPages.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
             this.cmsMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // difTemas
@@ -210,7 +204,6 @@
             this.btnActualizar,
             this.btnImprimir,
             this.btnExcel,
-            this.barStaticItem2,
             this.barButtonItem3,
             this.barSubItem2,
             this.txtFecha,
@@ -241,7 +234,6 @@
             this.btnFiltro.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltro.ImageOptions.Image")));
             this.btnFiltro.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFiltro.ImageOptions.LargeImage")));
             this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFiltro_ItemClick);
             // 
             // btnActualizar
             // 
@@ -295,8 +287,7 @@
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUsuario),
             new DevExpress.XtraBars.LinkPersistInfo(this.txtFecha),
-            new DevExpress.XtraBars.LinkPersistInfo(this.txtHora),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.txtHora)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -323,13 +314,6 @@
             this.txtHora.Caption = "Hora: ";
             this.txtHora.Id = 16;
             this.txtHora.Name = "txtHora";
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem2.Caption = "Total de registros: 0";
-            this.barStaticItem2.Id = 12;
-            this.barStaticItem2.Name = "barStaticItem2";
             // 
             // bar4
             // 
@@ -508,42 +492,42 @@
             this.tvInventario.ImageList = this.imgIcon;
             this.tvInventario.Location = new System.Drawing.Point(0, 0);
             this.tvInventario.Name = "tvInventario";
-            treeNode1.Name = "ComprobanteSalida";
-            treeNode1.Tag = "1";
-            treeNode1.Text = "Comprobante de salida de inventario";
-            treeNode2.Name = "ComprobanteEntrada";
-            treeNode2.Tag = "1";
-            treeNode2.Text = "Comprobante de entrada de inventario";
-            treeNode3.Name = "Nodo0";
-            treeNode3.Tag = "0";
-            treeNode3.Text = "Operaciones";
-            treeNode4.Name = "Producto";
-            treeNode4.Tag = "1";
-            treeNode4.Text = "Producto";
-            treeNode5.Name = "C0001";
-            treeNode5.Tag = "0001";
-            treeNode5.Text = "Marca";
-            treeNode6.Name = "C0002";
-            treeNode6.Tag = "1";
-            treeNode6.Text = "Categoría";
-            treeNode7.Name = "Almacen";
-            treeNode7.Tag = "1";
-            treeNode7.Text = "Almacén";
-            treeNode8.Name = "TipoProducto";
-            treeNode8.Tag = "1";
-            treeNode8.Text = "Tipo de producto";
-            treeNode9.Name = "PlantillaUnidad";
-            treeNode9.Tag = "1";
-            treeNode9.Text = "Plantilla de unidades";
-            treeNode10.Name = "ListaPrecios";
-            treeNode10.Tag = "1";
-            treeNode10.Text = "Lista de precios";
-            treeNode11.Name = "Nodo0";
-            treeNode11.Tag = "0";
-            treeNode11.Text = "Maestros";
+            treeNode33.Name = "ComprobanteSalida";
+            treeNode33.Tag = "1";
+            treeNode33.Text = "Comprobante de salida de inventario";
+            treeNode34.Name = "ComprobanteEntrada";
+            treeNode34.Tag = "1";
+            treeNode34.Text = "Comprobante de entrada de inventario";
+            treeNode35.Name = "Nodo0";
+            treeNode35.Tag = "0";
+            treeNode35.Text = "Operaciones";
+            treeNode36.Name = "Producto";
+            treeNode36.Tag = "1";
+            treeNode36.Text = "Producto";
+            treeNode37.Name = "C0001";
+            treeNode37.Tag = "0001";
+            treeNode37.Text = "Marca";
+            treeNode38.Name = "C0002";
+            treeNode38.Tag = "1";
+            treeNode38.Text = "Categoría";
+            treeNode39.Name = "Almacen";
+            treeNode39.Tag = "1";
+            treeNode39.Text = "Almacén";
+            treeNode40.Name = "TipoProducto";
+            treeNode40.Tag = "1";
+            treeNode40.Text = "Tipo de producto";
+            treeNode41.Name = "PlantillaUnidad";
+            treeNode41.Tag = "1";
+            treeNode41.Text = "Plantilla de unidades";
+            treeNode42.Name = "ListaPrecios";
+            treeNode42.Tag = "1";
+            treeNode42.Text = "Lista de precios";
+            treeNode43.Name = "Nodo0";
+            treeNode43.Tag = "0";
+            treeNode43.Text = "Maestros";
             this.tvInventario.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode11});
+            treeNode35,
+            treeNode43});
             this.tvInventario.SelectedImageIndex = 0;
             this.tvInventario.Size = new System.Drawing.Size(265, 211);
             this.tvInventario.TabIndex = 0;
@@ -571,27 +555,27 @@
             this.tvCompra.ImageList = this.imgIcon;
             this.tvCompra.Location = new System.Drawing.Point(0, 0);
             this.tvCompra.Name = "tvCompra";
-            treeNode12.Name = "Compra";
-            treeNode12.Tag = "1";
-            treeNode12.Text = "Comprobante de compra";
-            treeNode13.Name = "Gasto";
-            treeNode13.Tag = "1";
-            treeNode13.Text = "Comprobante de gasto";
-            treeNode14.Name = "Nodo0";
-            treeNode14.Tag = "0";
-            treeNode14.Text = "Operaciones";
-            treeNode15.Name = "Provedor";
-            treeNode15.Tag = "1";
-            treeNode15.Text = "Proveedor";
-            treeNode16.Name = "ModalidadCredito";
-            treeNode16.Tag = "1";
-            treeNode16.Text = "Modalidad de crédito";
-            treeNode17.Name = "Nodo0";
-            treeNode17.Tag = "0";
-            treeNode17.Text = "Mestros";
+            treeNode1.Name = "Compra";
+            treeNode1.Tag = "1";
+            treeNode1.Text = "Comprobante de compra";
+            treeNode2.Name = "Gasto";
+            treeNode2.Tag = "1";
+            treeNode2.Text = "Comprobante de gasto";
+            treeNode3.Name = "Nodo0";
+            treeNode3.Tag = "0";
+            treeNode3.Text = "Operaciones";
+            treeNode4.Name = "Provedor";
+            treeNode4.Tag = "1";
+            treeNode4.Text = "Proveedor";
+            treeNode5.Name = "ModalidadCredito";
+            treeNode5.Tag = "1";
+            treeNode5.Text = "Modalidad de crédito";
+            treeNode6.Name = "Nodo0";
+            treeNode6.Tag = "0";
+            treeNode6.Text = "Mestros";
             this.tvCompra.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14,
-            treeNode17});
+            treeNode3,
+            treeNode6});
             this.tvCompra.SelectedImageIndex = 0;
             this.tvCompra.Size = new System.Drawing.Size(265, 211);
             this.tvCompra.TabIndex = 0;
@@ -613,27 +597,27 @@
             this.tvVenta.ImageList = this.imgIcon;
             this.tvVenta.Location = new System.Drawing.Point(0, 0);
             this.tvVenta.Name = "tvVenta";
-            treeNode18.Name = "PuntoVenta";
-            treeNode18.Tag = "1";
-            treeNode18.Text = "Punto de venta";
-            treeNode19.Name = "Nodo0";
-            treeNode19.Tag = "0";
-            treeNode19.Text = "Operaciones";
-            treeNode20.Name = "Cliente";
-            treeNode20.Tag = "1";
-            treeNode20.Text = "Cliente";
-            treeNode21.Name = "Caja";
-            treeNode21.Tag = "1";
-            treeNode21.Text = "Caja";
-            treeNode22.Name = "MetodoPago";
-            treeNode22.Tag = "1";
-            treeNode22.Text = "Método de pago";
-            treeNode23.Name = "Nodo1";
-            treeNode23.Tag = "0";
-            treeNode23.Text = "Mestros";
+            treeNode7.Name = "PuntoVenta";
+            treeNode7.Tag = "1";
+            treeNode7.Text = "Punto de venta";
+            treeNode8.Name = "Nodo0";
+            treeNode8.Tag = "0";
+            treeNode8.Text = "Operaciones";
+            treeNode9.Name = "Cliente";
+            treeNode9.Tag = "1";
+            treeNode9.Text = "Cliente";
+            treeNode10.Name = "Caja";
+            treeNode10.Tag = "1";
+            treeNode10.Text = "Caja";
+            treeNode11.Name = "MetodoPago";
+            treeNode11.Tag = "1";
+            treeNode11.Text = "Método de pago";
+            treeNode12.Name = "Nodo1";
+            treeNode12.Tag = "0";
+            treeNode12.Text = "Mestros";
             this.tvVenta.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode19,
-            treeNode23});
+            treeNode8,
+            treeNode12});
             this.tvVenta.SelectedImageIndex = 0;
             this.tvVenta.Size = new System.Drawing.Size(265, 211);
             this.tvVenta.TabIndex = 0;
@@ -655,36 +639,36 @@
             this.tvConfiguracion.ImageList = this.imgIcon;
             this.tvConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.tvConfiguracion.Name = "tvConfiguracion";
-            treeNode24.Name = "TipoPersona";
-            treeNode24.Tag = "1";
-            treeNode24.Text = "Tipo de persona";
-            treeNode25.Name = "Empleado";
-            treeNode25.Tag = "1";
-            treeNode25.Text = "Empleado";
-            treeNode26.Name = "CargoEmpleado";
-            treeNode26.Tag = "1";
-            treeNode26.Text = "Cargo empleado";
-            treeNode27.Name = "TipoDocumento";
-            treeNode27.Tag = "1";
-            treeNode27.Text = "Tipo de documento";
-            treeNode28.Name = "Sucursal";
-            treeNode28.Tag = "1";
-            treeNode28.Text = "Sucursal";
-            treeNode29.Name = "Contenedores";
-            treeNode29.Tag = "1";
-            treeNode29.Text = "Contenedores";
-            treeNode30.Name = "Nodo0";
-            treeNode30.Tag = "0";
-            treeNode30.Text = "Mestros";
-            treeNode31.Name = "Usuario";
-            treeNode31.Tag = "1";
-            treeNode31.Text = "Usuario";
-            treeNode32.Name = "Nodo7";
-            treeNode32.Tag = "0";
-            treeNode32.Text = "Seguridad";
+            treeNode13.Name = "TipoPersona";
+            treeNode13.Tag = "1";
+            treeNode13.Text = "Tipo de persona";
+            treeNode14.Name = "Empleado";
+            treeNode14.Tag = "1";
+            treeNode14.Text = "Empleado";
+            treeNode15.Name = "CargoEmpleado";
+            treeNode15.Tag = "1";
+            treeNode15.Text = "Cargo empleado";
+            treeNode16.Name = "TipoDocumento";
+            treeNode16.Tag = "1";
+            treeNode16.Text = "Tipo de documento";
+            treeNode17.Name = "Sucursal";
+            treeNode17.Tag = "1";
+            treeNode17.Text = "Sucursal";
+            treeNode18.Name = "Contenedores";
+            treeNode18.Tag = "1";
+            treeNode18.Text = "Contenedores";
+            treeNode19.Name = "Nodo0";
+            treeNode19.Tag = "0";
+            treeNode19.Text = "Mestros";
+            treeNode20.Name = "Usuario";
+            treeNode20.Tag = "1";
+            treeNode20.Text = "Usuario";
+            treeNode21.Name = "Nodo7";
+            treeNode21.Tag = "0";
+            treeNode21.Text = "Seguridad";
             this.tvConfiguracion.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode30,
-            treeNode32});
+            treeNode19,
+            treeNode21});
             this.tvConfiguracion.SelectedImageIndex = 0;
             this.tvConfiguracion.Size = new System.Drawing.Size(265, 211);
             this.tvConfiguracion.TabIndex = 0;
@@ -749,91 +733,72 @@
             this.xtcPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtcPages.Location = new System.Drawing.Point(305, 22);
             this.xtcPages.Name = "xtcPages";
-            this.xtcPages.SelectedTabPage = this.xtraTabPage1;
             this.xtcPages.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
             this.xtcPages.Size = new System.Drawing.Size(515, 435);
             this.xtcPages.TabIndex = 5;
-            this.xtcPages.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.pivotGridControl1);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(509, 407);
-            this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // cmsMenu
             // 
             this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem,
-            this.actualizarToolStripMenuItem,
+            this.mnuFiltro,
+            this.mnuActualizar,
             this.toolStripSeparator1,
-            this.nuevoToolStripMenuItem1,
-            this.eliminarToolStripMenuItem,
-            this.modificarToolStripMenuItem});
+            this.mnuNuevo,
+            this.mnuEliminar,
+            this.mnuModificar});
             this.cmsMenu.Name = "contextMenuStrip1";
             this.cmsMenu.Size = new System.Drawing.Size(171, 120);
             // 
-            // nuevoToolStripMenuItem
+            // mnuFiltro
             // 
-            this.nuevoToolStripMenuItem.Image = global::UI.Properties.Resources.Filter_16x16;
-            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.nuevoToolStripMenuItem.Text = "Filtro";
+            this.mnuFiltro.Image = global::UI.Properties.Resources.Filter_16x16;
+            this.mnuFiltro.Name = "mnuFiltro";
+            this.mnuFiltro.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.mnuFiltro.Size = new System.Drawing.Size(170, 22);
+            this.mnuFiltro.Text = "Filtro";
             // 
-            // actualizarToolStripMenuItem
+            // mnuActualizar
             // 
-            this.actualizarToolStripMenuItem.Image = global::UI.Properties.Resources.RefreshPivotTable_16x16;
-            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.actualizarToolStripMenuItem.Text = "Actualizar";
+            this.mnuActualizar.Image = global::UI.Properties.Resources.RefreshPivotTable_16x16;
+            this.mnuActualizar.Name = "mnuActualizar";
+            this.mnuActualizar.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.mnuActualizar.Size = new System.Drawing.Size(170, 22);
+            this.mnuActualizar.Text = "Actualizar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
-            // nuevoToolStripMenuItem1
+            // mnuNuevo
             // 
-            this.nuevoToolStripMenuItem1.Image = global::UI.Properties.Resources.Add_16x16;
-            this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
-            this.nuevoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
-            this.nuevoToolStripMenuItem1.Text = "Nuevo";
+            this.mnuNuevo.Image = global::UI.Properties.Resources.Add_16x16;
+            this.mnuNuevo.Name = "mnuNuevo";
+            this.mnuNuevo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.mnuNuevo.Size = new System.Drawing.Size(170, 22);
+            this.mnuNuevo.Text = "Nuevo";
             // 
-            // eliminarToolStripMenuItem
+            // mnuEliminar
             // 
-            this.eliminarToolStripMenuItem.Image = global::UI.Properties.Resources.Remove_16x16;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.mnuEliminar.Image = global::UI.Properties.Resources.Remove_16x16;
+            this.mnuEliminar.Name = "mnuEliminar";
+            this.mnuEliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.mnuEliminar.Size = new System.Drawing.Size(170, 22);
+            this.mnuEliminar.Text = "Eliminar";
             // 
-            // modificarToolStripMenuItem
+            // mnuModificar
             // 
-            this.modificarToolStripMenuItem.Image = global::UI.Properties.Resources.Edit_16x16;
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar";
+            this.mnuModificar.Image = global::UI.Properties.Resources.Edit_16x16;
+            this.mnuModificar.Name = "mnuModificar";
+            this.mnuModificar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.mnuModificar.Size = new System.Drawing.Size(170, 22);
+            this.mnuModificar.Text = "Modificar";
             // 
             // tmTiempo
             // 
             this.tmTiempo.Enabled = true;
             this.tmTiempo.Interval = 1000;
             this.tmTiempo.Tick += new System.EventHandler(this.tmTiempo_Tick);
-            // 
-            // pivotGridControl1
-            // 
-            this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
-            this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.LegacyOptimized;
-            this.pivotGridControl1.Size = new System.Drawing.Size(509, 407);
-            this.pivotGridControl1.TabIndex = 0;
             // 
             // FrmHome
             // 
@@ -864,10 +829,7 @@
             this.navBarGroupControlContainer3.ResumeLayout(false);
             this.navBarGroupControlContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtcPages)).EndInit();
-            this.xtcPages.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
             this.cmsMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -917,21 +879,18 @@
         private DevExpress.XtraBars.Bar bar4;
         private DevExpress.XtraBars.BarButtonItem btnImprimir;
         private DevExpress.XtraBars.BarButtonItem btnExcel;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarStaticItem txtFecha;
         private DevExpress.XtraBars.BarStaticItem txtHora;
         private System.Windows.Forms.Timer tmTiempo;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabControl xtcPages;
         private System.Windows.Forms.ContextMenuStrip cmsMenu;
-        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuFiltro;
+        private System.Windows.Forms.ToolStripMenuItem mnuActualizar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
+        private System.Windows.Forms.ToolStripMenuItem mnuNuevo;
+        private System.Windows.Forms.ToolStripMenuItem mnuEliminar;
+        private System.Windows.Forms.ToolStripMenuItem mnuModificar;
     }
 }
