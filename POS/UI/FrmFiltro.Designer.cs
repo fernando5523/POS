@@ -36,6 +36,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(562, 316);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -62,13 +63,12 @@
             this.fcFilter.TabIndex = 3;
             this.fcFilter.Text = "filterControl1";
             // 
-            // backgroundWorker1
-            // 
-            // 
             // FrmFiltro
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(648, 349);
             this.Controls.Add(this.fcFilter);
             this.Controls.Add(this.btnAceptar);

@@ -170,6 +170,19 @@ namespace UI
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }
 
-        
+        private void mnuEliminar_Click(object sender, EventArgs e)
+        {
+            XtraTabPage con =  (XtraTabPage)this.Controls["xtcPages"].Controls[xtcPages.SelectedTabPage.Name];
+            GridControl grid = (GridControl)con.Controls[xtcPages.SelectedTabPage.Name];
+
+            int[] selRows = ((GridView)grid.MainView).GetSelectedRows();
+
+            foreach(int i in selRows)
+            {
+                DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(i));
+                //DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(selRows[i]));
+                MessageBox.Show(selRow["Id"].ToString());
+            }
+        }
     }
 }
