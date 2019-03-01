@@ -41,10 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coding.cs" />
-    <Compile Include="Connect.cs" />
-    <Compile Include="Consult.cs" />
-    <Compile Include="Container.cs" />
     <Compile Include="Contracts\ICodingRepository.cs" />
     <Compile Include="Contracts\IConsultRepository.cs" />
     <Compile Include="Contracts\IContainerRepository.cs" />
@@ -56,8 +52,11 @@
     <Compile Include="Entities\Container.cs" />
     <Compile Include="Entities\Filter.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Filter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CodingRepository.cs" />
+    <Compile Include="Repositories\ConsultRepository.cs" />
+    <Compile Include="Repositories\ContainerRepository.cs" />
+    <Compile Include="Repositories\FilterRepository.cs" />
     <Compile Include="Repositories\MasterRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
