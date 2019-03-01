@@ -45,8 +45,16 @@
     <Compile Include="Connect.cs" />
     <Compile Include="Consult.cs" />
     <Compile Include="Container.cs" />
+    <Compile Include="Contracts\ICodingRepository.cs" />
+    <Compile Include="Contracts\IConsultRepository.cs" />
+    <Compile Include="Contracts\IContainerRepository.cs" />
+    <Compile Include="Contracts\IFilterRepository.cs" />
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Contracts\IUserRepository.cs" />
+    <Compile Include="Entities\Coding.cs" />
+    <Compile Include="Entities\Consult.cs" />
+    <Compile Include="Entities\Container.cs" />
+    <Compile Include="Entities\Filter.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
