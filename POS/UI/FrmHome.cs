@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL.Model;
+using BLL.ValueObjects;
 
 using Entity = EL;
 using DevExpress.XtraTab;
@@ -19,7 +21,7 @@ namespace UI
 {
     public partial class FrmHome : DevExpress.XtraEditors.XtraForm, IPages
     {
-        public Entity.User Usuario;
+        public UserModel Login;
         public FrmHome()
         {
             InitializeComponent();
@@ -140,7 +142,8 @@ namespace UI
 
         private void btnUsuario_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            FrmUserPassword UserPassword = new FrmUserPassword();
+            UserPassword.ShowDialog();
         }
 
         private void FrmHome_Load(object sender, EventArgs e)
@@ -159,7 +162,7 @@ namespace UI
             #endregion
 
             //Footer
-            btnUsuario.Caption = "Usuario :" + Usuario.Name;
+            btnUsuario.Caption = "Usuario :" + Login.Name;
             txtFecha.Caption = "Fecha : " + DateTime.Now.ToString("dd/MM/yyyy");
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }

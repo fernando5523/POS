@@ -91,6 +91,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserPassword.Designer.cs">
+      <DependentUpon>FrmUserPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="IPages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

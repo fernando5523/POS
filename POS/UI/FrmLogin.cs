@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL.Model;
+using BLL.ValueObjects;
 
 using DevExpress.XtraEditors.Controls;
 using Entity = EL;
@@ -18,7 +20,7 @@ namespace UI
     public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {
         #region General
-        User Usuario = new User();
+        private UserModel User = new UserModel();
         #endregion
 
         public FrmLogin()
@@ -124,26 +126,19 @@ namespace UI
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            Entity.User obj = new Entity.User();
-            obj.Name = txtUsuario.Text;
-            obj.Password = txtContraseña.Text;
-
             if(LueAutentificacion.ItemIndex == 0)
             {
-                //Válidamos el usuario
-                Entity.User usr = Usuario.ListBy(obj);
-                if(usr.Active == true)
+                UserModel login = User.GetLogin(txtUsuario.Text, txtContraseña.Text);
+                if(login.Active)
                 {
                     if(ckRecordar.Checked == true)
-                        CreateTempRecorder(obj.Name, obj.Password);
+                        CreateTempRecorder(login.Name,login.Password);
                     else
-                        DeleteTempRecorder(obj.Name);
+                        DeleteTempRecorder(login.Name);
 
                     this.Hide();
-                    
-                    //Cargamos el formulario Home
                     FrmHome Home = new FrmHome();
-                    Home.Usuario = usr;
+                    Home.Login = login;
                     Home.Show();
                 }
             }
