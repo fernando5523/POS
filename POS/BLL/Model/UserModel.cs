@@ -24,75 +24,21 @@ namespace BLL.Model
         public EntityState State { private get; set; }
 
         [RegularExpression("([0-9]+)", ErrorMessage = "Solo esta permitido valores númericos.")]
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
+        public int Id { get => id; set => id = value; }
 
-            set
-            {
-                id = value;
-            }
-        }
         [Required(ErrorMessage = "El nombre es un campo requerido.")]
         [StringLength(maximumLength: 50, ErrorMessage = "Solo esta permitido un máximo de 50 digitos.")]
         [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Los campos deben ser letras.")]
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
+        public string Name { get => name; set => name = value; }
 
         [Required(ErrorMessage = "La contraseña es un campo requerido.")]
-        [StringLength(maximumLength: 30, ErrorMessage = "Solo esta permitido un máximo de 30 digitos.")]
-        public string Password
-        {
-            get
-            {
-                return password;
-            }
+        [StringLength(maximumLength: 30, MinimumLength = 14, ErrorMessage = "La contraseña debe tener minimo 14 y máximo 30 digitos.")]
+        public string Password { get => password; set => password = value; }
+        public bool Active { get => active; set => active = value; }
 
-            set
-            {
-                password = value;
-            }
-        }
-
-        public bool Active
-        {
-            get
-            {
-                return active;
-            }
-
-            set
-            {
-                active = value;
-            }
-        }
         [Required(ErrorMessage = "El iduser es un campo requerido.")]
         [RegularExpression("([0-9]+)", ErrorMessage = "Solo esta permitido valores númericos.")]
-        public int IdUser
-        {
-            get
-            {
-                return iduser;
-            }
-
-            set
-            {
-                iduser = value;
-            }
-        }
+        public int IdUser { get => iduser; set => iduser = value; }
 
         public UserModel()
         {
@@ -105,7 +51,7 @@ namespace BLL.Model
             try
             {
                 var userDataModel = new User();
-                userDataModel.Id = id;
+                userDataModel.Id = Id;
                 userDataModel.Name = name;
                 userDataModel.Password = password;
                 userDataModel.Active = active;
@@ -163,7 +109,7 @@ namespace BLL.Model
         {
             var userDataModel = userRepository.GetLogin(name, password);
             UserModel Login = new UserModel();
-            Login.id = userDataModel.Id;
+            Login.Id = userDataModel.Id;
             Login.name = userDataModel.Name;
             Login.password = userDataModel.Password;
             Login.active = userDataModel.Active;
