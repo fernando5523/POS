@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using BLL.Model;
 using BLL.ValueObjects;
 
-using Entity = EL;
 using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using DevExpress.XtraGrid;
@@ -47,44 +46,44 @@ namespace UI
 
             if (!exist)
             {
-                XtraTabPage Page = new XtraTabPage();
-                Page.Name = name;
-                Page.Text = text;
+                //XtraTabPage Page = new XtraTabPage();
+                //Page.Name = name;
+                //Page.Text = text;
 
-                //Obtenemos el contenedor
-                BLL.Container Container = new BLL.Container();
-                Entity.Container Contenedor = Container.GetBy(name);
+                ////Obtenemos el contenedor
+                //BLL.Container Container = new BLL.Container();
+                //Entity.Container Contenedor = Container.GetBy(name);
 
-                //Obtenemos la consulta
-                Consult Consult = new Consult();
-                Entity.Consult objConsult = Consult.GetBy(Contenedor.Id);
-                Filter Filter = new Filter();
-                Entity.Filter objFilter = Filter.GetBy(objConsult.Id);
-                DataTable Dt = Consult.GetView(Contenedor.Id, objFilter.Condition);
+                ////Obtenemos la consulta
+                //Consult Consult = new Consult();
+                //Entity.Consult objConsult = Consult.GetBy(Contenedor.Id);
+                //Filter Filter = new Filter();
+                //Entity.Filter objFilter = Filter.GetBy(objConsult.Id);
+                //DataTable Dt = Consult.GetView(Contenedor.Id, objFilter.Condition);
 
-                //Creamos el control tipo lista para el contenedor
-                GridView gView = new GridView();
-                gView.OptionsBehavior.ReadOnly = true;
+                ////Creamos el control tipo lista para el contenedor
+                //GridView gView = new GridView();
+                //gView.OptionsBehavior.ReadOnly = true;
 
-                GridControl Grid = new GridControl();
-                Grid.Name = name;
-                Grid.Dock = DockStyle.Fill;
-                Grid.ContextMenuStrip = cmsMenu;
+                //GridControl Grid = new GridControl();
+                //Grid.Name = name;
+                //Grid.Dock = DockStyle.Fill;
+                //Grid.ContextMenuStrip = cmsMenu;
 
-                Grid.ViewCollection.Add(gView);
-                Grid.MainView = gView;
-                Grid.BindingContext = new BindingContext();
-                Grid.DataSource = Dt;
+                //Grid.ViewCollection.Add(gView);
+                //Grid.MainView = gView;
+                //Grid.BindingContext = new BindingContext();
+                //Grid.DataSource = Dt;
 
-                gView.PopulateColumns();
-                Grid.ForceInitialize();
-                gView.Columns["Id"].Visible = false;
-                gView.OptionsSelection.MultiSelect = true;
+                //gView.PopulateColumns();
+                //Grid.ForceInitialize();
+                //gView.Columns["Id"].Visible = false;
+                //gView.OptionsSelection.MultiSelect = true;
 
-                Page.Controls.Add(Grid);
+                //Page.Controls.Add(Grid);
 
-                xtcPages.TabPages.Add(Page);
-                xtcPages.SelectedTabPage = Page;
+                //xtcPages.TabPages.Add(Page);
+                //xtcPages.SelectedTabPage = Page;
             }
         }
         #endregion
@@ -143,7 +142,9 @@ namespace UI
         private void btnUsuario_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FrmUserPassword UserPassword = new FrmUserPassword();
+            UserPassword.Login = Login;
             UserPassword.ShowDialog();
+            Login = UserPassword.Login;
         }
 
         private void FrmHome_Load(object sender, EventArgs e)
@@ -186,6 +187,11 @@ namespace UI
                 //DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(selRows[i]));
                 MessageBox.Show(selRow["Id"].ToString());
             }
+        }
+
+        private void tvCompra_AfterSelect(object sender,TreeViewEventArgs e)
+        {
+
         }
     }
 }

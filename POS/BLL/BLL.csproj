@@ -41,9 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consult.cs" />
-    <Compile Include="Container.cs" />
-    <Compile Include="Filter.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
@@ -53,10 +50,6 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{c6f62d08-3e71-4cb3-bdf5-6fa4c4a46e38}</Project>
       <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EL\EL.csproj">
-      <Project>{22fcd501-491e-4f32-961f-bc0b5bfaac56}</Project>
-      <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

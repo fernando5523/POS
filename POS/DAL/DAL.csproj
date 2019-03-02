@@ -62,12 +62,6 @@
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Security.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EL\EL.csproj">
-      <Project>{22fcd501-491e-4f32-961f-bc0b5bfaac56}</Project>
-      <Name>EL</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

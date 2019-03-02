@@ -54,40 +54,40 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(48, 64);
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(44, 56);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(125, 14);
+            this.labelControl1.Size = new System.Drawing.Size(108, 13);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Tipo de autentificación";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(48, 93);
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(44, 81);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(103, 14);
+            this.labelControl2.Size = new System.Drawing.Size(90, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Nombre de &usuario";
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(48, 122);
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Location = new System.Drawing.Point(44, 108);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(61, 14);
+            this.labelControl3.Size = new System.Drawing.Size(56, 13);
             this.labelControl3.TabIndex = 3;
             this.labelControl3.Text = "&Contraseña";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(182, 89);
+            this.txtUsuario.Location = new System.Drawing.Point(158, 77);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtUsuario.Properties.Appearance.Options.UseFont = true;
+            this.txtUsuario.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtUsuario.Properties.Appearance.Options.UseForeColor = true;
             this.txtUsuario.Properties.AutoHeight = false;
             this.txtUsuario.Size = new System.Drawing.Size(220, 23);
             this.txtUsuario.TabIndex = 2;
@@ -95,20 +95,24 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Hind Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(47, 12);
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Location = new System.Drawing.Point(44, 12);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(232, 29);
+            this.labelControl4.Size = new System.Drawing.Size(153, 38);
             this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "POS - Inicio de sesión";
+            this.labelControl4.Text = "Inicio de sesión";
             // 
             // btnInicio
             // 
-            this.btnInicio.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnInicio.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnInicio.Appearance.Options.UseFont = true;
+            this.btnInicio.Appearance.Options.UseForeColor = true;
             this.btnInicio.Enabled = false;
-            this.btnInicio.Location = new System.Drawing.Point(182, 173);
+            this.btnInicio.Location = new System.Drawing.Point(158, 153);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(140, 33);
             this.btnInicio.TabIndex = 8;
@@ -117,10 +121,8 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.btnSalir.Appearance.Options.UseFont = true;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(328, 173);
+            this.btnSalir.Location = new System.Drawing.Point(304, 153);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(74, 33);
             this.btnSalir.TabIndex = 9;
@@ -129,10 +131,10 @@
             // 
             // ckRecordar
             // 
-            this.ckRecordar.Location = new System.Drawing.Point(256, 147);
+            this.ckRecordar.Location = new System.Drawing.Point(232, 128);
             this.ckRecordar.Name = "ckRecordar";
-            this.ckRecordar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.ckRecordar.Properties.Appearance.Options.UseFont = true;
+            this.ckRecordar.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.ckRecordar.Properties.Appearance.Options.UseForeColor = true;
             this.ckRecordar.Properties.Caption = "&Recordar contraseña";
             this.ckRecordar.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.ckRecordar.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -141,10 +143,12 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(182, 118);
+            this.txtContraseña.Location = new System.Drawing.Point(158, 103);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txtContraseña.Properties.Appearance.Font = new System.Drawing.Font("Hind", 9F);
+            this.txtContraseña.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtContraseña.Properties.Appearance.Options.UseFont = true;
+            this.txtContraseña.Properties.Appearance.Options.UseForeColor = true;
             this.txtContraseña.Properties.AutoHeight = false;
             this.txtContraseña.Properties.PasswordChar = '●';
             this.txtContraseña.Size = new System.Drawing.Size(220, 23);
@@ -153,10 +157,10 @@
             // 
             // LueAutentificacion
             // 
-            this.LueAutentificacion.Location = new System.Drawing.Point(182, 60);
+            this.LueAutentificacion.Location = new System.Drawing.Point(158, 52);
             this.LueAutentificacion.Name = "LueAutentificacion";
-            this.LueAutentificacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.LueAutentificacion.Properties.Appearance.Options.UseFont = true;
+            this.LueAutentificacion.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.LueAutentificacion.Properties.Appearance.Options.UseForeColor = true;
             this.LueAutentificacion.Properties.AutoHeight = false;
             this.LueAutentificacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -168,11 +172,12 @@
             // FrmLogin
             // 
             this.AcceptButton = this.btnInicio;
+            this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(453, 224);
+            this.ClientSize = new System.Drawing.Size(427, 203);
             this.Controls.Add(this.LueAutentificacion);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.ckRecordar);
