@@ -50,7 +50,7 @@
             // difTemas
             // 
             this.difTemas.EnableBonusSkins = true;
-            this.difTemas.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.difTemas.LookAndFeel.SkinName = "The Bezier";
             // 
             // labelControl1
             // 
@@ -138,7 +138,7 @@
             this.ckRecordar.Properties.Caption = "&Recordar contraseña";
             this.ckRecordar.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.ckRecordar.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ckRecordar.Size = new System.Drawing.Size(146, 19);
+            this.ckRecordar.Size = new System.Drawing.Size(146, 20);
             this.ckRecordar.TabIndex = 7;
             // 
             // txtContraseña
@@ -177,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(427, 203);
+            this.ClientSize = new System.Drawing.Size(443, 211);
             this.Controls.Add(this.LueAutentificacion);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.ckRecordar);

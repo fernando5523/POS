@@ -59,7 +59,7 @@ namespace UI
         {
             if(txtActual.Properties.PasswordChar.ToString() != "")
             {
-                txtActual.Properties.PasswordChar;
+                //txtActual.Properties.PasswordChar;
             }
         }
     }
