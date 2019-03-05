@@ -29,63 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Punto de venta");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Cliente");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Caja");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Método de pago");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
-            treeNode5});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Comprobante de compra");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Comprobante de gasto");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Proveedor");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Modalidad de crédito");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Tipo de persona");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Empleado");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Cargo empleado");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Tipo de documento");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Sucursal");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Contenedores");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Comprobante de compra");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Comprobante de gasto");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
             treeNode13,
-            treeNode14,
-            treeNode15,
+            treeNode14});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Proveedor");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Modalidad de crédito");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
             treeNode16,
-            treeNode17,
-            treeNode18});
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Usuario");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
-            treeNode20});
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
+            treeNode17});
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Punto de venta");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
+            treeNode19});
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Cliente");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Caja");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Método de pago");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            treeNode21,
             treeNode22,
             treeNode23});
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Producto");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Marca");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Categoría");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Almacén");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Tipo de producto");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Plantilla de unidades");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Lista de precios");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Tipo de persona");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Empleado");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Cargo empleado");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Tipo de documento");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Sucursal");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Contenedores");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
             treeNode25,
             treeNode26,
             treeNode27,
             treeNode28,
             treeNode29,
-            treeNode30,
-            treeNode31});
+            treeNode30});
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Usuario");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
+            treeNode32});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Producto");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Marca");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Categoría");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Almacén");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Tipo de producto");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Plantilla de unidades");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Lista de precios");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode34,
+            treeNode35,
+            treeNode36,
+            treeNode42});
             this.dmPanel = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.bmStatusMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -116,17 +116,17 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
-            this.tvVenta = new System.Windows.Forms.TreeView();
-            this.imgIcon = new System.Windows.Forms.ImageList(this.components);
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvCompra = new System.Windows.Forms.TreeView();
+            this.imgIcon = new System.Windows.Forms.ImageList(this.components);
+            this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
+            this.tvVenta = new System.Windows.Forms.TreeView();
             this.navBarGroupControlContainer4 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvConfiguracion = new System.Windows.Forms.TreeView();
             this.navBarGroupControlContainer2 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvInventario = new System.Windows.Forms.TreeView();
-            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.xtcPages = new DevExpress.XtraTab.XtraTabControl();
@@ -145,8 +145,8 @@
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.navBarControl1.SuspendLayout();
-            this.navBarGroupControlContainer3.SuspendLayout();
             this.navBarGroupControlContainer1.SuspendLayout();
+            this.navBarGroupControlContainer3.SuspendLayout();
             this.navBarGroupControlContainer4.SuspendLayout();
             this.navBarGroupControlContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtcPages)).BeginInit();
@@ -202,16 +202,16 @@
             this.txtFecha,
             this.txtHora});
             this.bmStatusMenu.MainMenu = this.bar2;
-            this.bmStatusMenu.MaxItemId = 17;
+            this.bmStatusMenu.MaxItemId = 18;
             this.bmStatusMenu.StatusBar = this.bar3;
             // 
             // bar1
             // 
             this.bar1.BarName = "Herramientas";
             this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.FloatLocation = new System.Drawing.Point(289, 205);
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Left;
+            this.bar1.FloatLocation = new System.Drawing.Point(-1890, 221);
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnFiltro),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnActualizar),
@@ -232,7 +232,7 @@
             // 
             this.btnActualizar.Caption = "Actualizar";
             this.btnActualizar.Id = 9;
-            this.btnActualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.ImageOptions.Image")));
+            this.btnActualizar.ImageOptions.Image = global::UI.Properties.Resources.Window_Refresh;
             this.btnActualizar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnActualizar.ImageOptions.LargeImage")));
             this.btnActualizar.Name = "btnActualizar";
             // 
@@ -240,7 +240,7 @@
             // 
             this.btnNuevo.Caption = "Nuevo";
             this.btnNuevo.Id = 6;
-            this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.Image")));
+            this.btnNuevo.ImageOptions.Image = global::UI.Properties.Resources.Add;
             this.btnNuevo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.LargeImage")));
             this.btnNuevo.Name = "btnNuevo";
             // 
@@ -248,7 +248,7 @@
             // 
             this.btnEliminar.Caption = "Eliminar";
             this.btnEliminar.Id = 7;
-            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
+            this.btnEliminar.ImageOptions.Image = global::UI.Properties.Resources.Delete;
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
             // 
@@ -312,9 +312,9 @@
             // 
             this.bar4.BarName = "Acciones";
             this.bar4.DockCol = 1;
-            this.bar4.DockRow = 1;
-            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar4.FloatLocation = new System.Drawing.Point(368, 367);
+            this.bar4.DockRow = 0;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Left;
+            this.bar4.FloatLocation = new System.Drawing.Point(-1888, 385);
             this.bar4.FloatSize = new System.Drawing.Size(80, 32);
             this.bar4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnImprimir),
@@ -344,7 +344,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.bmStatusMenu;
-            this.barDockControlTop.Size = new System.Drawing.Size(874, 48);
+            this.barDockControlTop.Size = new System.Drawing.Size(874, 20);
             // 
             // barDockControlBottom
             // 
@@ -358,17 +358,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.bmStatusMenu;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 490);
+            this.barDockControlLeft.Size = new System.Drawing.Size(32, 518);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(874, 48);
+            this.barDockControlRight.Location = new System.Drawing.Point(874, 20);
             this.barDockControlRight.Manager = this.bmStatusMenu;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 490);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 518);
             // 
             // barButtonItem1
             // 
@@ -417,25 +417,25 @@
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("d834598c-fd73-4213-a60a-97e9b5434611");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 48);
+            this.dockPanel1.Location = new System.Drawing.Point(600, 20);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(274, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(274, 490);
+            this.dockPanel1.Size = new System.Drawing.Size(274, 518);
             this.dockPanel1.Text = "Módulos";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 30);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 30);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(267, 457);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(267, 485);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
             // 
-            this.navBarControl1.ActiveGroup = this.navBarGroup1;
+            this.navBarControl1.ActiveGroup = this.navBarGroup4;
             this.navBarControl1.Controls.Add(this.navBarGroupControlContainer1);
             this.navBarControl1.Controls.Add(this.navBarGroupControlContainer3);
             this.navBarControl1.Controls.Add(this.navBarGroupControlContainer4);
@@ -451,70 +451,22 @@
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 267;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(267, 457);
+            this.navBarControl1.Size = new System.Drawing.Size(267, 485);
             this.navBarControl1.TabIndex = 5;
             this.navBarControl1.Text = "navBarControl1";
-            this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinNavigationPaneViewInfoRegistrator("DevExpress Dark Style");
+            this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinNavigationPaneViewInfoRegistrator("The Bezier");
             // 
-            // navBarGroup1
+            // navBarGroup4
             // 
-            this.navBarGroup1.Caption = "Gestión de la venta";
-            this.navBarGroup1.ControlContainer = this.navBarGroupControlContainer3;
-            this.navBarGroup1.Expanded = true;
-            this.navBarGroup1.GroupClientHeight = 80;
-            this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
-            this.navBarGroup1.ImageOptions.ImageUri.Uri = "Currency";
-            this.navBarGroup1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.ImageOptions.LargeImage")));
-            this.navBarGroup1.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.ImageOptions.SmallImage")));
-            this.navBarGroup1.Name = "navBarGroup1";
-            // 
-            // navBarGroupControlContainer3
-            // 
-            this.navBarGroupControlContainer3.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.navBarGroupControlContainer3.Appearance.Options.UseBackColor = true;
-            this.navBarGroupControlContainer3.Controls.Add(this.tvVenta);
-            this.navBarGroupControlContainer3.Name = "navBarGroupControlContainer3";
-            this.navBarGroupControlContainer3.Size = new System.Drawing.Size(267, 262);
-            this.navBarGroupControlContainer3.TabIndex = 2;
-            // 
-            // tvVenta
-            // 
-            this.tvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tvVenta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvVenta.ImageIndex = 0;
-            this.tvVenta.ImageList = this.imgIcon;
-            this.tvVenta.Location = new System.Drawing.Point(0, 0);
-            this.tvVenta.Name = "tvVenta";
-            treeNode1.Name = "PuntoVenta";
-            treeNode1.Tag = "1";
-            treeNode1.Text = "Punto de venta";
-            treeNode2.Name = "Nodo0";
-            treeNode2.Tag = "0";
-            treeNode2.Text = "Operaciones";
-            treeNode3.Name = "Cliente";
-            treeNode3.Tag = "1";
-            treeNode3.Text = "Cliente";
-            treeNode4.Name = "Caja";
-            treeNode4.Tag = "1";
-            treeNode4.Text = "Caja";
-            treeNode5.Name = "MetodoPago";
-            treeNode5.Tag = "1";
-            treeNode5.Text = "Método de pago";
-            treeNode6.Name = "Nodo1";
-            treeNode6.Tag = "0";
-            treeNode6.Text = "Configuración";
-            this.tvVenta.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode6});
-            this.tvVenta.SelectedImageIndex = 0;
-            this.tvVenta.Size = new System.Drawing.Size(267, 262);
-            this.tvVenta.TabIndex = 0;
-            // 
-            // imgIcon
-            // 
-            this.imgIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgIcon.ImageStream")));
-            this.imgIcon.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgIcon.Images.SetKeyName(0, "Window_16x16.png");
+            this.navBarGroup4.Caption = "Gestión de la compra";
+            this.navBarGroup4.ControlContainer = this.navBarGroupControlContainer1;
+            this.navBarGroup4.Expanded = true;
+            this.navBarGroup4.GroupClientHeight = 80;
+            this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.navBarGroup4.ImageOptions.ImageUri.Uri = "MonthView";
+            this.navBarGroup4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.ImageOptions.LargeImage")));
+            this.navBarGroup4.ImageOptions.SmallImage = global::UI.Properties.Resources.MonthView_16x16;
+            this.navBarGroup4.Name = "navBarGroup4";
             // 
             // navBarGroupControlContainer1
             // 
@@ -522,7 +474,7 @@
             this.navBarGroupControlContainer1.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer1.Controls.Add(this.tvCompra);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(265, 182);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(267, 264);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // tvCompra
@@ -534,31 +486,83 @@
             this.tvCompra.ImageList = this.imgIcon;
             this.tvCompra.Location = new System.Drawing.Point(0, 0);
             this.tvCompra.Name = "tvCompra";
-            treeNode7.Name = "Compra";
-            treeNode7.Tag = "1";
-            treeNode7.Text = "Comprobante de compra";
-            treeNode8.Name = "Gasto";
-            treeNode8.Tag = "1";
-            treeNode8.Text = "Comprobante de gasto";
-            treeNode9.Name = "Nodo0";
-            treeNode9.Tag = "0";
-            treeNode9.Text = "Operaciones";
-            treeNode10.Name = "Provedor";
-            treeNode10.Tag = "1";
-            treeNode10.Text = "Proveedor";
-            treeNode11.Name = "ModalidadCredito";
-            treeNode11.Tag = "1";
-            treeNode11.Text = "Modalidad de crédito";
-            treeNode12.Name = "Nodo0";
-            treeNode12.Tag = "0";
-            treeNode12.Text = "Configuración";
+            treeNode13.Name = "Compra";
+            treeNode13.Tag = "1";
+            treeNode13.Text = "Comprobante de compra";
+            treeNode14.Name = "Gasto";
+            treeNode14.Tag = "1";
+            treeNode14.Text = "Comprobante de gasto";
+            treeNode15.Name = "Nodo0";
+            treeNode15.Tag = "0";
+            treeNode15.Text = "Operaciones";
+            treeNode16.Name = "Provedor";
+            treeNode16.Tag = "1";
+            treeNode16.Text = "Proveedor";
+            treeNode17.Name = "ModalidadCredito";
+            treeNode17.Tag = "1";
+            treeNode17.Text = "Modalidad de crédito";
+            treeNode18.Name = "Nodo0";
+            treeNode18.Tag = "0";
+            treeNode18.Text = "Configuración";
             this.tvCompra.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode12});
+            treeNode15,
+            treeNode18});
             this.tvCompra.SelectedImageIndex = 0;
-            this.tvCompra.Size = new System.Drawing.Size(265, 182);
+            this.tvCompra.Size = new System.Drawing.Size(267, 264);
             this.tvCompra.TabIndex = 0;
             this.tvCompra.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvCompra_AfterSelect);
+            // 
+            // imgIcon
+            // 
+            this.imgIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgIcon.ImageStream")));
+            this.imgIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgIcon.Images.SetKeyName(0, "tree.png");
+            this.imgIcon.Images.SetKeyName(1, "tab.png");
+            this.imgIcon.Images.SetKeyName(2, "FolderPanel_16x16.png");
+            this.imgIcon.Images.SetKeyName(3, "DataEntry.png");
+            this.imgIcon.Images.SetKeyName(4, "Window_16x16.png");
+            // 
+            // navBarGroupControlContainer3
+            // 
+            this.navBarGroupControlContainer3.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.navBarGroupControlContainer3.Appearance.Options.UseBackColor = true;
+            this.navBarGroupControlContainer3.Controls.Add(this.tvVenta);
+            this.navBarGroupControlContainer3.Name = "navBarGroupControlContainer3";
+            this.navBarGroupControlContainer3.Size = new System.Drawing.Size(267, 236);
+            this.navBarGroupControlContainer3.TabIndex = 2;
+            // 
+            // tvVenta
+            // 
+            this.tvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tvVenta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvVenta.ImageIndex = 0;
+            this.tvVenta.ImageList = this.imgIcon;
+            this.tvVenta.Location = new System.Drawing.Point(0, 0);
+            this.tvVenta.Name = "tvVenta";
+            treeNode19.Name = "PuntoVenta";
+            treeNode19.Tag = "1";
+            treeNode19.Text = "Punto de venta";
+            treeNode20.Name = "Nodo0";
+            treeNode20.Tag = "0";
+            treeNode20.Text = "Operaciones";
+            treeNode21.Name = "Cliente";
+            treeNode21.Tag = "1";
+            treeNode21.Text = "Cliente";
+            treeNode22.Name = "Caja";
+            treeNode22.Tag = "1";
+            treeNode22.Text = "Caja";
+            treeNode23.Name = "MetodoPago";
+            treeNode23.Tag = "1";
+            treeNode23.Text = "Método de pago";
+            treeNode24.Name = "Nodo1";
+            treeNode24.Tag = "0";
+            treeNode24.Text = "Configuración";
+            this.tvVenta.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode20,
+            treeNode24});
+            this.tvVenta.SelectedImageIndex = 0;
+            this.tvVenta.Size = new System.Drawing.Size(267, 236);
+            this.tvVenta.TabIndex = 0;
             // 
             // navBarGroupControlContainer4
             // 
@@ -579,36 +583,36 @@
             this.tvConfiguracion.ImageList = this.imgIcon;
             this.tvConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.tvConfiguracion.Name = "tvConfiguracion";
-            treeNode13.Name = "TipoPersona";
-            treeNode13.Tag = "1";
-            treeNode13.Text = "Tipo de persona";
-            treeNode14.Name = "Empleado";
-            treeNode14.Tag = "1";
-            treeNode14.Text = "Empleado";
-            treeNode15.Name = "CargoEmpleado";
-            treeNode15.Tag = "1";
-            treeNode15.Text = "Cargo empleado";
-            treeNode16.Name = "TipoDocumento";
-            treeNode16.Tag = "1";
-            treeNode16.Text = "Tipo de documento";
-            treeNode17.Name = "Sucursal";
-            treeNode17.Tag = "1";
-            treeNode17.Text = "Sucursal";
-            treeNode18.Name = "Contenedores";
-            treeNode18.Tag = "1";
-            treeNode18.Text = "Contenedores";
-            treeNode19.Name = "Nodo0";
-            treeNode19.Tag = "0";
-            treeNode19.Text = "Configuración";
-            treeNode20.Name = "Usuario";
-            treeNode20.Tag = "1";
-            treeNode20.Text = "Usuario";
-            treeNode21.Name = "Nodo7";
-            treeNode21.Tag = "0";
-            treeNode21.Text = "Seguridad";
+            treeNode25.Name = "TipoPersona";
+            treeNode25.Tag = "1";
+            treeNode25.Text = "Tipo de persona";
+            treeNode26.Name = "Empleado";
+            treeNode26.Tag = "1";
+            treeNode26.Text = "Empleado";
+            treeNode27.Name = "CargoEmpleado";
+            treeNode27.Tag = "1";
+            treeNode27.Text = "Cargo empleado";
+            treeNode28.Name = "TipoDocumento";
+            treeNode28.Tag = "1";
+            treeNode28.Text = "Tipo de documento";
+            treeNode29.Name = "Sucursal";
+            treeNode29.Tag = "1";
+            treeNode29.Text = "Sucursal";
+            treeNode30.Name = "Contenedores";
+            treeNode30.Tag = "1";
+            treeNode30.Text = "Contenedores";
+            treeNode31.Name = "Nodo0";
+            treeNode31.Tag = "0";
+            treeNode31.Text = "Configuración";
+            treeNode32.Name = "Usuario";
+            treeNode32.Tag = "1";
+            treeNode32.Text = "Usuario";
+            treeNode33.Name = "Nodo7";
+            treeNode33.Tag = "0";
+            treeNode33.Text = "Seguridad";
             this.tvConfiguracion.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode19,
-            treeNode21});
+            treeNode31,
+            treeNode33});
             this.tvConfiguracion.SelectedImageIndex = 0;
             this.tvConfiguracion.Size = new System.Drawing.Size(265, 182);
             this.tvConfiguracion.TabIndex = 0;
@@ -630,56 +634,56 @@
             this.tvInventario.ImageList = this.imgIcon;
             this.tvInventario.Location = new System.Drawing.Point(0, 0);
             this.tvInventario.Name = "tvInventario";
-            treeNode22.Name = "ComprobanteSalida";
-            treeNode22.Tag = "1";
-            treeNode22.Text = "Comprobante de salida de inventario";
-            treeNode23.Name = "ComprobanteEntrada";
-            treeNode23.Tag = "1";
-            treeNode23.Text = "Comprobante de entrada de inventario";
-            treeNode24.Name = "Nodo0";
-            treeNode24.Tag = "0";
-            treeNode24.Text = "Operaciones";
-            treeNode25.Name = "Producto";
-            treeNode25.Tag = "1";
-            treeNode25.Text = "Producto";
-            treeNode26.Name = "C0001";
-            treeNode26.Tag = "0001";
-            treeNode26.Text = "Marca";
-            treeNode27.Name = "C0002";
-            treeNode27.Tag = "1";
-            treeNode27.Text = "Categoría";
-            treeNode28.Name = "Almacen";
-            treeNode28.Tag = "1";
-            treeNode28.Text = "Almacén";
-            treeNode29.Name = "TipoProducto";
-            treeNode29.Tag = "1";
-            treeNode29.Text = "Tipo de producto";
-            treeNode30.Name = "PlantillaUnidad";
-            treeNode30.Tag = "1";
-            treeNode30.Text = "Plantilla de unidades";
-            treeNode31.Name = "ListaPrecios";
-            treeNode31.Tag = "1";
-            treeNode31.Text = "Lista de precios";
-            treeNode32.Name = "Nodo0";
-            treeNode32.Tag = "0";
-            treeNode32.Text = "Configuración";
+            treeNode1.Name = "ComprobanteSalida";
+            treeNode1.Tag = "1";
+            treeNode1.Text = "Comprobante de salida de inventario";
+            treeNode2.Name = "ComprobanteEntrada";
+            treeNode2.Tag = "1";
+            treeNode2.Text = "Comprobante de entrada de inventario";
+            treeNode3.Name = "Nodo0";
+            treeNode3.Tag = "0";
+            treeNode3.Text = "Operaciones";
+            treeNode4.Name = "Producto";
+            treeNode4.Tag = "1";
+            treeNode4.Text = "Producto";
+            treeNode5.Name = "C0001";
+            treeNode5.Tag = "0001";
+            treeNode5.Text = "Marca";
+            treeNode6.Name = "C0002";
+            treeNode6.Tag = "1";
+            treeNode6.Text = "Categoría";
+            treeNode34.Name = "Almacen";
+            treeNode34.Tag = "1";
+            treeNode34.Text = "Almacén";
+            treeNode35.Name = "TipoProducto";
+            treeNode35.Tag = "1";
+            treeNode35.Text = "Tipo de producto";
+            treeNode36.Name = "PlantillaUnidad";
+            treeNode36.Tag = "1";
+            treeNode36.Text = "Plantilla de unidades";
+            treeNode42.Name = "ListaPrecios";
+            treeNode42.Tag = "1";
+            treeNode42.Text = "Lista de precios";
+            treeNode43.Name = "Nodo0";
+            treeNode43.Tag = "0";
+            treeNode43.Text = "Configuración";
             this.tvInventario.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode32});
+            treeNode3,
+            treeNode43});
             this.tvInventario.SelectedImageIndex = 0;
             this.tvInventario.Size = new System.Drawing.Size(265, 182);
             this.tvInventario.TabIndex = 0;
             // 
-            // navBarGroup4
+            // navBarGroup1
             // 
-            this.navBarGroup4.Caption = "Gestión de la compra";
-            this.navBarGroup4.ControlContainer = this.navBarGroupControlContainer1;
-            this.navBarGroup4.GroupClientHeight = 80;
-            this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
-            this.navBarGroup4.ImageOptions.ImageUri.Uri = "MonthView";
-            this.navBarGroup4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.ImageOptions.LargeImage")));
-            this.navBarGroup4.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.ImageOptions.SmallImage")));
-            this.navBarGroup4.Name = "navBarGroup4";
+            this.navBarGroup1.Caption = "Gestión de la venta";
+            this.navBarGroup1.ControlContainer = this.navBarGroupControlContainer3;
+            this.navBarGroup1.GroupClientHeight = 0;
+            this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.navBarGroup1.ImageOptions.ImageUri.Uri = "Currency";
+            this.navBarGroup1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.ImageOptions.LargeImage")));
+            this.navBarGroup1.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.ImageOptions.SmallImage")));
+            this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBarGroup3
             // 
@@ -689,7 +693,7 @@
             this.navBarGroup3.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup3.ImageOptions.ImageUri.Uri = "Paste";
             this.navBarGroup3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.ImageOptions.LargeImage")));
-            this.navBarGroup3.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.ImageOptions.SmallImage")));
+            this.navBarGroup3.ImageOptions.SmallImage = global::UI.Properties.Resources.PackageProduct_16x16;
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarGroup2
@@ -706,12 +710,12 @@
             // xtcPages
             // 
             this.xtcPages.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.xtcPages.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPagesAndTabControlHeader;
+            this.xtcPages.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageAndTabControlHeader;
             this.xtcPages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtcPages.Location = new System.Drawing.Point(274, 48);
+            this.xtcPages.Location = new System.Drawing.Point(32, 20);
             this.xtcPages.Name = "xtcPages";
             this.xtcPages.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtcPages.Size = new System.Drawing.Size(600, 490);
+            this.xtcPages.Size = new System.Drawing.Size(568, 518);
             this.xtcPages.TabIndex = 5;
             // 
             // cmsMenu
@@ -728,7 +732,7 @@
             // 
             // mnuFiltro
             // 
-            this.mnuFiltro.Image = global::UI.Properties.Resources.Filter_16x16;
+            this.mnuFiltro.Image = global::UI.Properties.Resources.Filter;
             this.mnuFiltro.Name = "mnuFiltro";
             this.mnuFiltro.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.mnuFiltro.Size = new System.Drawing.Size(170, 22);
@@ -736,7 +740,7 @@
             // 
             // mnuActualizar
             // 
-            this.mnuActualizar.Image = global::UI.Properties.Resources.RefreshPivotTable_16x16;
+            this.mnuActualizar.Image = global::UI.Properties.Resources.Window_Refresh;
             this.mnuActualizar.Name = "mnuActualizar";
             this.mnuActualizar.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.mnuActualizar.Size = new System.Drawing.Size(170, 22);
@@ -749,7 +753,7 @@
             // 
             // mnuNuevo
             // 
-            this.mnuNuevo.Image = global::UI.Properties.Resources.Add_16x16;
+            this.mnuNuevo.Image = global::UI.Properties.Resources.Add;
             this.mnuNuevo.Name = "mnuNuevo";
             this.mnuNuevo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.mnuNuevo.Size = new System.Drawing.Size(170, 22);
@@ -757,7 +761,7 @@
             // 
             // mnuEliminar
             // 
-            this.mnuEliminar.Image = global::UI.Properties.Resources.Remove_16x16;
+            this.mnuEliminar.Image = global::UI.Properties.Resources.Delete;
             this.mnuEliminar.Name = "mnuEliminar";
             this.mnuEliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.mnuEliminar.Size = new System.Drawing.Size(170, 22);
@@ -766,7 +770,7 @@
             // 
             // mnuModificar
             // 
-            this.mnuModificar.Image = global::UI.Properties.Resources.Edit_16x16;
+            this.mnuModificar.Image = global::UI.Properties.Resources.Change1;
             this.mnuModificar.Name = "mnuModificar";
             this.mnuModificar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
             this.mnuModificar.Size = new System.Drawing.Size(170, 22);
@@ -802,8 +806,8 @@
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.navBarControl1.ResumeLayout(false);
-            this.navBarGroupControlContainer3.ResumeLayout(false);
             this.navBarGroupControlContainer1.ResumeLayout(false);
+            this.navBarGroupControlContainer3.ResumeLayout(false);
             this.navBarGroupControlContainer4.ResumeLayout(false);
             this.navBarGroupControlContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtcPages)).EndInit();

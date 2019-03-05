@@ -27,28 +27,29 @@ namespace UI
         }
 
         #region Métodos
-        public void LoadPage(string name, string text, bool reset)
+        public void LoadPage(string name, string text)
         {
+            //Revisamos si existe el page seleccionado en el panel.
             bool exist = false;
             for(int i = 0; i < xtcPages.TabPages.Count; i++)
             {
-                if(xtcPages.TabPages[i].Name == name && reset == false)
+                if(xtcPages.TabPages[i].Name == name)
                 {
                     xtcPages.SelectedTabPage = xtcPages.TabPages[i];
                     exist = true;
                 }
-                if (xtcPages.TabPages[i].Name == name && reset == true)
-                {
-                    xtcPages.TabPages.Remove(xtcPages.TabPages[i]);
-                    exist = false;
-                }
+                //if (xtcPages.TabPages[i].Name == name)
+                //{
+                //    xtcPages.TabPages.Remove(xtcPages.TabPages[i]);
+                //    exist = false;
+                //}
             }
 
             if (!exist)
             {
-                //XtraTabPage Page = new XtraTabPage();
-                //Page.Name = name;
-                //Page.Text = text;
+                var Page = new XtraTabPage();
+                Page.Name = name;
+                Page.Text = text;
 
                 ////Obtenemos el contenedor
                 //BLL.Container Container = new BLL.Container();
@@ -61,14 +62,14 @@ namespace UI
                 //Entity.Filter objFilter = Filter.GetBy(objConsult.Id);
                 //DataTable Dt = Consult.GetView(Contenedor.Id, objFilter.Condition);
 
-                ////Creamos el control tipo lista para el contenedor
+                //Creamos el control tipo lista para el contenedor
                 //GridView gView = new GridView();
                 //gView.OptionsBehavior.ReadOnly = true;
 
-                //GridControl Grid = new GridControl();
-                //Grid.Name = name;
-                //Grid.Dock = DockStyle.Fill;
-                //Grid.ContextMenuStrip = cmsMenu;
+                //gridcontrol grid = new gridcontrol();
+                //grid.name = name;
+                //grid.dock = dockstyle.fill;
+                //grid.contextmenustrip = cmsmenu;
 
                 //Grid.ViewCollection.Add(gView);
                 //Grid.MainView = gView;
@@ -82,8 +83,8 @@ namespace UI
 
                 //Page.Controls.Add(Grid);
 
-                //xtcPages.TabPages.Add(Page);
-                //xtcPages.SelectedTabPage = Page;
+                xtcPages.TabPages.Add(Page);
+                xtcPages.SelectedTabPage = Page;
             }
         }
         #endregion
@@ -92,8 +93,12 @@ namespace UI
         private void treeview_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeView tree = (TreeView)sender;
-            if(e.Node.Tag.ToString() != "0")
-                LoadPage(tree.SelectedNode.Name, tree.SelectedNode.Text, false);
+            if (e.Node.Tag.ToString() != "0")
+            {
+                LoadPage(tree.SelectedNode.Name, tree.SelectedNode.Text);
+                //tree.SelectedNode = null;
+            }
+
         }
 
         private void xtraTabControl_CloseButtonClick(object sender, EventArgs e)

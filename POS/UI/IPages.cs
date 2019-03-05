@@ -8,6 +8,6 @@ namespace UI
 {
     public interface IPages
     {
-        void LoadPage(string name, string text, bool reset);
+        void LoadPage(string name, string text);
     }
 }

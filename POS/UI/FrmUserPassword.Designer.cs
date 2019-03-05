@@ -50,7 +50,7 @@
             this.btnContraseña.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContraseña.Appearance.Options.UseFont = true;
             this.btnContraseña.Enabled = false;
-            this.btnContraseña.Location = new System.Drawing.Point(150, 135);
+            this.btnContraseña.Location = new System.Drawing.Point(149, 113);
             this.btnContraseña.Name = "btnContraseña";
             this.btnContraseña.Size = new System.Drawing.Size(87, 33);
             this.btnContraseña.TabIndex = 7;
@@ -59,7 +59,7 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(243, 134);
+            this.btnCancelar.Location = new System.Drawing.Point(242, 112);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(76, 33);
             this.btnCancelar.TabIndex = 8;
@@ -67,19 +67,19 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Hind Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
             this.labelControl4.Location = new System.Drawing.Point(44, 12);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(226, 38);
+            this.labelControl4.Size = new System.Drawing.Size(126, 13);
             this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "Cambio de contraseña";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(44, 57);
+            this.labelControl1.Location = new System.Drawing.Point(43, 35);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(88, 13);
             this.labelControl1.TabIndex = 5;
@@ -87,7 +87,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(44, 83);
+            this.labelControl2.Location = new System.Drawing.Point(43, 61);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(88, 13);
             this.labelControl2.TabIndex = 1;
@@ -95,7 +95,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(44, 109);
+            this.labelControl3.Location = new System.Drawing.Point(43, 87);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(92, 13);
             this.labelControl3.TabIndex = 3;
@@ -103,7 +103,7 @@
             // 
             // txtNueva
             // 
-            this.txtNueva.Location = new System.Drawing.Point(150, 79);
+            this.txtNueva.Location = new System.Drawing.Point(149, 57);
             this.txtNueva.Name = "txtNueva";
             this.txtNueva.Properties.AutoHeight = false;
             this.txtNueva.Properties.PasswordChar = '●';
@@ -113,7 +113,7 @@
             // 
             // txtRepetir
             // 
-            this.txtRepetir.Location = new System.Drawing.Point(150, 105);
+            this.txtRepetir.Location = new System.Drawing.Point(149, 83);
             this.txtRepetir.Name = "txtRepetir";
             this.txtRepetir.Properties.AutoHeight = false;
             this.txtRepetir.Properties.PasswordChar = '●';
@@ -123,7 +123,7 @@
             // 
             // txtActual
             // 
-            this.txtActual.Location = new System.Drawing.Point(150, 53);
+            this.txtActual.Location = new System.Drawing.Point(149, 31);
             this.txtActual.Name = "txtActual";
             this.txtActual.Properties.AutoHeight = false;
             this.txtActual.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -142,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(364, 189);
+            this.ClientSize = new System.Drawing.Size(364, 160);
             this.Controls.Add(this.txtRepetir);
             this.Controls.Add(this.txtNueva);
             this.Controls.Add(this.labelControl3);
