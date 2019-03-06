@@ -42,6 +42,7 @@ namespace DAL.Repositories
                     using(var table = new DataTable()){
                         table.Load(reader);
                         reader.Dispose();
+                        parameters.Clear();
                         return table;
                     }
                 }

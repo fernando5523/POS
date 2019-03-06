@@ -14,19 +14,21 @@ namespace DAL.Repositories
     public class FilterRepository : MasterRepository, IFilterRepository
     {
         private string selectAll;
+        private string selectUser;
         private string insert;
         private string update;
         private string delete;
         public FilterRepository()
         {
             selectAll = "SELECT * FROM [Filter]";
+            selectUser = "SELECT * FROM [Filter] WHERE IdUser = @iduser AND IdConsult = @idconsult";
             insert = "INSERT INTO [Filter] VALUES(@iduser, @idconsult, @condition, @conditiondev)";
             update = "UPDATE [Filter] SET IdUser = @iduser, IdConsult = @idconsult, Condition = @condition, ConditionDev = @conditiondev WHERE Id = @id";
             delete = "DELETE FROM [Filter] WHERE Id = @id";
         }
         public int Add(Filter entity)
         {
-            var parameters = new List<SqlParameter>();
+            parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@iduser", entity.IdUser));
             parameters.Add(new SqlParameter("@idconsult", entity.IdConsult));
             parameters.Add(new SqlParameter("@condition", entity.Condition));
@@ -36,7 +38,7 @@ namespace DAL.Repositories
 
         public int Edit(Filter entity)
         {
-            var parameters = new List<SqlParameter>();
+            parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@id", entity.Id));
             parameters.Add(new SqlParameter("@iduser", entity.IdUser));
             parameters.Add(new SqlParameter("@idconsult", entity.IdConsult));
@@ -63,9 +65,32 @@ namespace DAL.Repositories
             return listFilter;
         }
 
+        public Filter GetUser(int iduser, int idconsult)
+        {
+            parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@iduser", iduser));
+            parameters.Add(new SqlParameter("@idconsult", idconsult));
+            var tableResult = ExecuteReader(selectUser);
+            var listFilter = new Filter();
+            foreach (DataRow item in tableResult.Rows)
+            {
+                listFilter.Id = (int)item["Id"];
+                listFilter.IdUser = (int)item["IdUser"];
+                listFilter.IdConsult = (int)item["IdConsult"];
+                listFilter.Condition = item["Condition"].ToString();
+                listFilter.ConditionDev = item["ConditionDev"].ToString();
+            }
+            return listFilter;
+        }
+
+        public DataTable Execute(string transactSql)
+        {
+            return ExecuteReader(transactSql);
+        }
+
         public int Remove(int id)
         {
-            var parameters = new List<SqlParameter>();
+            parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@id", id));
             return ExecuteNonQuery(delete);
         }

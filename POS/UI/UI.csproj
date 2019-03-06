@@ -145,64 +145,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Filter_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RefreshPivotTable_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Add_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Remove_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Edit_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sales.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Add.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RefreshLines.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Filter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Change.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ExportToExcel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\filtro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\refrescar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Print.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-administrative-tools-16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Window-Refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MonthView_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\PackageProduct_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MasterFilter_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

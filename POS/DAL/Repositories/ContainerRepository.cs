@@ -14,12 +14,14 @@ namespace DAL.Repositories
     public class ContainerRepository : MasterRepository, IContainerRepository
     {
         private string selectAll;
+        private string selectContainer;
         private string insert;
         private string update;
         private string delete;
         public ContainerRepository()
         {
             selectAll = "SELECT * FROM [Container]";
+            selectContainer = "SELECT Id, Name, Description FROM [Container] WHERE Name = @name";
             insert = "INSERT INTO [Container] VALUES(@code, @name, @description, @active, @iduser)";
             update = "UPDATE [Container] SET Code = @code, Name = @name, Description = @description, Active = @active, IdUser = @iduser WHERE Id = @id";
             delete = "DELETE FROM [Container] WHERE Id = @id";
@@ -62,6 +64,21 @@ namespace DAL.Repositories
                     Active = (bool)item["Active"],
                     IdUser = (int)item["IdUser"]
                 });
+            }
+            return listContainer;
+        }
+
+        public Container GetContainerName(string name)
+        {
+            parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@name", name));
+            var tableResult = ExecuteReader(selectContainer);
+            var listContainer = new Container();
+            foreach(DataRow item in tableResult.Rows)
+            {
+                listContainer.Id = (int)item["Id"];
+                listContainer.Name = (string)item["Name"];
+                listContainer.Description = (string)item["Description"];
             }
             return listContainer;
         }

@@ -21,6 +21,9 @@ namespace UI
     public partial class FrmHome : DevExpress.XtraEditors.XtraForm, IPages
     {
         public UserModel Login;
+        public ContainerModel Containers= new ContainerModel();
+        public ConsultModel Consult = new ConsultModel();
+        public FilterModel Filter = new FilterModel();
         public FrmHome()
         {
             InitializeComponent();
@@ -31,9 +34,9 @@ namespace UI
         {
             //Revisamos si existe el page seleccionado en el panel.
             bool exist = false;
-            for(int i = 0; i < xtcPages.TabPages.Count; i++)
+            for (int i = 0; i < xtcPages.TabPages.Count; i++)
             {
-                if(xtcPages.TabPages[i].Name == name)
+                if (xtcPages.TabPages[i].Name == name)
                 {
                     xtcPages.SelectedTabPage = xtcPages.TabPages[i];
                     exist = true;
@@ -51,41 +54,46 @@ namespace UI
                 Page.Name = name;
                 Page.Text = text;
 
-                ////Obtenemos el contenedor
-                //BLL.Container Container = new BLL.Container();
-                //Entity.Container Contenedor = Container.GetBy(name);
-
-                ////Obtenemos la consulta
-                //Consult Consult = new Consult();
-                //Entity.Consult objConsult = Consult.GetBy(Contenedor.Id);
-                //Filter Filter = new Filter();
-                //Entity.Filter objFilter = Filter.GetBy(objConsult.Id);
-                //DataTable Dt = Consult.GetView(Contenedor.Id, objFilter.Condition);
-
                 //Creamos el control tipo lista para el contenedor
-                //GridView gView = new GridView();
-                //gView.OptionsBehavior.ReadOnly = true;
+                GridView gView = new GridView();
+                gView.OptionsBehavior.ReadOnly = true;
 
-                //gridcontrol grid = new gridcontrol();
-                //grid.name = name;
-                //grid.dock = dockstyle.fill;
-                //grid.contextmenustrip = cmsmenu;
+                GridControl grid = new GridControl();
+                grid.Name = name;
+                grid.Dock = DockStyle.Fill;
+                grid.ContextMenuStrip = cmsMenu;
 
-                //Grid.ViewCollection.Add(gView);
-                //Grid.MainView = gView;
-                //Grid.BindingContext = new BindingContext();
-                //Grid.DataSource = Dt;
+                grid.ViewCollection.Add(gView);
+                grid.MainView = gView;
+                grid.BindingContext = new BindingContext();
+                grid.DataSource = LoadView(name);
 
-                //gView.PopulateColumns();
-                //Grid.ForceInitialize();
-                //gView.Columns["Id"].Visible = false;
-                //gView.OptionsSelection.MultiSelect = true;
+                gView.PopulateColumns();
+                grid.ForceInitialize();
+                gView.Columns["Id"].Visible = false;
+                gView.OptionsSelection.MultiSelect = true;
 
-                //Page.Controls.Add(Grid);
+                Page.Controls.Add(grid);
 
                 xtcPages.TabPages.Add(Page);
                 xtcPages.SelectedTabPage = Page;
             }
+        }
+        public DataTable LoadView(string name)
+        {
+            ////Obtenemos el contenedor, consulta y el filtro
+            ContainerModel containerDataModel = Containers.GetContainerName(name);
+            ConsultModel consultDataModel = Consult.GetIdContainer(containerDataModel.Id);
+            FilterModel filterDataModel = Filter.GetUser(Login.Id, consultDataModel.Id);
+
+            string where;
+            if (!string.IsNullOrWhiteSpace(consultDataModel.Where))
+                where = " AND " + filterDataModel.Condition;
+            else
+                where = filterDataModel.Condition;
+
+            string transactSql = consultDataModel.Select + " " + consultDataModel.From + " " + where + " " + consultDataModel.GroupBy + " " + consultDataModel.Having + " " + consultDataModel.OrderBy;
+            return Filter.Execute(transactSql);
         }
         #endregion
 

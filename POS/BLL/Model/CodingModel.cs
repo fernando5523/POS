@@ -62,7 +62,7 @@ namespace BLL.Model
                         break;
                     case EntityState.Modified:
                         codingRepository.Edit(codingDataModel);
-                        message = "Registro modificado.";
+                        message = "Registro eliminado.";
                         break;
                     default:
                         break;

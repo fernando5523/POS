@@ -9,5 +9,6 @@ namespace DAL.Contracts
 {
     public interface IContainerRepository:IGenericRepository<Container>
     {
+        Container GetContainerName(string name);
     }
 }
