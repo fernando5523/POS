@@ -11,72 +11,67 @@ using System.Windows.Forms;
 using BLL;
 using DevExpress.Data.Filtering;
 using DevExpress.XtraGrid;
+using BLL.Model;
+using BLL.ValueObjects;
 
 namespace UI
 {
     public partial class FrmFiltro : DevExpress.XtraEditors.XtraForm
     {
-        //Entity.Container objContainer = new Entity.Container();
-        //private string page;
+        //Obtenemos el contenedor, consulta y el filtro
+        private ContainerModel Containers = new ContainerModel();
+        private ConsultModel Consult = new ConsultModel();
+        private FilterModel Filter = new FilterModel();
 
-        //public string Name { get; set; }
-        //public string Text { get; set; }
+        private string name;
+        private int idconsult;
+        private int iduser;
+        private string text;
         public IPages Pages { get; set; }
 
-        public FrmFiltro()
+        public FrmFiltro(string name, string text, int iduser)
         {
+            this.name = name;
+            this.text = text;
+            this.iduser = iduser;
             InitializeComponent();
         }
 
         private void FrmFiltro_Load(object sender, EventArgs e)
         {
-            //BLL.Container Contain = new BLL.Container();
-            //objContainer = Contain.GetBy(Name);
+            ContainerModel containerDataModel = Containers.GetContainerName(name);
+            ConsultModel consultDataModel = Consult.GetIdContainer(containerDataModel.Id);
+            FilterModel filterDataModel = Filter.GetUser(iduser, consultDataModel.Id);
 
-            //Consult Column = new Consult();
-            //DataTable Columns = Column.GetView(objContainer.Id, "Id = 0");
-            //Entity.Consult objFiltro = Column.GetBy(objContainer.Id);
-            //fcFilter.SourceControl = Columns;
-
-
-            //Filter ModelFilter = new Filter();
-            //Entity.Filter Filtro = ModelFilter.GetBy(objFiltro.Id);
-
-            //fcFilter.FilterCriteria = CriteriaOperator.Parse(Filtro.ConditionDev);
+            this.idconsult = consultDataModel.Id;
+            string transactSql = consultDataModel.Select + " " + consultDataModel.From + " WHERE 0=1";
+            fcFilter.SourceControl = Filter.Execute(transactSql);
+            fcFilter.FilterCriteria = CriteriaOperator.Parse(filterDataModel.ConditionDev);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //Consult Consult = new Consult();
-            //Filter Filter = new Filter();
+            FilterModel filterDataModel = Filter.GetUser(iduser, idconsult);
+            string condition = CriteriaToWhereClauseHelper.GetMsSqlWhere(fcFilter.FilterCriteria);
+            string conditiondev = fcFilter.FilterCriteria != null ? fcFilter.FilterCriteria.LegacyToString() : "";
 
-            //Entity.Consult objConsult = Consult.GetBy(objContainer.Id);
-            //Entity.Filter objFilter = Filter.GetBy(objConsult.Id) ;
+            if (filterDataModel.Id != 0)
+            {
+                filterDataModel.Condition = condition;
+                filterDataModel.ConditionDev = conditiondev;
+                filterDataModel.State = EntityState.Modified;
+                filterDataModel.SaveChanges();
+            }
+            else
+            {
+                filterDataModel.Condition = condition;
+                filterDataModel.ConditionDev = conditiondev;
+                filterDataModel.State = EntityState.Added;
+                filterDataModel.SaveChanges();
+            }
 
-            //string condition = CriteriaToWhereClauseHelper.GetMsSqlWhere(fcFilter.FilterCriteria);
-            //string conditiondev = "";
-
-            //if (fcFilter.FilterCriteria != null)
-            //    conditiondev = fcFilter.FilterCriteria.LegacyToString();
-
-            //if (objFilter.Id != 0)
-            //{
-            //    objFilter.Condition = condition;
-            //    objFilter.ConditionDev = conditiondev;
-            //    Filter.Update(objFilter);
-            //}
-            //else
-            //{
-            //    objFilter.IdUser = 1;
-            //    objFilter.IdConsult = objConsult.Id;
-            //    objFilter.Condition = condition;
-            //    objFilter.ConditionDev = conditiondev;
-            //    Filter.Insert(objFilter);
-            //}
-
-            //Pages.LoadPage(Name, Text, true);
-
-            //this.Close();
+            Pages.LoadPage(this.name, this.text);
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

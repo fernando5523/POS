@@ -15,6 +15,9 @@ using DevExpress.XtraTab.ViewInfo;
 using DevExpress.XtraGrid;
 using BLL;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace UI
 {
@@ -30,6 +33,19 @@ namespace UI
         }
 
         #region Métodos
+        private void OpenForm()
+        {
+            ContainerModel containerDataModel = Containers.GetContainerName(xtcPages.SelectedTabPage.Name);
+            var _formName = (from t in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+                             where t.Name.Equals(containerDataModel.Form)
+                             select t.FullName).Single();
+            var _form = (Form)Activator.CreateInstance(Type.GetType(_formName));
+            if (_form != null)
+            {
+                _form.Show();
+            }
+        }
+
         public void LoadPage(string name, string text)
         {
             //Revisamos si existe el page seleccionado en el panel.
@@ -39,13 +55,12 @@ namespace UI
                 if (xtcPages.TabPages[i].Name == name)
                 {
                     xtcPages.SelectedTabPage = xtcPages.TabPages[i];
+
+                    XtraTabPage con = (XtraTabPage)this.Controls["xtcPages"].Controls[xtcPages.SelectedTabPage.Name];
+                    GridControl grid = (GridControl)con.Controls[xtcPages.SelectedTabPage.Name];
+                    grid.DataSource = LoadView(name);
                     exist = true;
                 }
-                //if (xtcPages.TabPages[i].Name == name)
-                //{
-                //    xtcPages.TabPages.Remove(xtcPages.TabPages[i]);
-                //    exist = false;
-                //}
             }
 
             if (!exist)
@@ -57,9 +72,16 @@ namespace UI
                 //Creamos el control tipo lista para el contenedor
                 GridView gView = new GridView();
                 gView.OptionsBehavior.ReadOnly = true;
+                gView.OptionsBehavior.AutoPopulateColumns = true;
+                gView.OptionsView.ColumnAutoWidth = false;
+                gView.OptionsBehavior.Editable = false;
+                gView.OptionsView.ShowGroupPanel = false;
+                gView.OptionsView.ShowAutoFilterRow = true;
+                gView.DoubleClick += gridView_DoubleClick;
 
                 GridControl grid = new GridControl();
                 grid.Name = name;
+
                 grid.Dock = DockStyle.Fill;
                 grid.ContextMenuStrip = cmsMenu;
 
@@ -69,9 +91,22 @@ namespace UI
                 grid.DataSource = LoadView(name);
 
                 gView.PopulateColumns();
+                gView.BestFitColumns();
                 grid.ForceInitialize();
                 gView.Columns["Id"].Visible = false;
                 gView.OptionsSelection.MultiSelect = true;
+
+                #region Número de columna
+                //GridColumn colCounter = gView.Columns.AddVisible("Nro.");
+                //colCounter.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+                //colCounter.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+                //gView.CustomUnboundColumnData += (sender, e) =>
+                //{
+                //    GridView view = sender as GridView;
+                //    if (e.Column.FieldName == "Nro." && e.IsGetData)
+                //        e.Value = view.GetRowHandle(e.ListSourceRowIndex) + 1;
+                //};
+                #endregion
 
                 Page.Controls.Add(grid);
 
@@ -81,7 +116,7 @@ namespace UI
         }
         public DataTable LoadView(string name)
         {
-            ////Obtenemos el contenedor, consulta y el filtro
+            //Obtenemos el contenedor, consulta y el filtro
             ContainerModel containerDataModel = Containers.GetContainerName(name);
             ConsultModel consultDataModel = Consult.GetIdContainer(containerDataModel.Id);
             FilterModel filterDataModel = Filter.GetUser(Login.Id, consultDataModel.Id);
@@ -89,8 +124,10 @@ namespace UI
             string where;
             if (!string.IsNullOrWhiteSpace(consultDataModel.Where))
                 where = " AND " + filterDataModel.Condition;
+            if (string.IsNullOrWhiteSpace(filterDataModel.Condition))
+                where = "";
             else
-                where = filterDataModel.Condition;
+                where = " WHERE " + filterDataModel.Condition;
 
             string transactSql = consultDataModel.Select + " " + consultDataModel.From + " " + where + " " + consultDataModel.GroupBy + " " + consultDataModel.Having + " " + consultDataModel.OrderBy;
             return Filter.Execute(transactSql);
@@ -102,11 +139,7 @@ namespace UI
         {
             TreeView tree = (TreeView)sender;
             if (e.Node.Tag.ToString() != "0")
-            {
                 LoadPage(tree.SelectedNode.Name, tree.SelectedNode.Text);
-                //tree.SelectedNode = null;
-            }
-
         }
 
         private void xtraTabControl_CloseButtonClick(object sender, EventArgs e)
@@ -115,20 +148,28 @@ namespace UI
             xtcPages.TabPages.Remove(xtcPages.SelectedTabPage);
         }
 
+        private void gridView_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow || info.InRowCell)
+            {
+                string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
+                MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
+            }
+        }
+
         private void button_Click(object sender, EventArgs e)
         {
-            FrmFiltro Filtro = new FrmFiltro();
-            Filtro.Name = xtcPages.SelectedTabPage.Name;
-            Filtro.Text = xtcPages.SelectedTabPage.Text;
+            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text, Login.Id);
             Filtro.Pages = this;
             Filtro.Show();
         }
 
         private void button_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FrmFiltro Filtro = new FrmFiltro();
-            Filtro.Name = xtcPages.SelectedTabPage.Name;
-            Filtro.Text = xtcPages.SelectedTabPage.Text;
+            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text ,Login.Id);
             Filtro.Pages = this;
             Filtro.Show();
         }
@@ -187,14 +228,19 @@ namespace UI
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void mnuEliminar_Click(object sender, EventArgs e)
+        private void btnActualizar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraTabPage con =  (XtraTabPage)this.Controls["xtcPages"].Controls[xtcPages.SelectedTabPage.Name];
+            LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+        }
+
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraTabPage con = (XtraTabPage)this.Controls["xtcPages"].Controls[xtcPages.SelectedTabPage.Name];
             GridControl grid = (GridControl)con.Controls[xtcPages.SelectedTabPage.Name];
 
             int[] selRows = ((GridView)grid.MainView).GetSelectedRows();
 
-            foreach(int i in selRows)
+            foreach (int i in selRows)
             {
                 DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(i));
                 //DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(selRows[i]));
@@ -202,9 +248,9 @@ namespace UI
             }
         }
 
-        private void tvCompra_AfterSelect(object sender,TreeViewEventArgs e)
+        private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            OpenForm();
         }
     }
 }

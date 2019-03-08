@@ -84,6 +84,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.EditValue = "administrador";
             this.txtUsuario.Location = new System.Drawing.Point(158, 77);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Properties.Appearance.ForeColor = System.Drawing.Color.Black;

@@ -17,6 +17,7 @@ namespace BLL.Model
         private string code;
         private string name;
         private string description;
+        private string form;
         private bool active;
         private int iduser;
         private IContainerRepository containerRepository;
@@ -26,6 +27,7 @@ namespace BLL.Model
         public string Code { get => code; set => code = value; }
         public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
+        public string Form { get => form; set => form = value; }
         public bool Active { get => active; set => active = value; }
         public int IdUser { get => iduser; set => iduser = value; }
 
@@ -44,6 +46,7 @@ namespace BLL.Model
                 containerModel.Code = Code;
                 containerModel.Name = Name;
                 containerModel.Description = Description;
+                containerModel.Form = Form;
                 containerModel.Active = Active;
                 containerModel.IdUser = IdUser;
                 switch (State)
@@ -87,6 +90,7 @@ namespace BLL.Model
                     Code = item.Code,
                     Name = item.Name,
                     Description = item.Description,
+                    Form = item.Form,
                     Active = item.Active,
                     IdUser = item.IdUser
                 });
@@ -101,6 +105,7 @@ namespace BLL.Model
             listContainer.Id = containerDataModel.Id;
             listContainer.Name = containerDataModel.Name;
             listContainer.Description = containerDataModel.Description;
+            listContainer.Form = containerDataModel.Form;
 
             return listContainer;
         }
