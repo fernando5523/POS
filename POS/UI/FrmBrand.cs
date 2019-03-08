@@ -25,6 +25,7 @@ namespace UI
         private void FrmBrand_Load(object sender, EventArgs e)
         {
             brandRepository = new BrandModel().GetId(this.Id);
+            CodingModel codingRepository = new CodingModel();
             if (this.Id > 0)
             {
                 brandRepository.State = EntityState.Modified;
@@ -34,7 +35,10 @@ namespace UI
                 txtDescription.Focus();
             }
             else
+            {
                 brandRepository.State = EntityState.Added;
+                txtCode.Text = codingRepository.GetCode("Brand");
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

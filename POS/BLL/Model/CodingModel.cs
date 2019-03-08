@@ -98,5 +98,26 @@ namespace BLL.Model
             }
             return listCoding;
         }
+
+        public CodingModel GetEntity(string entity)
+        {
+            var codingDataModel = codingRepository.GetEntity(entity);
+            var listCoding = new CodingModel();
+            listCoding.Id = codingDataModel.Id;
+            listCoding.Entity = codingDataModel.Entity;
+            listCoding.Text = codingDataModel.Text;
+            listCoding.Number = codingDataModel.Number;
+            listCoding.Numberlength = codingDataModel.NumberLength;
+            listCoding.Active = codingDataModel.Active;
+            listCoding.IdUser = codingDataModel.IdUser;
+            return listCoding;
+        }
+
+        public string GetCode(string entity)
+        {
+            var coding = codingRepository.GetEntity(entity);
+            string code = coding.Text + new string('0', coding.NumberLength - coding.Number.ToString().Length).ToString() + (coding.Number + 1).ToString();
+            return code;
+        }
     }
 }

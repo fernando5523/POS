@@ -9,5 +9,6 @@ namespace DAL.Contracts
 {
     public interface ICodingRepository:IGenericRepository<Coding>
     {
+        Coding GetEntity(string entity);
     }
 }

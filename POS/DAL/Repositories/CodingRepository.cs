@@ -14,12 +14,14 @@ namespace DAL.Repositories
     public class CodingRepository : MasterRepository, ICodingRepository
     {
         private string selectAll;
+        private string selectEntity;
         private string insert;
         private string update;
         private string delete;
         public CodingRepository()
         {
             selectAll = "SELECT * FROM [Coding]";
+            selectEntity = "SELECT * FROM [Coding] WHERE Entity = @entity";
             insert = "INSERT INTO [Coding] VALUES(@entity, @text, @number, @numberlength, @active, @iduser)";
             update = "UPDATE [Coding] SET Entity = @entity, Text = @text, Number = @number, NumberLength = @numberlength, Active = @active, IdUser = @iduser WHERE Id = @id";
             delete = "DELETE FROM [Coding] WHERE Id = @id";
@@ -67,6 +69,25 @@ namespace DAL.Repositories
                 });
             }
             return listConding;
+        }
+
+        public Coding GetEntity(string entity)
+        {
+            parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@entity", entity));
+            var tableResult = ExecuteReader(selectEntity);
+            var listCoding = new Coding();
+            foreach(DataRow item in tableResult.Rows)
+            {
+                listCoding.Id = (int)item["Id"];
+                listCoding.Entity = (string)item["Entity"];
+                listCoding.Text = (string)item["Text"];
+                listCoding.Number = (int)item["Number"];
+                listCoding.NumberLength = (int)item["NumberLength"];
+                listCoding.Active = (bool)item["Active"];
+                listCoding.IdUser = (int)item["IdUser"];
+            }
+            return listCoding;
         }
 
         public int Remove(int id)
