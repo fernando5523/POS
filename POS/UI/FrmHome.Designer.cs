@@ -29,63 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
-            treeNode33,
-            treeNode34});
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Producto");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Marca");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Categoría");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Almacén");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Tipo de producto");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Plantilla de unidades");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Lista de precios");
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode37,
-            treeNode38,
-            treeNode39,
-            treeNode40,
-            treeNode41,
-            treeNode42});
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Comprobante de compra");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Comprobante de gasto");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Proveedor");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Modalidad de crédito");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Producto");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Marca");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Categoría");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Almacén");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Tipo de producto");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Plantilla de unidades");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Lista de precios");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
             treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Punto de venta");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Cliente");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Caja");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Método de pago");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
             treeNode9,
-            treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Tipo de persona");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Empleado");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Cargo empleado");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Tipo de documento");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Sucursal");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Contenedores");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14,
+            treeNode10});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Comprobante de compra");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Comprobante de gasto");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
+            treeNode12,
+            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Proveedor");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Modalidad de crédito");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
             treeNode15,
-            treeNode16,
-            treeNode17,
+            treeNode16});
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Punto de venta");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
             treeNode18});
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Usuario");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
-            treeNode20});
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Cliente");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Caja");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Método de pago");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            treeNode20,
+            treeNode21,
+            treeNode22});
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Tipo de persona");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Empleado");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Cargo empleado");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Tipo de documento");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Sucursal");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Contenedores");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Configuración", new System.Windows.Forms.TreeNode[] {
+            treeNode24,
+            treeNode25,
+            treeNode26,
+            treeNode27,
+            treeNode28,
+            treeNode29});
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Usuario");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
+            treeNode31});
             this.dmPanel = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.bmStatusMenu = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -261,6 +261,7 @@
             this.btnModificar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.ImageOptions.Image")));
             this.btnModificar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.ImageOptions.LargeImage")));
             this.btnModificar.Name = "btnModificar";
+            this.btnModificar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnModificar_ItemClick);
             // 
             // bar2
             // 
@@ -487,42 +488,42 @@
             this.tvInventario.ImageList = this.imgIcon;
             this.tvInventario.Location = new System.Drawing.Point(0, 0);
             this.tvInventario.Name = "tvInventario";
-            treeNode33.Name = "ComprobanteSalida";
-            treeNode33.Tag = "1";
-            treeNode33.Text = "Comprobante de salida de inventario";
-            treeNode34.Name = "ComprobanteEntrada";
-            treeNode34.Tag = "1";
-            treeNode34.Text = "Comprobante de entrada de inventario";
-            treeNode35.Name = "Nodo0";
-            treeNode35.Tag = "0";
-            treeNode35.Text = "Operaciones";
-            treeNode36.Name = "Producto";
-            treeNode36.Tag = "1";
-            treeNode36.Text = "Producto";
-            treeNode37.Name = "Marca";
-            treeNode37.Tag = "0001";
-            treeNode37.Text = "Marca";
-            treeNode38.Name = "Categoria";
-            treeNode38.Tag = "1";
-            treeNode38.Text = "Categoría";
-            treeNode39.Name = "Almacen";
-            treeNode39.Tag = "1";
-            treeNode39.Text = "Almacén";
-            treeNode40.Name = "TipoProducto";
-            treeNode40.Tag = "1";
-            treeNode40.Text = "Tipo de producto";
-            treeNode41.Name = "PlantillaUnidad";
-            treeNode41.Tag = "1";
-            treeNode41.Text = "Plantilla de unidades";
-            treeNode42.Name = "ListaPrecios";
-            treeNode42.Tag = "1";
-            treeNode42.Text = "Lista de precios";
-            treeNode43.Name = "Nodo0";
-            treeNode43.Tag = "0";
-            treeNode43.Text = "Configuración";
+            treeNode1.Name = "ComprobanteSalida";
+            treeNode1.Tag = "1";
+            treeNode1.Text = "Comprobante de salida de inventario";
+            treeNode2.Name = "ComprobanteEntrada";
+            treeNode2.Tag = "1";
+            treeNode2.Text = "Comprobante de entrada de inventario";
+            treeNode3.Name = "Nodo0";
+            treeNode3.Tag = "0";
+            treeNode3.Text = "Operaciones";
+            treeNode4.Name = "Producto";
+            treeNode4.Tag = "1";
+            treeNode4.Text = "Producto";
+            treeNode5.Name = "Marca";
+            treeNode5.Tag = "0001";
+            treeNode5.Text = "Marca";
+            treeNode6.Name = "Categoria";
+            treeNode6.Tag = "1";
+            treeNode6.Text = "Categoría";
+            treeNode7.Name = "Almacen";
+            treeNode7.Tag = "1";
+            treeNode7.Text = "Almacén";
+            treeNode8.Name = "TipoProducto";
+            treeNode8.Tag = "1";
+            treeNode8.Text = "Tipo de producto";
+            treeNode9.Name = "PlantillaUnidad";
+            treeNode9.Tag = "1";
+            treeNode9.Text = "Plantilla de unidades";
+            treeNode10.Name = "ListaPrecios";
+            treeNode10.Tag = "1";
+            treeNode10.Text = "Lista de precios";
+            treeNode11.Name = "Nodo0";
+            treeNode11.Tag = "0";
+            treeNode11.Text = "Configuración";
             this.tvInventario.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode35,
-            treeNode43});
+            treeNode3,
+            treeNode11});
             this.tvInventario.SelectedImageIndex = 0;
             this.tvInventario.Size = new System.Drawing.Size(267, 236);
             this.tvInventario.TabIndex = 0;
@@ -551,27 +552,27 @@
             this.tvCompra.ImageList = this.imgIcon;
             this.tvCompra.Location = new System.Drawing.Point(0, 0);
             this.tvCompra.Name = "tvCompra";
-            treeNode1.Name = "Compra";
-            treeNode1.Tag = "1";
-            treeNode1.Text = "Comprobante de compra";
-            treeNode2.Name = "Gasto";
-            treeNode2.Tag = "1";
-            treeNode2.Text = "Comprobante de gasto";
-            treeNode3.Name = "Nodo0";
-            treeNode3.Tag = "0";
-            treeNode3.Text = "Operaciones";
-            treeNode4.Name = "Provedor";
-            treeNode4.Tag = "1";
-            treeNode4.Text = "Proveedor";
-            treeNode5.Name = "ModalidadCredito";
-            treeNode5.Tag = "1";
-            treeNode5.Text = "Modalidad de crédito";
-            treeNode6.Name = "Nodo0";
-            treeNode6.Tag = "0";
-            treeNode6.Text = "Configuración";
+            treeNode12.Name = "Compra";
+            treeNode12.Tag = "1";
+            treeNode12.Text = "Comprobante de compra";
+            treeNode13.Name = "Gasto";
+            treeNode13.Tag = "1";
+            treeNode13.Text = "Comprobante de gasto";
+            treeNode14.Name = "Nodo0";
+            treeNode14.Tag = "0";
+            treeNode14.Text = "Operaciones";
+            treeNode15.Name = "Provedor";
+            treeNode15.Tag = "1";
+            treeNode15.Text = "Proveedor";
+            treeNode16.Name = "ModalidadCredito";
+            treeNode16.Tag = "1";
+            treeNode16.Text = "Modalidad de crédito";
+            treeNode17.Name = "Nodo0";
+            treeNode17.Tag = "0";
+            treeNode17.Text = "Configuración";
             this.tvCompra.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode6});
+            treeNode14,
+            treeNode17});
             this.tvCompra.SelectedImageIndex = 0;
             this.tvCompra.Size = new System.Drawing.Size(267, 264);
             this.tvCompra.TabIndex = 0;
@@ -593,27 +594,27 @@
             this.tvVenta.ImageList = this.imgIcon;
             this.tvVenta.Location = new System.Drawing.Point(0, 0);
             this.tvVenta.Name = "tvVenta";
-            treeNode7.Name = "PuntoVenta";
-            treeNode7.Tag = "1";
-            treeNode7.Text = "Punto de venta";
-            treeNode8.Name = "Nodo0";
-            treeNode8.Tag = "0";
-            treeNode8.Text = "Operaciones";
-            treeNode9.Name = "Cliente";
-            treeNode9.Tag = "1";
-            treeNode9.Text = "Cliente";
-            treeNode10.Name = "Caja";
-            treeNode10.Tag = "1";
-            treeNode10.Text = "Caja";
-            treeNode11.Name = "MetodoPago";
-            treeNode11.Tag = "1";
-            treeNode11.Text = "Método de pago";
-            treeNode12.Name = "Nodo1";
-            treeNode12.Tag = "0";
-            treeNode12.Text = "Configuración";
+            treeNode18.Name = "PuntoVenta";
+            treeNode18.Tag = "1";
+            treeNode18.Text = "Punto de venta";
+            treeNode19.Name = "Nodo0";
+            treeNode19.Tag = "0";
+            treeNode19.Text = "Operaciones";
+            treeNode20.Name = "Cliente";
+            treeNode20.Tag = "1";
+            treeNode20.Text = "Cliente";
+            treeNode21.Name = "Caja";
+            treeNode21.Tag = "1";
+            treeNode21.Text = "Caja";
+            treeNode22.Name = "MetodoPago";
+            treeNode22.Tag = "1";
+            treeNode22.Text = "Método de pago";
+            treeNode23.Name = "Nodo1";
+            treeNode23.Tag = "0";
+            treeNode23.Text = "Configuración";
             this.tvVenta.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode12});
+            treeNode19,
+            treeNode23});
             this.tvVenta.SelectedImageIndex = 0;
             this.tvVenta.Size = new System.Drawing.Size(267, 236);
             this.tvVenta.TabIndex = 0;
@@ -637,36 +638,36 @@
             this.tvConfiguracion.ImageList = this.imgIcon;
             this.tvConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.tvConfiguracion.Name = "tvConfiguracion";
-            treeNode13.Name = "TipoPersona";
-            treeNode13.Tag = "1";
-            treeNode13.Text = "Tipo de persona";
-            treeNode14.Name = "Empleado";
-            treeNode14.Tag = "1";
-            treeNode14.Text = "Empleado";
-            treeNode15.Name = "CargoEmpleado";
-            treeNode15.Tag = "1";
-            treeNode15.Text = "Cargo empleado";
-            treeNode16.Name = "TipoDocumento";
-            treeNode16.Tag = "1";
-            treeNode16.Text = "Tipo de documento";
-            treeNode17.Name = "Sucursal";
-            treeNode17.Tag = "1";
-            treeNode17.Text = "Sucursal";
-            treeNode18.Name = "Contenedores";
-            treeNode18.Tag = "1";
-            treeNode18.Text = "Contenedores";
-            treeNode19.Name = "Nodo0";
-            treeNode19.Tag = "0";
-            treeNode19.Text = "Configuración";
-            treeNode20.Name = "Usuario";
-            treeNode20.Tag = "1";
-            treeNode20.Text = "Usuario";
-            treeNode21.Name = "Nodo7";
-            treeNode21.Tag = "0";
-            treeNode21.Text = "Seguridad";
+            treeNode24.Name = "TipoPersona";
+            treeNode24.Tag = "1";
+            treeNode24.Text = "Tipo de persona";
+            treeNode25.Name = "Empleado";
+            treeNode25.Tag = "1";
+            treeNode25.Text = "Empleado";
+            treeNode26.Name = "CargoEmpleado";
+            treeNode26.Tag = "1";
+            treeNode26.Text = "Cargo empleado";
+            treeNode27.Name = "TipoDocumento";
+            treeNode27.Tag = "1";
+            treeNode27.Text = "Tipo de documento";
+            treeNode28.Name = "Sucursal";
+            treeNode28.Tag = "1";
+            treeNode28.Text = "Sucursal";
+            treeNode29.Name = "Contenedores";
+            treeNode29.Tag = "1";
+            treeNode29.Text = "Contenedores";
+            treeNode30.Name = "Nodo0";
+            treeNode30.Tag = "0";
+            treeNode30.Text = "Configuración";
+            treeNode31.Name = "Usuario";
+            treeNode31.Tag = "1";
+            treeNode31.Text = "Usuario";
+            treeNode32.Name = "Nodo7";
+            treeNode32.Tag = "0";
+            treeNode32.Text = "Seguridad";
             this.tvConfiguracion.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode19,
-            treeNode21});
+            treeNode30,
+            treeNode32});
             this.tvConfiguracion.SelectedImageIndex = 0;
             this.tvConfiguracion.Size = new System.Drawing.Size(265, 182);
             this.tvConfiguracion.TabIndex = 0;

@@ -114,6 +114,9 @@
     <Compile Include="IPages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\FormRepository.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="FrmBrand.resx">
       <DependentUpon>FrmBrand.cs</DependentUpon>
     </EmbeddedResource>

@@ -135,6 +135,7 @@
             this.Name = "FrmBrand";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marca";
+            this.Load += new System.EventHandler(this.FrmBrand_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeActive.Properties)).EndInit();

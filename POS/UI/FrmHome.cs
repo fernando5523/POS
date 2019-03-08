@@ -14,6 +14,7 @@ using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using DevExpress.XtraGrid;
 using BLL;
+using UI.Repository;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.Utils;
@@ -33,17 +34,35 @@ namespace UI
         }
 
         #region Métodos
-        private void OpenForm()
+        private void OpenForm(int id = 0)
         {
             ContainerModel containerDataModel = Containers.GetContainerName(xtcPages.SelectedTabPage.Name);
             var _formName = (from t in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
                              where t.Name.Equals(containerDataModel.Form)
                              select t.FullName).Single();
-            var _form = (Form)Activator.CreateInstance(Type.GetType(_formName));
+            var _form = (FormRepository)Activator.CreateInstance(Type.GetType(_formName));
             if (_form != null)
             {
-                _form.Show();
+                _form.Id = id;
+                _form.ShowDialog();
             }
+        }
+
+        private List<int> ItemSelect()
+        {
+            XtraTabPage con = (XtraTabPage)this.Controls["xtcPages"].Controls[xtcPages.SelectedTabPage.Name];
+            GridControl grid = (GridControl)con.Controls[xtcPages.SelectedTabPage.Name];
+            List<int> items = new List<int>();
+
+            int[] selRows = ((GridView)grid.MainView).GetSelectedRows();
+
+            foreach (int i in selRows)
+            {
+                DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(i));
+                //DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(selRows[i]));
+                items.Add((int)selRow["Id"]);
+            }
+            return items;
         }
 
         public void LoadPage(string name, string text)
@@ -150,14 +169,8 @@ namespace UI
 
         private void gridView_DoubleClick(object sender, EventArgs e)
         {
-            DXMouseEventArgs ea = e as DXMouseEventArgs;
-            GridView view = sender as GridView;
-            GridHitInfo info = view.CalcHitInfo(ea.Location);
-            if (info.InRow || info.InRowCell)
-            {
-                string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
-                MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
-            }
+            int id = ItemSelect()[0];
+            OpenForm(id);
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -235,22 +248,23 @@ namespace UI
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraTabPage con = (XtraTabPage)this.Controls["xtcPages"].Controls[xtcPages.SelectedTabPage.Name];
-            GridControl grid = (GridControl)con.Controls[xtcPages.SelectedTabPage.Name];
-
-            int[] selRows = ((GridView)grid.MainView).GetSelectedRows();
-
-            foreach (int i in selRows)
-            {
-                DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(i));
-                //DataRowView selRow = (DataRowView)(((GridView)grid.MainView).GetRow(selRows[i]));
-                MessageBox.Show(selRow["Id"].ToString());
-            }
+            ItemSelect();
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenForm();
+        }
+
+        private void btnModificar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (ItemSelect().Count > 0)
+            {
+                int id = ItemSelect()[0];
+                OpenForm(id);
+            }
+            else
+                MessageBox.Show("Es necesario seleccionar un item de la vista administrativa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
