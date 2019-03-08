@@ -25,7 +25,6 @@ namespace UI
         private void FrmBrand_Load(object sender, EventArgs e)
         {
             brandRepository = new BrandModel().GetId(this.Id);
-            CodingModel codingRepository = new CodingModel();
             if (this.Id > 0)
             {
                 brandRepository.State = EntityState.Modified;
@@ -35,15 +34,19 @@ namespace UI
                 txtDescription.Focus();
             }
             else
-            {
                 brandRepository.State = EntityState.Added;
-                txtCode.Text = codingRepository.GetCode("Brand");
-            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            brandRepository.Code = txtCode.Text.Trim();
+            if (this.Id == 0)
+            {
+                var codingRepository = new CodingModel().GetEntity("Brand");
+                brandRepository.Code = codingRepository.Code;
+                codingRepository.Number += 1;
+                codingRepository.State = EntityState.Modified;
+                codingRepository.SaveChanges();
+            }
             brandRepository.Description = txtDescription.Text.Trim();
             brandRepository.Active = cbeActive.Checked;
             brandRepository.IdUser = ConstantData.Login.Id;
@@ -51,6 +54,11 @@ namespace UI
             brandRepository.SaveChanges();
             Page.LoadPage(this.NamePage, this.TextPage);
             this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            //this.Close();
         }
     }
 }

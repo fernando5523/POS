@@ -14,6 +14,7 @@ namespace BLL.Model
     public class CodingModel
     {
         private int id;
+        private string code;
         private string entity;
         private string text;
         private int number;
@@ -24,6 +25,7 @@ namespace BLL.Model
 
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
+        public string Code { get => code; private set => code = value;}
         public string Entity { get => entity; set => entity = value; }
         public string Text { get => text; set => text = value; }
         public int Number { get => number; set => number = value; }
@@ -110,14 +112,8 @@ namespace BLL.Model
             listCoding.Numberlength = codingDataModel.NumberLength;
             listCoding.Active = codingDataModel.Active;
             listCoding.IdUser = codingDataModel.IdUser;
+            listCoding.Code = codingDataModel.Text + new string('0', codingDataModel.NumberLength - codingDataModel.Number.ToString().Length).ToString() + (codingDataModel.Number + 1).ToString();
             return listCoding;
-        }
-
-        public string GetCode(string entity)
-        {
-            var coding = codingRepository.GetEntity(entity);
-            string code = coding.Text + new string('0', coding.NumberLength - coding.Number.ToString().Length).ToString() + (coding.Number + 1).ToString();
-            return code;
         }
     }
 }
