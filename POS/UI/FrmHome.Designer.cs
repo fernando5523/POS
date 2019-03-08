@@ -226,6 +226,7 @@
             this.btnFiltro.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltro.ImageOptions.Image")));
             this.btnFiltro.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFiltro.ImageOptions.LargeImage")));
             this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFiltro_ItemClick);
             // 
             // btnActualizar
             // 
@@ -347,15 +348,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.bmStatusMenu;
-            this.barDockControlTop.Size = new System.Drawing.Size(874, 48);
+            this.barDockControlTop.Size = new System.Drawing.Size(884, 48);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 538);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
             this.barDockControlBottom.Manager = this.bmStatusMenu;
-            this.barDockControlBottom.Size = new System.Drawing.Size(874, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(884, 24);
             // 
             // barDockControlLeft
             // 
@@ -363,15 +364,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
             this.barDockControlLeft.Manager = this.bmStatusMenu;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 490);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 492);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(874, 48);
+            this.barDockControlRight.Location = new System.Drawing.Point(884, 48);
             this.barDockControlRight.Manager = this.bmStatusMenu;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 490);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 492);
             // 
             // barButtonItem1
             // 
@@ -425,7 +426,7 @@
             this.dockPanel1.Location = new System.Drawing.Point(0, 48);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(274, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(274, 490);
+            this.dockPanel1.Size = new System.Drawing.Size(274, 492);
             this.dockPanel1.Text = "Módulos";
             // 
             // dockPanel1_Container
@@ -433,7 +434,7 @@
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(3, 30);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(267, 457);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(267, 459);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -454,10 +455,10 @@
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 267;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(267, 457);
+            this.navBarControl1.Size = new System.Drawing.Size(267, 459);
+            this.navBarControl1.StoreDefaultPaintStyleName = true;
             this.navBarControl1.TabIndex = 5;
             this.navBarControl1.Text = "navBarControl1";
-            this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinNavigationPaneViewInfoRegistrator("The Bezier");
             // 
             // navBarGroup3
             // 
@@ -477,7 +478,7 @@
             this.navBarGroupControlContainer2.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer2.Controls.Add(this.tvInventario);
             this.navBarGroupControlContainer2.Name = "navBarGroupControlContainer2";
-            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(267, 236);
+            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(267, 238);
             this.navBarGroupControlContainer2.TabIndex = 4;
             // 
             // tvInventario
@@ -525,7 +526,7 @@
             treeNode3,
             treeNode11});
             this.tvInventario.SelectedImageIndex = 0;
-            this.tvInventario.Size = new System.Drawing.Size(267, 236);
+            this.tvInventario.Size = new System.Drawing.Size(267, 238);
             this.tvInventario.TabIndex = 0;
             // 
             // imgIcon
@@ -625,7 +626,7 @@
             this.navBarGroupControlContainer4.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer4.Controls.Add(this.tvConfiguracion);
             this.navBarGroupControlContainer4.Name = "navBarGroupControlContainer4";
-            this.navBarGroupControlContainer4.Size = new System.Drawing.Size(265, 182);
+            this.navBarGroupControlContainer4.Size = new System.Drawing.Size(267, 238);
             this.navBarGroupControlContainer4.TabIndex = 3;
             // 
             // tvConfiguracion
@@ -669,7 +670,7 @@
             treeNode30,
             treeNode32});
             this.tvConfiguracion.SelectedImageIndex = 0;
-            this.tvConfiguracion.Size = new System.Drawing.Size(265, 182);
+            this.tvConfiguracion.Size = new System.Drawing.Size(267, 238);
             this.tvConfiguracion.TabIndex = 0;
             // 
             // navBarGroup1
@@ -713,7 +714,7 @@
             this.xtcPages.Location = new System.Drawing.Point(274, 48);
             this.xtcPages.Name = "xtcPages";
             this.xtcPages.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtcPages.Size = new System.Drawing.Size(600, 490);
+            this.xtcPages.Size = new System.Drawing.Size(610, 492);
             this.xtcPages.TabIndex = 5;
             // 
             // cmsMenu
@@ -777,7 +778,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 562);
+            this.ClientSize = new System.Drawing.Size(884, 564);
             this.Controls.Add(this.xtcPages);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.barDockControlLeft);

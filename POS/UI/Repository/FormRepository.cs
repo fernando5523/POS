@@ -11,5 +11,8 @@ namespace UI.Repository
     public class FormRepository: XtraForm
     {
         public int Id { get; set; }
+        public IPages Page { get; set; }
+        public string NamePage { get; set; }
+        public string TextPage { get; set; }
     }
 }

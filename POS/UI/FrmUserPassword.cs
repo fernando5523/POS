@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL.Model;
+using UI.Helpers;
 
 namespace UI
 {
     public partial class FrmUserPassword:DevExpress.XtraEditors.XtraForm
     {
-        public UserModel Login;
-
         public FrmUserPassword()
         {
             InitializeComponent();
@@ -23,21 +22,21 @@ namespace UI
         #region Métodos
         private void ValidatePassword()
         {
-            if(txtActual.Text == Login.Password && txtNueva.Text == txtRepetir.Text && txtNueva.Text != string.Empty && txtRepetir.Text != string.Empty)
+            if(txtActual.Text == ConstantData.Login.Password && txtNueva.Text == txtRepetir.Text && txtNueva.Text != string.Empty && txtRepetir.Text != string.Empty)
             {
                 btnContraseña.Enabled = true;
             }
             else
             {
                 btnContraseña.Enabled = false;
-                txtActual.Text = Login.Password;
+                txtActual.Text = ConstantData.Login.Password;
             }
         }
         #endregion
 
         private void FrmUserPassword_Load(object sender,EventArgs e)
         {
-            txtActual.Text = Login.Password;
+            txtActual.Text = ConstantData.Login.Password;
         }
 
         private void txtNueva_TextChanged(object sender,EventArgs e)

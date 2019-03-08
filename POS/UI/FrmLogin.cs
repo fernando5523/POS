@@ -13,6 +13,7 @@ using BLL.ValueObjects;
 using DevExpress.XtraEditors.Controls;
 using BLL;
 using System.IO;
+using UI.Helpers;
 
 namespace UI
 {
@@ -137,7 +138,7 @@ namespace UI
 
                     this.Hide();
                     FrmHome Home = new FrmHome();
-                    Home.Login = login;
+                    ConstantData.Login = login;
                     Home.Show();
                 }
             }

@@ -14,6 +14,7 @@ using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using DevExpress.XtraGrid;
 using BLL;
+using UI.Helpers;
 using UI.Repository;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
@@ -24,7 +25,6 @@ namespace UI
 {
     public partial class FrmHome : DevExpress.XtraEditors.XtraForm, IPages
     {
-        public UserModel Login;
         public ContainerModel Containers= new ContainerModel();
         public ConsultModel Consult = new ConsultModel();
         public FilterModel Filter = new FilterModel();
@@ -44,6 +44,9 @@ namespace UI
             if (_form != null)
             {
                 _form.Id = id;
+                _form.Page = this;
+                _form.NamePage = xtcPages.SelectedTabPage.Name;
+                _form.TextPage = xtcPages.SelectedTabPage.Text;
                 _form.ShowDialog();
             }
         }
@@ -138,7 +141,7 @@ namespace UI
             //Obtenemos el contenedor, consulta y el filtro
             ContainerModel containerDataModel = Containers.GetContainerName(name);
             ConsultModel consultDataModel = Consult.GetIdContainer(containerDataModel.Id);
-            FilterModel filterDataModel = Filter.GetUser(Login.Id, consultDataModel.Id);
+            FilterModel filterDataModel = Filter.GetUser(ConstantData.Login.Id, consultDataModel.Id);
 
             string where;
             if (!string.IsNullOrWhiteSpace(consultDataModel.Where))
@@ -175,14 +178,14 @@ namespace UI
 
         private void button_Click(object sender, EventArgs e)
         {
-            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text, Login.Id);
+            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text, ConstantData.Login.Id);
             Filtro.Pages = this;
             Filtro.Show();
         }
 
         private void button_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text ,Login.Id);
+            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text , ConstantData.Login.Id);
             Filtro.Pages = this;
             Filtro.Show();
         }
@@ -209,9 +212,7 @@ namespace UI
         private void btnUsuario_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FrmUserPassword UserPassword = new FrmUserPassword();
-            UserPassword.Login = Login;
             UserPassword.ShowDialog();
-            Login = UserPassword.Login;
         }
 
         private void FrmHome_Load(object sender, EventArgs e)
@@ -230,7 +231,7 @@ namespace UI
             #endregion
 
             //Footer
-            btnUsuario.Caption = "Usuario :" + Login.Name;
+            btnUsuario.Caption = "Usuario :" + ConstantData.Login.Name;
             txtFecha.Caption = "Fecha : " + DateTime.Now.ToString("dd/MM/yyyy");
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }
@@ -265,6 +266,11 @@ namespace UI
             }
             else
                 MessageBox.Show("Es necesario seleccionar un item de la vista administrativa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnFiltro_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

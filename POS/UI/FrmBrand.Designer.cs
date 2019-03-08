@@ -83,6 +83,7 @@
             this.btnAceptar.Size = new System.Drawing.Size(79, 33);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "&Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 

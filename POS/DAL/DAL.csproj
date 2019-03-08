@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IBrandRepository.cs" />
     <Compile Include="Contracts\ICodingRepository.cs" />
     <Compile Include="Contracts\IConsultRepository.cs" />
     <Compile Include="Contracts\IContainerRepository.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Contracts\IUserRepository.cs" />
     <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Brand.cs" />
     <Compile Include="Entities\Coding.cs" />
     <Compile Include="Entities\Consult.cs" />
     <Compile Include="Entities\Container.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BrandRepository.cs" />
     <Compile Include="Repositories\CodingRepository.cs" />
     <Compile Include="Repositories\ConsultRepository.cs" />
     <Compile Include="Repositories\ContainerRepository.cs" />
