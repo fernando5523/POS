@@ -115,7 +115,8 @@ namespace UI
                 gView.PopulateColumns();
                 gView.BestFitColumns();
                 grid.ForceInitialize();
-                gView.Columns["Id"].Visible = false;
+                if (gView.Columns["Id"] != null)
+                    gView.Columns["Id"].Visible = false;
                 gView.OptionsSelection.MultiSelect = true;
 
                 #region Número de columna

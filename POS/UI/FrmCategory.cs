@@ -11,6 +11,10 @@ using UI.Repository;
 
 namespace UI
 {
+    using UI.Repository;
+    using UI.Helpers;
+    using BLL.Model;
+    using BLL.ValueObjects;
     public partial class FrmCategory : FormRepository
     {
         public FrmCategory()
