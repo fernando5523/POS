@@ -22,7 +22,7 @@ namespace BLL.Model
         private string groupby;
         private string having;
         private string orderby;
-        private int iduser;
+        private Nullable<int> iduser;
         private IConsultRepository consultRepository;
 
         public EntityState State { private get; set; }
@@ -35,7 +35,7 @@ namespace BLL.Model
         public string GroupBy { get => groupby; set => groupby = value; }
         public string Having { get => having; set => having = value; }
         public string OrderBy { get => orderby; set => orderby = value; }
-        public int IdUser { get => iduser; set => iduser = value; }
+        public int? IdUser { get => iduser; set => iduser = value; }
 
         public ConsultModel()
         {

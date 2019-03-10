@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Repository
+namespace DAL.Entities
 {
     using System;
     using System.Data.Entity;
@@ -40,9 +40,9 @@ namespace Repository
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<EmployeePosition> EmployeePosition { get; set; }
         public virtual DbSet<Filter> Filter { get; set; }
+        public virtual DbSet<HistoryInventoryWarehouse> HistoryInventoryWarehouse { get; set; }
         public virtual DbSet<Inventory> Inventory { get; set; }
         public virtual DbSet<InventoryOutputInput> InventoryOutputInput { get; set; }
-        public virtual DbSet<IventoryOutputInputItem> IventoryOutputInputItem { get; set; }
         public virtual DbSet<PaymentMethod> PaymentMethod { get; set; }
         public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<PersonDocument> PersonDocument { get; set; }
@@ -64,5 +64,6 @@ namespace Repository
         public virtual DbSet<UnitTemplate> UnitTemplate { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Warehouse> Warehouse { get; set; }
+        public virtual DbSet<InventoryOutputInputItem> InventoryOutputInputItem { get; set; }
     }
 }

@@ -4,46 +4,46 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8cb7799241c64194ba7d16d1cdbecdf5" Name="Diagram1">
-        <EntityTypeShape EntityType="POSModel.Address" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Box" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.BranchOffice" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Brand" Width="1.5" PointX="1.5" PointY="41.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Category" Width="1.5" PointX="1.5" PointY="53.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Client" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Coding" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Consult" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Container" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.CreditModality" Width="1.5" PointX="3.75" PointY="33.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Document" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.DocumentType" Width="1.5" PointX="3.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Employee" Width="1.5" PointX="6" PointY="29.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.EmployeePosition" Width="1.5" PointX="3.75" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Filter" Width="1.5" PointX="5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Inventory" Width="1.5" PointX="5.25" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.InventoryOutputInput" Width="1.5" PointX="8.25" PointY="25.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.IventoryOutputInputItem" Width="1.5" PointX="10.5" PointY="26.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.PaymentMethod" Width="1.5" PointX="11.25" PointY="30.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Person" Width="1.5" PointX="1.5" PointY="56.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.PersonDocument" Width="1.5" PointX="3.75" PointY="57.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.PersonDocumentType" Width="1.5" PointX="1.5" PointY="69.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.PersonType" Width="1.5" PointX="1.5" PointY="62.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Product" Width="1.5" PointX="1.5" PointY="47.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.ProductPrice" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.ProductPriceBranchOffice" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.ProductType" Width="1.5" PointX="1.5" PointY="66.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.ProductUnit" Width="1.5" PointX="1.5" PointY="35.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.ProductUnitBarCode" Width="1.5" PointX="3.75" PointY="38" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Provider" Width="1.5" PointX="6" PointY="33.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Purchase" Width="1.5" PointX="8.25" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.PurchaseItem" Width="1.5" PointX="10.5" PointY="19.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.PurchasePaymentMethod" Width="1.5" PointX="13.5" PointY="19.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Sales" Width="1.5" PointX="10.5" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.SalesItem" Width="1.5" PointX="12.75" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.SalesPaymentMethod" Width="1.5" PointX="15.75" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.UnitTemplate" Width="1.5" PointX="1.5" PointY="31.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.User" Width="1.5" PointX="2.75" PointY="73.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSModel.Warehouse" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+      <Diagram DiagramId="9bf8e3a1a9a84fab8b2401f5c14b842e" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="POSModel.Address" Width="1.5" PointX="5.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Box" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.BranchOffice" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Brand" Width="1.5" PointX="1.5" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Category" Width="1.5" PointX="1.5" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Client" Width="1.5" PointX="8.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Coding" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Consult" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Container" Width="1.5" PointX="2.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.CreditModality" Width="1.5" PointX="3.75" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Document" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.DocumentType" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Employee" Width="1.5" PointX="6" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.EmployeePosition" Width="1.5" PointX="3.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Filter" Width="1.5" PointX="7.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.HistoryInventoryWarehouse" Width="1.5" PointX="16" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Inventory" Width="1.5" PointX="5.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.InventoryOutputInput" Width="1.5" PointX="8.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.PaymentMethod" Width="1.5" PointX="11.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Person" Width="1.5" PointX="1.5" PointY="56.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.PersonDocument" Width="1.5" PointX="3.75" PointY="57" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.PersonDocumentType" Width="1.5" PointX="1.5" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.PersonType" Width="1.5" PointX="1.5" PointY="62.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Product" Width="1.5" PointX="1.5" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.ProductPrice" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.ProductPriceBranchOffice" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.ProductType" Width="1.5" PointX="1.5" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.ProductUnit" Width="1.5" PointX="1.5" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.ProductUnitBarCode" Width="1.5" PointX="3.75" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Provider" Width="1.5" PointX="6" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Purchase" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.PurchaseItem" Width="1.5" PointX="10.5" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.PurchasePaymentMethod" Width="1.5" PointX="13.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Sales" Width="1.5" PointX="10.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.SalesItem" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.SalesPaymentMethod" Width="1.5" PointX="15.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.UnitTemplate" Width="1.5" PointX="1.5" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.User" Width="1.5" PointX="5" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSModel.Warehouse" Width="1.5" PointX="3" PointY="24.5" IsExpanded="true" />
         <AssociationConnector Association="POSModel.Fk_Address_BranchOffice" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Address_Person" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Address_Warehouse" ManuallyRouted="false" />
@@ -60,6 +60,7 @@
         <AssociationConnector Association="POSModel.Fk_Client_CreditModality" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Client_Person" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Sales_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="POSModel.Fk_Consult_Container" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Filter_Consult" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Provider_CreditModality" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Document_DocumentType" ManuallyRouted="false" />
@@ -72,12 +73,14 @@
         <AssociationConnector Association="POSModel.Fk_Purchase_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Sales_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Filter_User" ManuallyRouted="false" />
+        <AssociationConnector Association="POSModel.Fk_HistoryInventory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="POSModel.Fk_HistoryInventory_PurchaseItem" ManuallyRouted="false" />
+        <AssociationConnector Association="POSModel.Fk_HistoryInventory_SalesItem" ManuallyRouted="false" />
+        <AssociationConnector Association="POSModel.Fk_HistoryInventory_Warehouse" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Inventory_Product" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Inventory_Warehouse" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_InventoryOutputInput_Person" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_InventoryOutputInput_Warehouse" ManuallyRouted="false" />
-        <AssociationConnector Association="POSModel.Fk_IventoryOutputInputItem_InventoryOutputInput" ManuallyRouted="false" />
-        <AssociationConnector Association="POSModel.Fk_IventoryOutputInputItem_ProductUnit" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_PurchasePaymentMethod_PaymentMethod" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_SalesPaymentMethod_PaymentMethod" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_Person_PersonType" ManuallyRouted="false" />
@@ -100,6 +103,10 @@
         <AssociationConnector Association="POSModel.Fk_Sales_Warehouse" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_SalesItem_Sales" ManuallyRouted="false" />
         <AssociationConnector Association="POSModel.Fk_SalesPaymentMethod_Sales" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="POSModel.InventoryOutputInputItem" Width="1.5" PointX="13.5" PointY="31.5" />
+        <AssociationConnector Association="POSModel.Fk_HistoryInventory_IventoryOutputInputItem1" />
+        <AssociationConnector Association="POSModel.Fk_IventoryOutputInputItem_InventoryOutputInput1" />
+        <AssociationConnector Association="POSModel.Fk_IventoryOutputInputItem_ProductUnit1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
