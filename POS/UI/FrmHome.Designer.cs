@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
@@ -86,8 +85,8 @@
             System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Usuario");
             System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
             treeNode31});
-            this.dmPanel = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.bmStatusMenu = new DevExpress.XtraBars.BarManager(this.components);
+            this.dmPanel = new DevExpress.XtraBars.Docking.DockManager();
+            this.bmStatusMenu = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnFiltro = new DevExpress.XtraBars.BarButtonItem();
             this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
@@ -107,7 +106,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -119,7 +118,7 @@
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer2 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvInventario = new System.Windows.Forms.TreeView();
-            this.imgIcon = new System.Windows.Forms.ImageList(this.components);
+            this.imgIcon = new System.Windows.Forms.ImageList();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvCompra = new System.Windows.Forms.TreeView();
             this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
@@ -130,14 +129,14 @@
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.xtcPages = new DevExpress.XtraTab.XtraTabControl();
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.mnuFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuActualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuNuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuModificar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmTiempo = new System.Windows.Forms.Timer(this.components);
+            this.tmTiempo = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.dmPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bmStatusMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -501,10 +500,10 @@
             treeNode4.Name = "Producto";
             treeNode4.Tag = "1";
             treeNode4.Text = "Producto";
-            treeNode5.Name = "Marca";
-            treeNode5.Tag = "0001";
+            treeNode5.Name = "Brand";
+            treeNode5.Tag = "";
             treeNode5.Text = "Marca";
-            treeNode6.Name = "Categoria";
+            treeNode6.Name = "Category";
             treeNode6.Tag = "1";
             treeNode6.Text = "Categoría";
             treeNode7.Name = "Almacen";

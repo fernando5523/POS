@@ -68,6 +68,32 @@ namespace UI
             return items;
         }
 
+        public bool ItemDelete(int Id)
+        {
+            bool result = false;
+            string entidad = xtcPages.SelectedTabPage.Name;
+            try
+            {
+                switch (entidad)
+                {
+                    case "Brand":
+                        BrandModel objeto = new BrandModel();
+                        objeto.Id = Id;
+                        objeto.State = EntityState.Deleted;
+                        objeto.SaveChanges();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                result = false;
+            }
+            result = true;
+            return result;
+        }
         public void LoadPage(string name, string text)
         {
             //Revisamos si existe el page seleccionado en el panel.
@@ -155,6 +181,7 @@ namespace UI
             string transactSql = consultDataModel.Select + " " + consultDataModel.From + " " + where + " " + consultDataModel.GroupBy + " " + consultDataModel.Having + " " + consultDataModel.OrderBy;
             return Filter.Execute(transactSql);
         }
+
         #endregion
 
         #region Eventos
@@ -251,7 +278,10 @@ namespace UI
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ItemSelect();
+            List<int> items = ItemSelect();
+            foreach(int item in items)
+                ItemDelete(item);
+            LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
