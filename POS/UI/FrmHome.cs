@@ -70,29 +70,8 @@ namespace UI
 
         public bool ItemDelete(int Id)
         {
-            bool result = false;
             string entidad = xtcPages.SelectedTabPage.Name;
-            try
-            {
-                switch (entidad)
-                {
-                    case "Brand":
-                        BrandModel objeto = new BrandModel();
-                        objeto.Id = Id;
-                        objeto.State = EntityState.Deleted;
-                        objeto.SaveChanges();
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                result = false;
-            }
-            result = true;
-            return result;
+            return ConstantData.DeleteItem(entidad, Id);
         }
         public void LoadPage(string name, string text)
         {
