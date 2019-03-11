@@ -3,89 +3,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using DAL.Contracts;
-using DAL.Entities;
 
 namespace DAL.Repositories
 {
+    using System.Data.SqlClient;
+    using System.Data.Entity;
+    using DAL.Contracts;
+    using DAL.Entities;
     public class UserRepository : MasterRepository, IUserRepository
     {
-        private string selectAll;
-        private string selectLogin;
-        private string insert;
-        private string update;
-        private string delete;
-        public UserRepository()
+        public bool Add(User entity)
         {
-            selectAll = "SELECT * FROM [User]";
-            selectLogin = "SELECT TOP 1 * FROM [User] WHERE Name = @name AND Password = @password";
-            insert = "INSERT INTO [User] VALUES(@name, @password, @active, @iduser)";
-            update = "UPDATE [User] SET Name = @name, Password = @password, Active = @active, IdUser = @iduser WHERE Id = @id";
-            delete = "DELETE FROM [User] WHERE Id = @id";
-        }
-        public int Add(User entity)
-        {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@name", entity.Name));
-            parameters.Add(new SqlParameter("@password", entity.Password));
-            parameters.Add(new SqlParameter("@active", entity.Active));
-            parameters.Add(new SqlParameter("@iduser", entity.IdUser));
-            return ExecuteNonQuery(insert);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                db.User.Add(entity);
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
 
-        public int Edit(User entity)
+        public bool Edit(User entity)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", entity.Id));
-            parameters.Add(new SqlParameter("@name", entity.Name));
-            parameters.Add(new SqlParameter("@password", entity.Password));
-            parameters.Add(new SqlParameter("@active", entity.Active));
-            parameters.Add(new SqlParameter("@iduser", entity.IdUser));
-            return ExecuteNonQuery(update);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                db.User.Add(entity);
+                db.Entry(entity).State = EntityState.Modified;
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
 
         public IEnumerable<User> GetAll()
         {
-            var tableResult = ExecuteReader(selectAll);
-            var listUser = new List<User>();
-            foreach(DataRow item in tableResult.Rows)
+            IEnumerable<User> obj;
+            using (DBContext db = new DBContext())
             {
-                listUser.Add(new User {
-                    Id = (int)item["Id"],
-                    Name = (string)item["Name"],
-                    Password = (string)item["Password"],
-                    Active = (bool)item["Active"],
-                    IdUser = (int)item["IdUser"]
-                });
+                obj = db.User;
             }
-            return listUser;
+            return obj;
         }
 
         public User GetLogin(string name, string password)
         {
-            User login = new User();
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@name",name));
-            parameters.Add(new SqlParameter("@password", password));
-            var listLogins = ExecuteReader(selectLogin);
-            foreach(DataRow item in listLogins.Rows)
+            User obj;
+            using(DBContext db = new DBContext())
             {
-                login.Id = (int)item["Id"];
-                login.Name = (string)item["Name"];
-                login.Password = (string)item["Password"];
-                login.Active = (bool)item["Active"];
-                login.IdUser = (int)item["IdUser"];
+                obj = (from o in db.User
+                      where o.Name == name && o.Password == password
+                      select o).FirstOrDefault();
             }
-            return login;
+            return obj;
         }
 
-        public int Remove(int id)
+        public bool Remove(int id)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", id));
-            return ExecuteNonQuery(delete);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                var obj = db.User.Find(id);
+                db.Entry(obj).State = EntityState.Deleted;
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
     }
 }

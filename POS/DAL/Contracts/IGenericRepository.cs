@@ -8,9 +8,9 @@ namespace DAL.Contracts
 {
     public interface IGenericRepository<Entity> where Entity:class
     {
-        int Add(Entity entity);
-        int Edit(Entity entity);
-        int Remove(int id);
+        bool Add(Entity entity);
+        bool Edit(Entity entity);
+        bool Remove(int id);
         IEnumerable<Entity> GetAll();
     }
 }

@@ -94,14 +94,18 @@ namespace BLL.Model
 
         public FilterModel GetUser(int iduser, int idconsult)
         {
+            FilterModel Filter = new FilterModel();
+
             var filterDataModel = filterRepository.GetUser(iduser, idconsult);
-            var listFilter = new FilterModel();
-            listFilter.Id = filterDataModel.Id;
-            listFilter.iduser = filterDataModel.IdUser;
-            listFilter.IdConsult = filterDataModel.IdConsult;
-            listFilter.Condition = filterDataModel.Condition;
-            listFilter.ConditionDev = filterDataModel.ConditionDev;
-            return listFilter;
+            if (filterDataModel != null)
+            {
+                Filter.Id = filterDataModel.Id;
+                Filter.iduser = filterDataModel.IdUser;
+                Filter.IdConsult = filterDataModel.IdConsult;
+                Filter.Condition = filterDataModel.Condition;
+                Filter.ConditionDev = filterDataModel.ConditionDev;
+            }
+            return Filter;
         }
 
         public DataTable Execute(string transactSql)

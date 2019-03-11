@@ -94,13 +94,17 @@ namespace BLL.Model
 
         public BrandModel GetId(int id)
         {
+            BrandModel listBrand = null;
             var brandDataModel = brandRepository.GetId(id);
-            BrandModel listBrand = new BrandModel();
-            listBrand.Id = brandDataModel.Id;
-            listBrand.Code = brandDataModel.Code;
-            listBrand.Description = brandDataModel.Description;
-            listBrand.Active = brandDataModel.Active;
-            listBrand.IdUser = brandDataModel.IdUser;
+            if (brandDataModel != null)
+            {
+                listBrand = new BrandModel();
+                listBrand.Id = brandDataModel.Id;
+                listBrand.Code = brandDataModel.Code;
+                listBrand.Description = brandDataModel.Description;
+                listBrand.Active = brandDataModel.Active;
+                listBrand.IdUser = brandDataModel.IdUser;
+            }
             return listBrand;
         }
     }

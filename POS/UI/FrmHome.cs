@@ -47,7 +47,7 @@ namespace UI
                 _form.Page = this;
                 _form.NamePage = xtcPages.SelectedTabPage.Name;
                 _form.TextPage = xtcPages.SelectedTabPage.Text;
-                _form.ShowDialog();
+                _form.Show();
             }
         }
 
@@ -173,8 +173,9 @@ namespace UI
 
         private void gridView_DoubleClick(object sender, EventArgs e)
         {
-            int id = ItemSelect()[0];
-            OpenForm(id);
+            List<int> item = ItemSelect();
+            if (item.Count > 0)
+                OpenForm(ItemSelect()[0]);
         }
 
         private void button_Click(object sender, EventArgs e)

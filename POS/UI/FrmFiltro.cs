@@ -64,6 +64,8 @@ namespace UI
             }
             else
             {
+                //filterDataModel.IdUser = iduser;
+                //filterDataModel.IdConsult = idconsult;
                 filterDataModel.Condition = condition;
                 filterDataModel.ConditionDev = conditiondev;
                 filterDataModel.State = EntityState.Added;

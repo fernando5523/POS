@@ -25,7 +25,7 @@ namespace UI
         private void FrmBrand_Load(object sender, EventArgs e)
         {
             brandRepository = new BrandModel().GetId(this.Id);
-            if (this.Id > 0)
+            if (brandRepository != null)
             {
                 brandRepository.State = EntityState.Modified;
                 txtCode.Text = brandRepository.Code;
@@ -33,8 +33,6 @@ namespace UI
                 cbeActive.Checked = brandRepository.Active;
                 txtDescription.Focus();
             }
-            else
-                brandRepository.State = EntityState.Added;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -42,9 +40,10 @@ namespace UI
             if (this.Id == 0)
             {
                 var codingRepository = new CodingModel().GetEntity("Brand");
+                brandRepository = new BrandModel();
                 brandRepository.Code = codingRepository.Code;
                 codingRepository.Number += 1;
-                codingRepository.State = EntityState.Modified;
+                codingRepository.State = EntityState.Added;
                 codingRepository.SaveChanges();
             }
             brandRepository.Description = txtDescription.Text.Trim();

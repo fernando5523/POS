@@ -3,98 +3,72 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-
-using DAL.Contracts;
-using DAL.Entities;
 
 namespace DAL.Repositories
 {
+    using System.Data.Entity;
+    using DAL.Contracts;
+    using DAL.Entities;
     public class CodingRepository : MasterRepository, ICodingRepository
     {
-        private string selectAll;
-        private string selectEntity;
-        private string insert;
-        private string update;
-        private string delete;
-        public CodingRepository()
+        public bool Add(Coding entity)
         {
-            selectAll = "SELECT * FROM [Coding]";
-            selectEntity = "SELECT * FROM [Coding] WHERE Entity = @entity";
-            insert = "INSERT INTO [Coding] VALUES(@entity, @text, @number, @numberlength, @active, @iduser)";
-            update = "UPDATE [Coding] SET Entity = @entity, Text = @text, Number = @number, NumberLength = @numberlength, Active = @active, IdUser = @iduser WHERE Id = @id";
-            delete = "DELETE FROM [Coding] WHERE Id = @id";
-        }
-        public int Add(Coding entity)
-        {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@entity", entity.Entity));
-            parameters.Add(new SqlParameter("@text", entity.Text));
-            parameters.Add(new SqlParameter("@number", entity.Number));
-            parameters.Add(new SqlParameter("@numberlength", entity.NumberLength));
-            parameters.Add(new SqlParameter("@active", entity.Active));
-            parameters.Add(new SqlParameter("@iduser", entity.IdUser));
-            return ExecuteNonQuery(insert);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                db.Coding.Add(entity);
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
 
-        public int Edit(Coding entity)
+        public bool Edit(Coding entity)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", entity.Id));
-            parameters.Add(new SqlParameter("@entity", entity.Entity));
-            parameters.Add(new SqlParameter("@text", entity.Text));
-            parameters.Add(new SqlParameter("@number", entity.Number));
-            parameters.Add(new SqlParameter("@numberlength", entity.NumberLength));
-            parameters.Add(new SqlParameter("@active", entity.Active));
-            parameters.Add(new SqlParameter("@iduser", entity.IdUser));
-            return ExecuteNonQuery(update);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                db.Coding.Add(entity);
+                db.Entry(entity).State = EntityState.Modified;
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
 
         public IEnumerable<Coding> GetAll()
         {
-            var tableResult = ExecuteReader(selectAll);
-            var listConding = new List<Coding>();
-            foreach (DataRow item in tableResult.Rows)
+            IEnumerable<Coding> obj;
+            using (DBContext db = new DBContext())
             {
-                listConding.Add(new Coding
-                {
-                    Id = (int)item["Id"],
-                    Entity = (string)item["Entity"],
-                    Text = (string)item["Text"],
-                    Number = (int)item["Number"],
-                    NumberLength = (int)item["NumberLength"],
-                    Active = (bool)item["Active"],
-                    IdUser = (int)item["IdUser"]
-                });
+                obj = db.Coding;
             }
-            return listConding;
+            return obj;
         }
 
         public Coding GetEntity(string entity)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@entity", entity));
-            var tableResult = ExecuteReader(selectEntity);
-            var listCoding = new Coding();
-            foreach(DataRow item in tableResult.Rows)
+            Coding obj;
+            using(DBContext db = new DBContext())
             {
-                listCoding.Id = (int)item["Id"];
-                listCoding.Entity = (string)item["Entity"];
-                listCoding.Text = (string)item["Text"];
-                listCoding.Number = (int)item["Number"];
-                listCoding.NumberLength = (int)item["NumberLength"];
-                listCoding.Active = (bool)item["Active"];
-                listCoding.IdUser = (int)item["IdUser"];
+                obj = (from o in db.Coding
+                       where o.Entity == entity
+                       select o).FirstOrDefault();
             }
-            return listCoding;
+            return obj;
         }
 
-        public int Remove(int id)
+        public bool Remove(int id)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", id));
-            return ExecuteNonQuery(delete);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                var obj = db.Coding.Find(id);
+                db.Entry(obj).State = EntityState.Deleted;
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
     }
 }

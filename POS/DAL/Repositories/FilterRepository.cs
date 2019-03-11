@@ -3,96 +3,80 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-
-using DAL.Contracts;
-using DAL.Entities;
 
 namespace DAL.Repositories
 {
+    using System.Data.Entity;
+    using System.Data;
+    using System.Data.SqlClient;
+    using DAL.Contracts;
+    using DAL.Entities;
     public class FilterRepository : MasterRepository, IFilterRepository
     {
-        private string selectAll;
-        private string selectUser;
-        private string insert;
-        private string update;
-        private string delete;
-        public FilterRepository()
+        public bool Add(Filter entity)
         {
-            selectAll = "SELECT * FROM [Filter]";
-            selectUser = "SELECT * FROM [Filter] WHERE IdUser = @iduser AND IdConsult = @idconsult";
-            insert = "INSERT INTO [Filter] VALUES(@iduser, @idconsult, @condition, @conditiondev)";
-            update = "UPDATE [Filter] SET IdUser = @iduser, IdConsult = @idconsult, Condition = @condition, ConditionDev = @conditiondev WHERE Id = @id";
-            delete = "DELETE FROM [Filter] WHERE Id = @id";
-        }
-        public int Add(Filter entity)
-        {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@iduser", entity.IdUser));
-            parameters.Add(new SqlParameter("@idconsult", entity.IdConsult));
-            parameters.Add(new SqlParameter("@condition", entity.Condition));
-            parameters.Add(new SqlParameter("@conditiondev", entity.ConditionDev));
-            return ExecuteNonQuery(insert);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                db.Filter.Add(entity);
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
 
-        public int Edit(Filter entity)
+        public bool Edit(Filter entity)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", entity.Id));
-            parameters.Add(new SqlParameter("@iduser", entity.IdUser));
-            parameters.Add(new SqlParameter("@idconsult", entity.IdConsult));
-            parameters.Add(new SqlParameter("@condition", entity.Condition));
-            parameters.Add(new SqlParameter("@conditiondev", entity.ConditionDev));
-            return ExecuteNonQuery(update);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                db.Filter.Add(entity);
+                db.Entry(entity).State = EntityState.Modified;
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
 
         public IEnumerable<Filter> GetAll()
         {
-            var tableResult = ExecuteReader(selectAll);
-            var listFilter = new List<Filter>();
-            foreach(DataRow item in tableResult.Rows)
+            IEnumerable<Filter> obj;
+            using (DBContext db = new DBContext())
             {
-                listFilter.Add(new Filter
-                {
-                    Id = (int)item["Id"],
-                    IdUser = (int)item["IdUser"],
-                    IdConsult = (int)item["IdConsult"],
-                    Condition = (string)item["Condition"],
-                    ConditionDev = (string)item["ConditionDev"]
-                });
+                obj = db.Filter;
             }
-            return listFilter;
+            return obj;
         }
 
         public Filter GetUser(int iduser, int idconsult)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@iduser", iduser));
-            parameters.Add(new SqlParameter("@idconsult", idconsult));
-            var tableResult = ExecuteReader(selectUser);
-            var listFilter = new Filter();
-            foreach (DataRow item in tableResult.Rows)
+            Filter obj;
+            using(DBContext db = new DBContext())
             {
-                listFilter.Id = (int)item["Id"];
-                listFilter.IdUser = (int)item["IdUser"];
-                listFilter.IdConsult = (int)item["IdConsult"];
-                listFilter.Condition = item["Condition"].ToString();
-                listFilter.ConditionDev = item["ConditionDev"].ToString();
+                obj = (from o in db.Filter
+                       where o.IdUser == iduser && o.IdConsult == idconsult
+                       select o).FirstOrDefault();
             }
-            return listFilter;
+            return obj;
         }
 
         public DataTable Execute(string transactSql)
         {
+            parameters = new List<SqlParameter>();
             return ExecuteReader(transactSql);
         }
 
-        public int Remove(int id)
+        public bool Remove(int id)
         {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", id));
-            return ExecuteNonQuery(delete);
+            bool result = false;
+            using (DBContext db = new DBContext())
+            {
+                var obj = db.Filter.Find(id);
+                db.Entry(obj).State = EntityState.Deleted;
+                db.SaveChanges();
+                result = true;
+            }
+            return result;
         }
     }
 }
