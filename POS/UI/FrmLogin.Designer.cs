@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.difTemas = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.difTemas = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -42,12 +40,10 @@
             this.ckRecordar = new DevExpress.XtraEditors.CheckEdit();
             this.txtContraseña = new DevExpress.XtraEditors.TextEdit();
             this.LueAutentificacion = new DevExpress.XtraEditors.LookUpEdit();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckRecordar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContraseña.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LueAutentificacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // difTemas
@@ -59,7 +55,7 @@
             // 
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(191, 55);
+            this.labelControl1.Location = new System.Drawing.Point(30, 56);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(108, 13);
             this.labelControl1.TabIndex = 5;
@@ -69,7 +65,7 @@
             // 
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(191, 80);
+            this.labelControl2.Location = new System.Drawing.Point(30, 81);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(90, 13);
             this.labelControl2.TabIndex = 1;
@@ -79,7 +75,7 @@
             // 
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(191, 107);
+            this.labelControl3.Location = new System.Drawing.Point(30, 108);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(56, 13);
             this.labelControl3.TabIndex = 3;
@@ -88,7 +84,7 @@
             // txtUsuario
             // 
             this.txtUsuario.EditValue = "administrador";
-            this.txtUsuario.Location = new System.Drawing.Point(305, 76);
+            this.txtUsuario.Location = new System.Drawing.Point(144, 77);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtUsuario.Properties.Appearance.Options.UseForeColor = true;
@@ -103,7 +99,7 @@
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(191, 11);
+            this.labelControl4.Location = new System.Drawing.Point(30, 12);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(153, 38);
             this.labelControl4.TabIndex = 0;
@@ -116,7 +112,7 @@
             this.btnInicio.Appearance.Options.UseFont = true;
             this.btnInicio.Appearance.Options.UseForeColor = true;
             this.btnInicio.Enabled = false;
-            this.btnInicio.Location = new System.Drawing.Point(305, 152);
+            this.btnInicio.Location = new System.Drawing.Point(144, 153);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(140, 33);
             this.btnInicio.TabIndex = 8;
@@ -126,7 +122,7 @@
             // btnSalir
             // 
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(451, 152);
+            this.btnSalir.Location = new System.Drawing.Point(290, 153);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(74, 33);
             this.btnSalir.TabIndex = 9;
@@ -135,7 +131,7 @@
             // 
             // ckRecordar
             // 
-            this.ckRecordar.Location = new System.Drawing.Point(379, 127);
+            this.ckRecordar.Location = new System.Drawing.Point(218, 128);
             this.ckRecordar.Name = "ckRecordar";
             this.ckRecordar.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.ckRecordar.Properties.Appearance.Options.UseForeColor = true;
@@ -147,7 +143,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(305, 102);
+            this.txtContraseña.Location = new System.Drawing.Point(144, 103);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Properties.Appearance.Font = new System.Drawing.Font("Hind", 9F);
             this.txtContraseña.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -161,7 +157,7 @@
             // 
             // LueAutentificacion
             // 
-            this.LueAutentificacion.Location = new System.Drawing.Point(305, 51);
+            this.LueAutentificacion.Location = new System.Drawing.Point(144, 52);
             this.LueAutentificacion.Name = "LueAutentificacion";
             this.LueAutentificacion.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.LueAutentificacion.Properties.Appearance.Options.UseForeColor = true;
@@ -173,16 +169,6 @@
             this.LueAutentificacion.Size = new System.Drawing.Size(220, 23);
             this.LueAutentificacion.TabIndex = 10;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(44, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnInicio;
@@ -190,8 +176,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(572, 211);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(396, 201);
             this.Controls.Add(this.LueAutentificacion);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.ckRecordar);
@@ -212,7 +197,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ckRecordar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContraseña.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LueAutentificacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,6 +216,5 @@
         private DevExpress.XtraEditors.CheckEdit ckRecordar;
         private DevExpress.XtraEditors.TextEdit txtContraseña;
         private DevExpress.XtraEditors.LookUpEdit LueAutentificacion;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

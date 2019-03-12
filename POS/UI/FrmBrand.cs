@@ -24,7 +24,7 @@ namespace UI
 
         private void FrmBrand_Load(object sender, EventArgs e)
         {
-            brandRepository = new BrandModel().GetId(this.Id);
+            brandRepository = new BrandModel().GetId(Id);
             if (brandRepository != null)
             {
                 brandRepository.State = EntityState.Modified;
@@ -37,7 +37,7 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (this.Id == 0)
+            if (Id == 0)
             {
                 var codingRepository = new CodingModel().GetEntity("Brand");
                 brandRepository = new BrandModel();
@@ -51,13 +51,15 @@ namespace UI
             brandRepository.IdUser = ConstantData.Login.Id;
             
             brandRepository.SaveChanges();
-            Page.LoadPage(this.NamePage, this.TextPage);
-            this.Close();
+            Page.LoadPage(NamePage, TextPage);
+            Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            DialogResult Resultado = MessageBox.Show("Seguro que desea cerrar la ventana?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Resultado == DialogResult.Yes)
+                Close();
         }
     }
 }

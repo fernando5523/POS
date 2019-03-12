@@ -33,6 +33,44 @@ namespace UI
             InitializeComponent();
         }
 
+        #region Comandos
+        public void NewCommand()
+        {
+            OpenForm();
+        }
+        public void EditCommand()
+        {
+            if (ItemSelect().Count > 0)
+            {
+                int id = ItemSelect()[0];
+                OpenForm(id);
+            }
+            else
+                MessageBox.Show("Es necesario seleccionar un item de la vista administrativa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public void RemoveCommand()
+        {
+            DialogResult Resultado = MessageBox.Show("Seguro que desea eliminar los items seleccionados?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Resultado == DialogResult.Yes)
+            {
+                List<int> items = ItemSelect();
+                foreach (int item in items)
+                    ItemDelete(item);
+                LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+            }
+        }
+        public void RefreshCommand()
+        {
+            LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+        }
+        public void FilterCommand()
+        {
+            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text, ConstantData.Login.Id);
+            Filtro.Pages = this;
+            Filtro.Show();
+        }
+        #endregion
+
         #region Métodos
         private void OpenForm(int id = 0)
         {
@@ -105,6 +143,7 @@ namespace UI
                 gView.OptionsView.ShowGroupPanel = false;
                 gView.OptionsView.ShowAutoFilterRow = true;
                 gView.DoubleClick += gridView_DoubleClick;
+                gView.KeyDown += GridView_KeyDown;
 
                 GridControl grid = new GridControl();
                 grid.Name = name;
@@ -164,6 +203,11 @@ namespace UI
         #endregion
 
         #region Eventos
+        private void GridView_KeyDown(Object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                EditCommand();
+        }
         private void treeview_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeView tree = (TreeView)sender;
@@ -184,35 +228,13 @@ namespace UI
                 OpenForm(ItemSelect()[0]);
         }
 
-        private void button_Click(object sender, EventArgs e)
-        {
-            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text, ConstantData.Login.Id);
-            Filtro.Pages = this;
-            Filtro.Show();
-        }
-
-        private void button_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text , ConstantData.Login.Id);
-            Filtro.Pages = this;
-            Filtro.Show();
-        }
         #endregion
 
         private void FrmHome_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult Resultado = MessageBox.Show("Seguro que desea salir de la aplicación", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (Resultado == DialogResult.Yes)
-            {
-                try
-                {
-                    Application.ExitThread();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+                Application.ExitThread();
             else
                 e.Cancel = true;
         }
@@ -231,11 +253,6 @@ namespace UI
             tvVenta.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             tvConfiguracion.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             xtcPages.CloseButtonClick += new EventHandler(xtraTabControl_CloseButtonClick);
-
-            //Filtro
-            btnFiltro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(button_ItemClick);
-            mnuFiltro.Click += new EventHandler(button_Click);
-
             #endregion
 
             //Footer
@@ -252,36 +269,52 @@ namespace UI
 
         private void btnActualizar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+            RefreshCommand();
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            List<int> items = ItemSelect();
-            foreach(int item in items)
-                ItemDelete(item);
-            LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+            RemoveCommand();
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenForm();
+            NewCommand();
         }
 
         private void btnModificar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (ItemSelect().Count > 0)
-            {
-                int id = ItemSelect()[0];
-                OpenForm(id);
-            }
-            else
-                MessageBox.Show("Es necesario seleccionar un item de la vista administrativa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            EditCommand();
         }
 
         private void btnFiltro_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            FilterCommand();
+        }
 
+        private void cmsFiltro_Click(object sender, EventArgs e)
+        {
+            FilterCommand();
+        }
+
+        private void cmsActualizar_Click(object sender, EventArgs e)
+        {
+            RefreshCommand();
+        }
+
+        private void cmsNuevo_Click(object sender, EventArgs e)
+        {
+            NewCommand();
+        }
+
+        private void cmsEliminar_Click(object sender, EventArgs e)
+        {
+            RemoveCommand();
+        }
+
+        private void cmsModificar_Click(object sender, EventArgs e)
+        {
+            EditCommand();
         }
     }
 }
