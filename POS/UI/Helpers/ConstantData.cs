@@ -40,13 +40,13 @@ namespace UI.Helpers
                     default:
                         break;
                 }
+                result = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 result = false;
             }
-            result = true;
             return result;
         }
     }

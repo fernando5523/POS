@@ -90,6 +90,7 @@
     <Compile Include="Contracts\ISalesItemRepository.cs" />
     <Compile Include="Contracts\ISalesPaymentMethodRepository.cs" />
     <Compile Include="Contracts\ISalesRepository.cs" />
+    <Compile Include="Contracts\IUnitTemplateRepository.cs" />
     <Compile Include="Contracts\IUserRepository.cs" />
     <Compile Include="Contracts\IWarehouseRepository.cs" />
     <Compile Include="DBEntity.Context.cs">
@@ -237,6 +238,7 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\MasterRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\UnitTemplateRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Security.cs" />
   </ItemGroup>

@@ -21,7 +21,7 @@ namespace BLL.Model
         private string description;
         private int iduser;
         private DBContext db;
-        private IRepositoryGeneric<UnitTemplate> gRepository;
+        private IUnitTemplateRepository gRepository;
 
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
@@ -35,7 +35,7 @@ namespace BLL.Model
         public UnitTemplateModel()
         {
             db = new DBContext();
-            gRepository = new GenericRepository<UnitTemplate>(db);
+            gRepository = new UnitTemplateRepository(db);
         }
 
         public string SaveChanges()
