@@ -31,6 +31,12 @@ namespace UI.Helpers
                         Category.State = EntityState.Deleted;
                         Category.SaveChanges();
                         break;
+                    case "UnitTemplate":
+                        UnitTemplateModel UnitTemplate = new UnitTemplateModel();
+                        UnitTemplate.Id = Id;
+                        UnitTemplate.State = EntityState.Deleted;
+                        UnitTemplate.SaveChanges();
+                        break;
                     default:
                         break;
                 }

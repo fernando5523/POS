@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DAL.Contracts
 {
-    public interface IGenericRepository<Entity> where Entity:class
+    public interface IGenericRepository<T> where T:class
     {
-        bool Add(Entity entity);
-        bool Edit(Entity entity);
+        bool Add(T entity);
+        bool Edit(T entity);
         bool Remove(int id);
-        IEnumerable<Entity> GetAll();
+        IEnumerable<T> GetAll();
     }
 }
