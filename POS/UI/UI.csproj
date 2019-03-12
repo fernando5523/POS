@@ -93,6 +93,18 @@
     <Compile Include="FrmCategory.Designer.cs">
       <DependentUpon>FrmCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCoding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCoding.Designer.cs">
+      <DependentUpon>FrmCoding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContainer.Designer.cs">
+      <DependentUpon>FrmContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmFiltro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategory.resx">
       <DependentUpon>FrmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCoding.resx">
+      <DependentUpon>FrmCoding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContainer.resx">
+      <DependentUpon>FrmContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFiltro.resx">
       <DependentUpon>FrmFiltro.cs</DependentUpon>
