@@ -10,44 +10,51 @@ namespace DAL.Repositories
     using System.Data.Entity;
     using DAL.Contracts;
     using DAL.Entities;
-    public class GenericRepository<T> : IRepositoryGeneric<T> where T : class
+    public abstract class GenericRepository<T> : IRepositoryGeneric<T> where T : class
     {
-        internal DBContext dbcontext;
-        public GenericRepository(DBContext context)
-        {
-            dbcontext = context;
-        }
         public void Add(T entity)
         {
-            dbcontext.Set<T>().Add(entity);
+            using (DBContext dbContext = new DBContext())
+            {
+                dbContext.Set<T>().Add(entity);
+                dbContext.SaveChanges();
+            }
         }
 
         public void Delete(T entity)
         {
-            dbcontext.Set<T>().Remove(entity);
-            Save();
+            using (DBContext dbContext = new DBContext())
+            {
+                dbContext.Entry(entity).State = EntityState.Deleted;
+                dbContext.SaveChanges();
+            }
         }
 
         public void Edit(T entity)
         {
-            dbcontext.Entry(entity).State = EntityState.Modified;
+            using (DBContext dbContext = new DBContext())
+            {
+                dbContext.Entry(entity).State = EntityState.Modified;
+                dbContext.SaveChanges();
+            }
         }
 
         public IQueryable<T> Find(Expression<Func<T, bool>> predicate)
         {
-            IQueryable<T> query = dbcontext.Set<T>().Where(predicate);
-            return query;
+            using (DBContext dbContext = new DBContext())
+            {
+                IQueryable<T> query = dbContext.Set<T>().Where(predicate);
+                return query;
+            }
         }
 
         public IQueryable<T> GetAll()
         {
-            IQueryable<T> query = dbcontext.Set<T>();
-            return query;
-        }
-
-        public void Save()
-        {
-            dbcontext.SaveChanges();
+            using (DBContext dbContext = new DBContext())
+            {
+                IQueryable<T> query = dbContext.Set<T>();
+                return query;
+            }
         }
     }
 }

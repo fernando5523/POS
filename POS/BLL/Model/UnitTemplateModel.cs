@@ -20,7 +20,6 @@ namespace BLL.Model
         private int factor;
         private string description;
         private int iduser;
-        private DBContext db;
         private IUnitTemplateRepository gRepository;
 
         public EntityState State { private get; set; }
@@ -34,8 +33,7 @@ namespace BLL.Model
 
         public UnitTemplateModel()
         {
-            db = new DBContext();
-            gRepository = new UnitTemplateRepository(db);
+            gRepository = new UnitTemplateRepository();
         }
 
         public string SaveChanges()
@@ -99,6 +97,23 @@ namespace BLL.Model
                 });
             }
             return listUnitTemplate;
+        }
+
+        public UnitTemplateModel GetId(int id)
+        {
+            var entityData = gRepository.Find(e => e.Id == id);
+            var returnModel = new UnitTemplateModel();
+            foreach(UnitTemplate item in entityData)
+            {
+                returnModel.Id = item.Id;
+                returnModel.Code = item.Code;
+                returnModel.Name = item.Name;
+                returnModel.Abbreviation = item.Abbreviation;
+                returnModel.Factor = item.Factor;
+                returnModel.Description = item.Description;
+                returnModel.IdUser = item.IdUser;
+            }
+            return returnModel;
         }
     }
 }

@@ -249,6 +249,7 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <None Include="DBEntity.edmx.diagram">
       <DependentUpon>DBEntity.edmx</DependentUpon>
     </None>

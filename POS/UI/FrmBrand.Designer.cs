@@ -114,7 +114,7 @@
             this.cbeActive.Name = "cbeActive";
             this.cbeActive.Properties.Caption = "Active";
             this.cbeActive.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.cbeActive.Size = new System.Drawing.Size(75, 20);
+            this.cbeActive.Size = new System.Drawing.Size(75, 19);
             this.cbeActive.TabIndex = 3;
             // 
             // FrmBrand

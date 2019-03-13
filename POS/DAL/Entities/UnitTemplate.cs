@@ -27,8 +27,6 @@ namespace DAL.Entities
         public int Factor { get; set; }
         public string Description { get; set; }
         public int IdUser { get; set; }
-        public System.DateTime Starting { get; set; }
-        public System.DateTime Ending { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductUnit> ProductUnit { get; set; }
