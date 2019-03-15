@@ -20,7 +20,7 @@ namespace DAL.Repositories
             }
         }
 
-        public void Delete(T entity)
+        public void Remove(T entity)
         {
             using (dbContext dbContext = new dbContext())
             {

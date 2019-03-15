@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Entities;
 
 namespace DAL.Contracts
 {
-    public interface IUserRepository:IRepositoryGeneric<User>
+    using DAL.Entities;
+    public interface IUserRepository : IRepositoryGeneric<User>
     {
         User GetLogin(string name, string password);
     }

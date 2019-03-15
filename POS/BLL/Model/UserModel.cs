@@ -65,7 +65,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        userRepository.Remove(userDataModel.ID);
+                        userRepository.Remove(userDataModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:

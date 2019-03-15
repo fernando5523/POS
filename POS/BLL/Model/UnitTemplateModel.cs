@@ -56,7 +56,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        gRepository.Delete(unittemplateDataModel);
+                        gRepository.Remove(unittemplateDataModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
