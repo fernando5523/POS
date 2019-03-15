@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DAL.Contracts
 {
     using DAL.Entities;
-    public interface IUnitTemplateRepository:IRepositoryGeneric<UnitTemplate>
+    public interface IUnitTemplateRepository: IRepositoryGeneric<UnitTemplate>
     {
 
     }

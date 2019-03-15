@@ -14,9 +14,9 @@ namespace DAL.Repositories
         public bool Add(Brand entity)
         {
             bool result = false;
-            using(DBContext db = new DBContext())
+            using(dbContext db = new dbContext())
             {
-                db.Brand.Add(entity);
+                db.Brands.Add(entity);
                 db.SaveChanges();
                 result = true;
             }
@@ -26,9 +26,9 @@ namespace DAL.Repositories
         public bool Edit(Brand entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Brand.Add(entity);
+                db.Brands.Add(entity);
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 result = true;
@@ -39,9 +39,9 @@ namespace DAL.Repositories
         public IEnumerable<Brand> GetAll()
         {
             IEnumerable<Brand> obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = db.Brand;
+                obj = db.Brands;
             }
             return obj;
         }
@@ -49,17 +49,17 @@ namespace DAL.Repositories
         public Brand GetId(int id)
         {
             Brand obj;
-            using (DBContext db = new DBContext())
-                obj = db.Brand.Find(id);
+            using (dbContext db = new dbContext())
+                obj = db.Brands.Find(id);
             return obj;
         }
 
         public bool Remove(int id)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                var obj = db.Brand.Find(id);
+                var obj = db.Brands.Find(id);
                 db.Entry(obj).State = EntityState.Deleted;
                 db.SaveChanges();
                 result = true;

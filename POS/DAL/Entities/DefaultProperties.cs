@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Entities;
 
-namespace DAL.Contracts
+namespace DAL.Entities
 {
-    public interface ICreditModalityRepository: IGenericRepository<CreditModality>
+    public class DefaultProperties
     {
+        public int ID { get; set; }
+        public int IdUser { get; set; }
     }
 }

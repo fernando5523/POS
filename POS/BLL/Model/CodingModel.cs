@@ -44,7 +44,7 @@ namespace BLL.Model
             try
             {
                 var codingDataModel = new Coding();
-                codingDataModel.Id = Id;
+                codingDataModel.ID = Id;
                 codingDataModel.Entity = Entity;
                 codingDataModel.Text = Text;
                 codingDataModel.Number = Number;
@@ -59,7 +59,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        codingRepository.Remove(codingDataModel.Id);
+                        codingRepository.Remove(codingDataModel.ID);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -89,7 +89,7 @@ namespace BLL.Model
             {
                 listCoding.Add(new CodingModel
                 {
-                    Id = item.Id,
+                    Id = item.ID,
                     Entity = item.Entity,
                     Text = item.Text,
                     Number = item.Number,
@@ -105,7 +105,7 @@ namespace BLL.Model
         {
             var codingDataModel = codingRepository.GetEntity(entity);
             var listCoding = new CodingModel();
-            listCoding.Id = codingDataModel.Id;
+            listCoding.Id = codingDataModel.ID;
             listCoding.Entity = codingDataModel.Entity;
             listCoding.Text = codingDataModel.Text;
             listCoding.Number = codingDataModel.Number;

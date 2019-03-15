@@ -42,7 +42,7 @@ namespace BLL.Model
             try
             {
                 var unittemplateDataModel = new UnitTemplate();
-                unittemplateDataModel.Id = Id;
+                unittemplateDataModel.ID = Id;
                 unittemplateDataModel.Code = Code;
                 unittemplateDataModel.Name = Name;
                 unittemplateDataModel.Abbreviation = Abbreviation;
@@ -87,7 +87,7 @@ namespace BLL.Model
             {
                 listUnitTemplate.Add(new UnitTemplateModel
                 {
-                    Id = item.Id,
+                    Id = item.ID,
                     Code = item.Code,
                     Name = item.Name,
                     Abbreviation = item.Abbreviation,
@@ -101,11 +101,11 @@ namespace BLL.Model
 
         public UnitTemplateModel GetId(int id)
         {
-            var entityData = gRepository.Find(e => e.Id == id);
+            var entityData = gRepository.Find(e => e.ID == id);
             var returnModel = new UnitTemplateModel();
             foreach(UnitTemplate item in entityData)
             {
-                returnModel.Id = item.Id;
+                returnModel.Id = item.ID;
                 returnModel.Code = item.Code;
                 returnModel.Name = item.Name;
                 returnModel.Abbreviation = item.Abbreviation;

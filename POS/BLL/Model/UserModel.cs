@@ -51,11 +51,11 @@ namespace BLL.Model
             try
             {
                 var userDataModel = new User();
-                userDataModel.Id = Id;
-                userDataModel.Name = name;
-                userDataModel.Password = password;
-                userDataModel.Active = active;
-                userDataModel.IdUser = iduser;
+                userDataModel.ID = Id;
+                userDataModel.Name = Name;
+                userDataModel.Password = Password;
+                userDataModel.Active = Active;
+                userDataModel.IdUser = IdUser;
 
                 switch (State)
                 {
@@ -65,7 +65,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        userRepository.Remove(userDataModel.Id);
+                        userRepository.Remove(userDataModel.ID);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -95,7 +95,7 @@ namespace BLL.Model
             foreach(User item in userDataModel)
             {
                 listUsers.Add(new UserModel {
-                    Id = item.Id,
+                    Id = item.ID,
                     Name = item.Name,
                     Password = item.Password,
                     Active = item.Active,
@@ -109,7 +109,7 @@ namespace BLL.Model
         {
             var userDataModel = userRepository.GetLogin(name, password);
             UserModel Login = new UserModel();
-            Login.Id = userDataModel.Id;
+            Login.Id = userDataModel.ID;
             Login.name = userDataModel.Name;
             Login.password = userDataModel.Password;
             Login.active = userDataModel.Active;

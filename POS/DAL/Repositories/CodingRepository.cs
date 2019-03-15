@@ -14,9 +14,9 @@ namespace DAL.Repositories
         public bool Add(Coding entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Coding.Add(entity);
+                db.Codings.Add(entity);
                 db.SaveChanges();
                 result = true;
             }
@@ -26,9 +26,9 @@ namespace DAL.Repositories
         public bool Edit(Coding entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Coding.Add(entity);
+                db.Codings.Add(entity);
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 result = true;
@@ -39,9 +39,9 @@ namespace DAL.Repositories
         public IEnumerable<Coding> GetAll()
         {
             IEnumerable<Coding> obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = db.Coding;
+                obj = db.Codings;
             }
             return obj;
         }
@@ -49,9 +49,9 @@ namespace DAL.Repositories
         public Coding GetEntity(string entity)
         {
             Coding obj;
-            using(DBContext db = new DBContext())
+            using(dbContext db = new dbContext())
             {
-                obj = (from o in db.Coding
+                obj = (from o in db.Codings
                        where o.Entity == entity
                        select o).FirstOrDefault();
             }
@@ -61,9 +61,9 @@ namespace DAL.Repositories
         public bool Remove(int id)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                var obj = db.Coding.Find(id);
+                var obj = db.Codings.Find(id);
                 db.Entry(obj).State = EntityState.Deleted;
                 db.SaveChanges();
                 result = true;

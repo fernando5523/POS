@@ -10,39 +10,33 @@ namespace DAL.Repositories
     using System.Data.Entity;
     using DAL.Contracts;
     using DAL.Entities;
-    public class UserRepository : MasterRepository, IUserRepository
+    public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        public bool Add(User entity)
+        public void Add(User entity)
         {
-            bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.User.Add(entity);
+                db.Users.Add(entity);
                 db.SaveChanges();
-                result = true;
             }
-            return result;
         }
 
-        public bool Edit(User entity)
+        public void Edit(User entity)
         {
-            bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.User.Add(entity);
+                db.Users.Add(entity);
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
-                result = true;
             }
-            return result;
         }
 
         public IEnumerable<User> GetAll()
         {
             IEnumerable<User> obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = db.User;
+                obj = db.Users;
             }
             return obj;
         }
@@ -50,26 +44,23 @@ namespace DAL.Repositories
         public User GetLogin(string name, string password)
         {
             User obj;
-            using(DBContext db = new DBContext())
+            using(dbContext db = new dbContext())
             {
-                obj = (from o in db.User
+                obj = (from o in db.Users
                       where o.Name == name && o.Password == password
                       select o).FirstOrDefault();
             }
             return obj;
         }
 
-        public bool Remove(int id)
+        public void Remove(User entity)
         {
-            bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                var obj = db.User.Find(id);
+                var obj = db.Users.Find(entity);
                 db.Entry(obj).State = EntityState.Deleted;
                 db.SaveChanges();
-                result = true;
             }
-            return result;
         }
     }
 }

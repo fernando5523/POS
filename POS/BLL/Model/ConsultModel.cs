@@ -22,7 +22,7 @@ namespace BLL.Model
         private string groupby;
         private string having;
         private string orderby;
-        private Nullable<int> iduser;
+        private int iduser;
         private IConsultRepository consultRepository;
 
         public EntityState State { private get; set; }
@@ -35,7 +35,7 @@ namespace BLL.Model
         public string GroupBy { get => groupby; set => groupby = value; }
         public string Having { get => having; set => having = value; }
         public string OrderBy { get => orderby; set => orderby = value; }
-        public int? IdUser { get => iduser; set => iduser = value; }
+        public int IdUser { get => iduser; set => iduser = value; }
 
         public ConsultModel()
         {
@@ -48,7 +48,7 @@ namespace BLL.Model
             try
             {
                 var consultDataModel = new Consult();
-                consultDataModel.Id = Id;
+                consultDataModel.ID = Id;
                 consultDataModel.IdContainer = IdContainer;
                 consultDataModel.Principal = Principal;
                 consultDataModel.Select = Select;
@@ -66,7 +66,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        consultRepository.Remove(consultDataModel.Id);
+                        consultRepository.Remove(consultDataModel.ID);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -96,7 +96,7 @@ namespace BLL.Model
             {
                 listConsult.Add(new ConsultModel
                 {
-                    Id = item.Id,
+                    Id = item.ID,
                     IdContainer = item.IdContainer,
                     Principal = item.Principal,
                     Select = item.Select,
@@ -115,7 +115,7 @@ namespace BLL.Model
         {
             var consultDataModel = consultRepository.GetIdContainer(idContainer);
             var listConsult = new ConsultModel();
-            listConsult.Id = consultDataModel.Id;
+            listConsult.Id = consultDataModel.ID;
             listConsult.IdContainer = consultDataModel.IdContainer;
             listConsult.Principal = consultDataModel.Principal;
             listConsult.Select = consultDataModel.Select;

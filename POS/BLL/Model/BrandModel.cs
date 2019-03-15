@@ -38,7 +38,7 @@ namespace BLL.Model
             try
             {
                 var brandDataModel = new Brand();
-                brandDataModel.Id = Id;
+                brandDataModel.ID = Id;
                 brandDataModel.Code = Code;
                 brandDataModel.Description = Description;
                 brandDataModel.Active = Active;
@@ -51,7 +51,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        brandRepository.Remove(brandDataModel.Id);
+                        brandRepository.Remove(brandDataModel.ID);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -82,7 +82,7 @@ namespace BLL.Model
             {
                 listBrand.Add(new BrandModel
                 {
-                    Id = item.Id,
+                    Id = item.ID,
                     Code = item.Code,
                     Description = item.Description,
                     Active = item.Active,
@@ -99,7 +99,7 @@ namespace BLL.Model
             if (brandDataModel != null)
             {
                 listBrand = new BrandModel();
-                listBrand.Id = brandDataModel.Id;
+                listBrand.Id = brandDataModel.ID;
                 listBrand.Code = brandDataModel.Code;
                 listBrand.Description = brandDataModel.Description;
                 listBrand.Active = brandDataModel.Active;

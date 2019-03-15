@@ -16,9 +16,9 @@ namespace DAL.Repositories
         public bool Add(Filter entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Filter.Add(entity);
+                db.Filters.Add(entity);
                 db.SaveChanges();
                 result = true;
             }
@@ -28,9 +28,9 @@ namespace DAL.Repositories
         public bool Edit(Filter entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Filter.Add(entity);
+                db.Filters.Add(entity);
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 result = true;
@@ -41,9 +41,9 @@ namespace DAL.Repositories
         public IEnumerable<Filter> GetAll()
         {
             IEnumerable<Filter> obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = db.Filter;
+                obj = db.Filters;
             }
             return obj;
         }
@@ -51,9 +51,9 @@ namespace DAL.Repositories
         public Filter GetUser(int iduser, int idconsult)
         {
             Filter obj;
-            using(DBContext db = new DBContext())
+            using(dbContext db = new dbContext())
             {
-                obj = (from o in db.Filter
+                obj = (from o in db.Filters
                        where o.IdUser == iduser && o.IdConsult == idconsult
                        select o).FirstOrDefault();
             }
@@ -69,9 +69,9 @@ namespace DAL.Repositories
         public bool Remove(int id)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                var obj = db.Filter.Find(id);
+                var obj = db.Filters.Find(id);
                 db.Entry(obj).State = EntityState.Deleted;
                 db.SaveChanges();
                 result = true;

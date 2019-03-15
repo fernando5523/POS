@@ -14,9 +14,9 @@ namespace DAL.Repositories
         public bool Add(Container entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Container.Add(entity);
+                db.Containers.Add(entity);
                 db.SaveChanges();
                 result = true;
             }
@@ -26,9 +26,9 @@ namespace DAL.Repositories
         public bool Edit(Container entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Container.Add(entity);
+                db.Containers.Add(entity);
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 result = true;
@@ -39,9 +39,9 @@ namespace DAL.Repositories
         public IEnumerable<Container> GetAll()
         {
             IEnumerable<Container> obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = db.Container;
+                obj = db.Containers;
             }
             return obj;
         }
@@ -49,9 +49,9 @@ namespace DAL.Repositories
         public Container GetContainerName(string name)
         {
             Container obj;
-            using(DBContext db = new DBContext())
+            using(dbContext db = new dbContext())
             {
-                obj = (from o in db.Container
+                obj = (from o in db.Containers
                        where o.Name == name
                        select o).FirstOrDefault();
             }
@@ -61,9 +61,9 @@ namespace DAL.Repositories
         public bool Remove(int id)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                var obj = db.Container.Find(id);
+                var obj = db.Containers.Find(id);
                 db.Entry(obj).State = EntityState.Deleted;
                 db.SaveChanges();
                 result = true;

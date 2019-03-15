@@ -7,7 +7,7 @@ using DAL.Entities;
 
 namespace DAL.Contracts
 {
-    public interface IUserRepository:IGenericRepository<User>
+    public interface IUserRepository:IRepositoryGeneric<User>
     {
         User GetLogin(string name, string password);
     }

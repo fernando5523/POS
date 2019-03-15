@@ -39,7 +39,7 @@ namespace BLL.Model
             try
             {
                 var filterDataModel = new Filter();
-                filterDataModel.Id = Id;
+                filterDataModel.ID = Id;
                 filterDataModel.IdUser = IdUser;
                 filterDataModel.IdConsult = IdConsult;
                 filterDataModel.Condition = Condition;
@@ -52,7 +52,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        filterRepository.Remove(filterDataModel.Id);
+                        filterRepository.Remove(filterDataModel.ID);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -82,7 +82,7 @@ namespace BLL.Model
             {
                 listFilter.Add(new FilterModel
                 {
-                    Id = item.Id,
+                    Id = item.ID,
                     IdUser = item.IdUser,
                     IdConsult = item.IdConsult,
                     Condition = item.Condition,
@@ -99,7 +99,7 @@ namespace BLL.Model
             var filterDataModel = filterRepository.GetUser(iduser, idconsult);
             if (filterDataModel != null)
             {
-                Filter.Id = filterDataModel.Id;
+                Filter.Id = filterDataModel.ID;
                 Filter.iduser = filterDataModel.IdUser;
                 Filter.IdConsult = filterDataModel.IdConsult;
                 Filter.Condition = filterDataModel.Condition;

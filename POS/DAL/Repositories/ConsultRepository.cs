@@ -14,9 +14,9 @@ namespace DAL.Repositories
         public bool Add(Consult entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Consult.Add(entity);
+                db.Consults.Add(entity);
                 db.SaveChanges();
                 result = true;
             }
@@ -26,9 +26,9 @@ namespace DAL.Repositories
         public bool Edit(Consult entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Consult.Add(entity);
+                db.Consults.Add(entity);
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 result = true;
@@ -39,9 +39,9 @@ namespace DAL.Repositories
         public IEnumerable<Consult> GetAll()
         {
             IEnumerable<Consult> obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = db.Consult;
+                obj = db.Consults;
             }
             return obj;
         }
@@ -49,9 +49,9 @@ namespace DAL.Repositories
         public Consult GetIdContainer(int idContainer)
         {
             Consult obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = (from o in db.Consult
+                obj = (from o in db.Consults
                        where o.IdContainer == idContainer
                        select o).FirstOrDefault();
             }
@@ -61,9 +61,9 @@ namespace DAL.Repositories
         public bool Remove(int id)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                var obj = db.Consult.Find(id);
+                var obj = db.Consults.Find(id);
                 db.Entry(obj).State = EntityState.Deleted;
                 db.SaveChanges();
                 result = true;

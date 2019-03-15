@@ -51,183 +51,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IAddressRepository.cs" />
-    <Compile Include="Contracts\IBoxRepository.cs" />
-    <Compile Include="Contracts\IBranchOfficeRepository.cs" />
     <Compile Include="Contracts\IBrandRepository.cs" />
     <Compile Include="Contracts\ICategoryRepository.cs" />
-    <Compile Include="Contracts\IClientRepository.cs" />
     <Compile Include="Contracts\ICodingRepository.cs" />
     <Compile Include="Contracts\IConsultRepository.cs" />
     <Compile Include="Contracts\IContainerRepository.cs" />
-    <Compile Include="Contracts\ICreditModalityRepository.cs" />
-    <Compile Include="Contracts\IDocumentRepository.cs" />
-    <Compile Include="Contracts\IDocumentTypeRepository.cs" />
-    <Compile Include="Contracts\IEmployeePositionRepository.cs" />
-    <Compile Include="Contracts\IEmployeeRepository.cs" />
     <Compile Include="Contracts\IFilterRepository.cs" />
     <Compile Include="Contracts\IGenericRepository.cs" />
-    <Compile Include="Contracts\IHistoryInventoryWarehouseRepository.cs" />
-    <Compile Include="Contracts\IInventoryOutputInputItemRepository.cs" />
-    <Compile Include="Contracts\IInventoryOutputInputRepository.cs" />
-    <Compile Include="Contracts\IInventoryRepository.cs" />
-    <Compile Include="Contracts\IPaymentMethodRepository.cs" />
-    <Compile Include="Contracts\IPersonDocumentRepository.cs" />
-    <Compile Include="Contracts\IPersonDocumentTypeRepository.cs" />
-    <Compile Include="Contracts\IPersonRepository.cs" />
-    <Compile Include="Contracts\IPersonTypeRepository.cs" />
-    <Compile Include="Contracts\IProductPriceBranchOfficeRepository.cs" />
-    <Compile Include="Contracts\IProductPriceRepository.cs" />
-    <Compile Include="Contracts\IProductRepository.cs" />
-    <Compile Include="Contracts\IProductTypeRepository.cs" />
-    <Compile Include="Contracts\IProductUnitBarCodeRepository.cs" />
-    <Compile Include="Contracts\IProductUnitRepository.cs" />
-    <Compile Include="Contracts\IProviderRepository.cs" />
-    <Compile Include="Contracts\IPurchaseItemRepository.cs" />
-    <Compile Include="Contracts\IPurchasePaymentMethodRepository.cs" />
-    <Compile Include="Contracts\IPurchaseRepository.cs" />
     <Compile Include="Contracts\IRepositoryGeneric.cs" />
-    <Compile Include="Contracts\ISalesItemRepository.cs" />
-    <Compile Include="Contracts\ISalesPaymentMethodRepository.cs" />
-    <Compile Include="Contracts\ISalesRepository.cs" />
     <Compile Include="Contracts\IUnitTemplateRepository.cs" />
     <Compile Include="Contracts\IUserRepository.cs" />
-    <Compile Include="Contracts\IWarehouseRepository.cs" />
-    <Compile Include="DBEntity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEntity.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBEntity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEntity.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Address.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Box.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\BranchOffice.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Brand.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Category.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Client.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Coding.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Consult.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Container.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\CreditModality.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\DBEntity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Document.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\DocumentType.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Employee.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\EmployeePosition.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Filter.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\HistoryInventoryWarehouse.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Inventory.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\InventoryOutputInput.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\InventoryOutputInputItem.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\PaymentMethod.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Person.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\PersonDocument.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\PersonDocumentType.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\PersonType.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Product.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\ProductPrice.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\ProductPriceBranchOffice.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\ProductType.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\ProductUnit.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\ProductUnitBarCode.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Provider.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Purchase.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\PurchaseItem.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\PurchasePaymentMethod.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Sales.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SalesItem.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SalesPaymentMethod.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\UnitTemplate.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\User.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Warehouse.cs">
-      <DependentUpon>DBEntity.tt</DependentUpon>
-    </Compile>
+    <Compile Include="dbContext.cs" />
+    <Compile Include="Entities\Brand.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Coding.cs" />
+    <Compile Include="Entities\Consult.cs" />
+    <Compile Include="Entities\Container.cs" />
+    <Compile Include="Entities\DefaultProperties.cs" />
+    <Compile Include="Entities\Filter.cs" />
+    <Compile Include="Entities\UnitTemplate.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BrandRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
@@ -243,33 +86,12 @@
     <Compile Include="Security.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DBEntity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBEntity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <None Include="DBEntity.edmx.diagram">
-      <DependentUpon>DBEntity.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DBEntity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBEntity.Context.cs</LastGenOutput>
-      <DependentUpon>DBEntity.edmx</DependentUpon>
-      <CustomToolNamespace>DAL.Entities</CustomToolNamespace>
-    </Content>
-    <Content Include="Entities\DBEntity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBEntity.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

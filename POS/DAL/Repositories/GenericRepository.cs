@@ -9,12 +9,11 @@ namespace DAL.Repositories
     using System.Linq.Expressions;
     using System.Data.Entity;
     using DAL.Contracts;
-    using DAL.Entities;
     public abstract class GenericRepository<T> : IRepositoryGeneric<T> where T : class
     {
         public void Add(T entity)
         {
-            using (DBContext dbContext = new DBContext())
+            using (dbContext dbContext = new dbContext())
             {
                 dbContext.Set<T>().Add(entity);
                 dbContext.SaveChanges();
@@ -23,7 +22,7 @@ namespace DAL.Repositories
 
         public void Delete(T entity)
         {
-            using (DBContext dbContext = new DBContext())
+            using (dbContext dbContext = new dbContext())
             {
                 dbContext.Entry(entity).State = EntityState.Deleted;
                 dbContext.SaveChanges();
@@ -32,7 +31,7 @@ namespace DAL.Repositories
 
         public void Edit(T entity)
         {
-            using (DBContext dbContext = new DBContext())
+            using (dbContext dbContext = new dbContext())
             {
                 dbContext.Entry(entity).State = EntityState.Modified;
                 dbContext.SaveChanges();
@@ -41,7 +40,7 @@ namespace DAL.Repositories
 
         public IQueryable<T> Find(Expression<Func<T, bool>> predicate)
         {
-            using (DBContext dbContext = new DBContext())
+            using (dbContext dbContext = new dbContext())
             {
                 IQueryable<T> query = dbContext.Set<T>().Where(predicate);
                 return query;
@@ -50,7 +49,7 @@ namespace DAL.Repositories
 
         public IQueryable<T> GetAll()
         {
-            using (DBContext dbContext = new DBContext())
+            using (dbContext dbContext = new dbContext())
             {
                 IQueryable<T> query = dbContext.Set<T>();
                 return query;

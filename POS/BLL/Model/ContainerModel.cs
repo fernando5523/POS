@@ -42,7 +42,7 @@ namespace BLL.Model
             try
             {
                 var containerModel = new Container();
-                containerModel.Id = Id;
+                containerModel.ID = Id;
                 containerModel.Code = Code;
                 containerModel.Name = Name;
                 containerModel.Description = Description;
@@ -56,7 +56,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        containerRepository.Remove(containerModel.Id);
+                        containerRepository.Remove(containerModel.ID);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -86,7 +86,7 @@ namespace BLL.Model
             {
                 listContainer.Add(new ContainerModel
                 {
-                    Id = item.Id,
+                    Id = item.ID,
                     Code = item.Code,
                     Name = item.Name,
                     Description = item.Description,
@@ -102,7 +102,7 @@ namespace BLL.Model
         {
             var containerDataModel = containerRepository.GetContainerName(name);
             ContainerModel listContainer = new ContainerModel();
-            listContainer.Id = containerDataModel.Id;
+            listContainer.Id = containerDataModel.ID;
             listContainer.Name = containerDataModel.Name;
             listContainer.Description = containerDataModel.Description;
             listContainer.Form = containerDataModel.Form;

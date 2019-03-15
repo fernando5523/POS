@@ -38,7 +38,7 @@ namespace BLL.Model
             try
             {
                 var categoryDataModel = new Category();
-                categoryDataModel.Id = Id;
+                categoryDataModel.ID = Id;
                 categoryDataModel.Code = Code;
                 categoryDataModel.Description = Description;
                 categoryDataModel.Active = Active;
@@ -51,7 +51,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        categoryRepository.Remove(categoryDataModel.Id);
+                        categoryRepository.Remove(categoryDataModel.ID);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -82,7 +82,7 @@ namespace BLL.Model
             {
                 listCategory.Add(new CategoryModel
                 {
-                    Id = item.Id,
+                    Id = item.ID,
                     Code = item.Code,
                     Description = item.Description,
                     Active = item.Active,
@@ -99,7 +99,7 @@ namespace BLL.Model
             if (categoryDataModel != null)
             {
                 listCategory = new CategoryModel();
-                listCategory.Id = categoryDataModel.Id;
+                listCategory.Id = categoryDataModel.ID;
                 listCategory.Code = categoryDataModel.Code;
                 listCategory.Description = categoryDataModel.Description;
                 listCategory.Active = categoryDataModel.Active;

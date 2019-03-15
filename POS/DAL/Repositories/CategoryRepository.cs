@@ -14,9 +14,9 @@ namespace DAL.Repositories
         public bool Add(Category entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Category.Add(entity);
+                db.Categories.Add(entity);
                 db.SaveChanges();
                 result = true;
             }
@@ -26,9 +26,9 @@ namespace DAL.Repositories
         public bool Edit(Category entity)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                db.Category.Add(entity);
+                db.Categories.Add(entity);
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 result = true;
@@ -39,9 +39,9 @@ namespace DAL.Repositories
         public bool Remove(int id)
         {
             bool result = false;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                var obj = db.Category.Find(id);
+                var obj = db.Categories.Find(id);
                 db.Entry(obj).State = EntityState.Deleted;
                 db.SaveChanges();
                 result = true;
@@ -52,17 +52,17 @@ namespace DAL.Repositories
         public IEnumerable<Category> GetAll()
         {
             IEnumerable<Category> obj;
-            using (DBContext db = new DBContext())
+            using (dbContext db = new dbContext())
             {
-                obj = db.Category;
+                obj = db.Categories;
             }
             return obj;
         }
         public Category GetId(int id)
         {
             Category obj;
-            using (DBContext db = new DBContext())
-                obj = db.Category.Find(id);
+            using (dbContext db = new dbContext())
+                obj = db.Categories.Find(id);
             return obj;
         }
     }
