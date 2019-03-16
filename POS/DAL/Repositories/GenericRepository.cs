@@ -13,45 +13,45 @@ namespace DAL.Repositories
     {
         public void Add(T entity)
         {
-            using (dbContext dbContext = new dbContext())
+            using (dbContext db = new dbContext())
             {
-                dbContext.Set<T>().Add(entity);
-                dbContext.SaveChanges();
+                db.Set<T>().Add(entity);
+                db.SaveChanges();
             }
         }
 
         public void Remove(T entity)
         {
-            using (dbContext dbContext = new dbContext())
+            using (dbContext db = new dbContext())
             {
-                dbContext.Entry(entity).State = EntityState.Deleted;
-                dbContext.SaveChanges();
+                db.Entry(entity).State = EntityState.Deleted;
+                db.SaveChanges();
             }
         }
 
         public void Edit(T entity)
         {
-            using (dbContext dbContext = new dbContext())
+            using (dbContext db = new dbContext())
             {
-                dbContext.Entry(entity).State = EntityState.Modified;
-                dbContext.SaveChanges();
+                db.Entry(entity).State = EntityState.Modified;
+                db.SaveChanges();
             }
         }
 
         public IQueryable<T> Find(Expression<Func<T, bool>> predicate)
         {
-            using (dbContext dbContext = new dbContext())
+            using (dbContext db = new dbContext())
             {
-                IQueryable<T> query = dbContext.Set<T>().Where(predicate);
+                IQueryable<T> query = db.Set<T>().Where(predicate);
                 return query;
             }
         }
 
         public IQueryable<T> GetAll()
         {
-            using (dbContext dbContext = new dbContext())
+            using (dbContext db = new dbContext())
             {
-                IQueryable<T> query = dbContext.Set<T>();
+                IQueryable<T> query = db.Set<T>();
                 return query;
             }
         }

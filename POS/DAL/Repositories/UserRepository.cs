@@ -14,8 +14,16 @@ namespace DAL.Repositories
     {
         public User GetLogin(string name, string password)
         {
-            User Result = Find(e => e.Name == name && e.Password == password).FirstOrDefault();
-            return Result;
+            User objectData = new User();
+            List<User> Result = Find(e => e.Name == name && e.Password == password).ToList();
+            foreach(User item in Result)
+            {
+                objectData.ID = item.ID;
+                objectData.Name = item.Name;
+                objectData.Active = item.Active;
+                objectData.IdUser = item.IdUser;
+            }
+            return objectData;
         }
     }
 }
