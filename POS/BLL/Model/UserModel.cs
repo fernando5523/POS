@@ -9,6 +9,7 @@ using DAL.Repositories;
 using BLL.ValueObjects;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 
 namespace BLL.Model
 {
@@ -115,6 +116,12 @@ namespace BLL.Model
             Login.active = userDataModel.Active;
             Login.IdUser = userDataModel.IdUser;
             return Login;
+        }
+
+        public IQueryable<UserModel> Find(Expression<Func<User, bool>> predicate)
+        {
+            IQueryable<UserModel> userDataModel = userRepository.Find(predicate).Select()
+            return userDataModel;
         }
     }
 }
