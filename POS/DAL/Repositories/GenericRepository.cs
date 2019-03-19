@@ -9,51 +9,42 @@ namespace DAL.Repositories
     using System.Linq.Expressions;
     using System.Data.Entity;
     using DAL.Contracts;
-    public abstract class GenericRepository<T> : IRepositoryGeneric<T> where T : class
+    public abstract class GenericRepository<T> : IDisposable, IRepositoryGeneric<T> where T : class
     {
+        dbContext db = new dbContext();
         public void Add(T entity)
         {
-            using (dbContext db = new dbContext())
-            {
-                db.Set<T>().Add(entity);
-                db.SaveChanges();
-            }
+            db.Set<T>().Add(entity);
+            db.SaveChanges();
         }
 
         public void Remove(T entity)
         {
-            using (dbContext db = new dbContext())
-            {
-                db.Entry(entity).State = EntityState.Deleted;
-                db.SaveChanges();
-            }
+            db.Set<T>().Remove(entity);
+            db.SaveChanges();
         }
 
         public void Edit(T entity)
         {
-            using (dbContext db = new dbContext())
-            {
-                db.Entry(entity).State = EntityState.Modified;
-                db.SaveChanges();
-            }
+            db.Entry(entity).State = EntityState.Modified;
+            db.SaveChanges();
         }
 
         public IQueryable<T> Find(Expression<Func<T, bool>> predicate)
         {
-            using (dbContext db = new dbContext())
-            {
-                IQueryable<T> query = db.Set<T>().Where(predicate);
-                return query;
-            }
+            IQueryable<T> query = db.Set<T>().Where(predicate);
+            return query;
         }
 
         public IQueryable<T> GetAll()
         {
-            using (dbContext db = new dbContext())
-            {
-                IQueryable<T> query = db.Set<T>();
-                return query;
-            }
+            IQueryable<T> query = db.Set<T>();
+            return query;
+        }
+
+        public void Dispose()
+        {
+            db.Dispose();
         }
     }
 }

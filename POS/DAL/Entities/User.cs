@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class User : DefaultProperties
+    public class User
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public bool Active { get; set; }
+        public Nullable<int> IdUser { get; set; }
     }
 }

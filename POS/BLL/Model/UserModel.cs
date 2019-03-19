@@ -19,7 +19,7 @@ namespace BLL.Model
         private string name;
         private string password;
         private bool active;
-        private int iduser;
+        private int? iduser;
 
         private IUserRepository userRepository;
         public EntityState State { private get; set; }
@@ -39,7 +39,7 @@ namespace BLL.Model
 
         [Required(ErrorMessage = "El iduser es un campo requerido.")]
         [RegularExpression("([0-9]+)", ErrorMessage = "Solo esta permitido valores númericos.")]
-        public int IdUser { get => iduser; set => iduser = value; }
+        public int? IdUser { get => iduser; set => iduser = value; }
 
         public UserModel()
         {
@@ -108,20 +108,18 @@ namespace BLL.Model
 
         public UserModel GetLogin(string name, string password)
         {
-            var userDataModel = userRepository.GetLogin(name, password);
-            UserModel Login = new UserModel();
-            Login.Id = userDataModel.ID;
-            Login.name = userDataModel.Name;
-            Login.password = userDataModel.Password;
-            Login.active = userDataModel.Active;
-            Login.IdUser = userDataModel.IdUser;
+            UserModel Login = null; 
+            var userDataModel = userRepository.Find(e => e.Name == name && e.Password == password).FirstOrDefault();
+            if (userDataModel != null)
+            {
+                Login = new UserModel();
+                Login.Id = userDataModel.ID;
+                Login.name = userDataModel.Name;
+                Login.password = userDataModel.Password;
+                Login.active = userDataModel.Active;
+                Login.IdUser = userDataModel.IdUser;
+            }
             return Login;
-        }
-
-        public IQueryable<UserModel> Find(Expression<Func<User, bool>> predicate)
-        {
-            IQueryable<UserModel> userDataModel = userRepository.Find(predicate).Select()
-            return userDataModel;
         }
     }
 }

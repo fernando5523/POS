@@ -44,5 +44,10 @@ namespace TestRepository
             objectModel.State = EntityState.Modified;
             objectModel.SaveChanges();
         }
+
+        public void Find()
+        {
+
+        }
     }
 }
