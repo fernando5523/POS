@@ -68,8 +68,10 @@
     <Compile Include="Entities\Container.cs" />
     <Compile Include="Entities\DefaultProperties.cs" />
     <Compile Include="Entities\Filter.cs" />
+    <Compile Include="Entities\Rol.cs" />
     <Compile Include="Entities\UnitTemplate.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UsersRol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BrandRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />

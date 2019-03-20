@@ -57,11 +57,16 @@ namespace UI
         {
             try
             {
-                UserModel objectModel = ConstantData.Login;
+                UserModel objectModel = new UserModel().GetId(ConstantData.Login.Id);
                 objectModel.Password = txtNueva.Text;
                 objectModel.State = EntityState.Modified;
-                ConstantData.MessageInformation(objectModel.SaveChanges());
-                ConstantData.Login = objectModel;
+                string message = objectModel.SaveChanges();
+
+                if (message == "Registro modificado.")
+                {
+                    ConstantData.MessageInformation(message);
+                    ConstantData.Login = objectModel;
+                }
                 Close();
             }
             catch (Exception ex)
