@@ -52,7 +52,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        filterRepository.Remove(filterDataModel.ID);
+                        filterRepository.Remove(filterDataModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -94,11 +94,12 @@ namespace BLL.Model
 
         public FilterModel GetUser(int iduser, int idconsult)
         {
-            FilterModel Filter = new FilterModel();
+            FilterModel Filter = null;
 
-            var filterDataModel = filterRepository.GetUser(iduser, idconsult);
+            var filterDataModel = filterRepository.Find(e => e.IdUser == iduser && e.IdConsult == idconsult).FirstOrDefault();
             if (filterDataModel != null)
             {
+                Filter = new FilterModel();
                 Filter.Id = filterDataModel.ID;
                 Filter.iduser = filterDataModel.IdUser;
                 Filter.IdConsult = filterDataModel.IdConsult;

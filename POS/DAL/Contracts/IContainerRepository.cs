@@ -7,8 +7,8 @@ using DAL.Entities;
 
 namespace DAL.Contracts
 {
-    public interface IContainerRepository:IGenericRepository<Container>
+    public interface IContainerRepository : IGenericRepository<Container>
     {
-        Container GetContainerName(string name);
+
     }
 }

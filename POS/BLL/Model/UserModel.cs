@@ -93,7 +93,7 @@ namespace BLL.Model
         {
             var userDataModel = userRepository.GetAll();
             var listUsers = new List<UserModel>();
-            foreach(User item in userDataModel)
+            foreach (User item in userDataModel)
             {
                 listUsers.Add(new UserModel {
                     Id = item.ID,
@@ -108,7 +108,7 @@ namespace BLL.Model
 
         public UserModel GetLogin(string name, string password)
         {
-            UserModel Login = null; 
+            UserModel Login = null;
             var userDataModel = userRepository.Find(e => e.Name == name && e.Password == password).FirstOrDefault();
             if (userDataModel != null)
             {
@@ -120,6 +120,22 @@ namespace BLL.Model
                 Login.IdUser = userDataModel.IdUser;
             }
             return Login;
+        }
+
+        public UserModel GetId(int id)
+        {
+            UserModel objects = null;
+            var userDataModel = userRepository.Find(e => e.ID == id).FirstOrDefault();
+            if(userDataModel != null)
+            {
+                objects = new UserModel();
+                objects.Id = userDataModel.ID;
+                objects.name = userDataModel.Name;
+                objects.password = userDataModel.Password;
+                objects.active = userDataModel.Active;
+                objects.IdUser = userDataModel.IdUser;
+            }
+            return objects;
         }
     }
 }

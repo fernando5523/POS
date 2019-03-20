@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnContraseña = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAceptar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -38,23 +38,24 @@
             this.txtNueva = new DevExpress.XtraEditors.TextEdit();
             this.txtRepetir = new DevExpress.XtraEditors.TextEdit();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.txtActual = new DevExpress.XtraEditors.ButtonEdit();
+            this.txtActual = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNueva.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRepetir.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtActual.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnContraseña
+            // btnAceptar
             // 
-            this.btnContraseña.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContraseña.Appearance.Options.UseFont = true;
-            this.btnContraseña.Enabled = false;
-            this.btnContraseña.Location = new System.Drawing.Point(149, 113);
-            this.btnContraseña.Name = "btnContraseña";
-            this.btnContraseña.Size = new System.Drawing.Size(87, 33);
-            this.btnContraseña.TabIndex = 7;
-            this.btnContraseña.Text = "Aceptar";
+            this.btnAceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Appearance.Options.UseFont = true;
+            this.btnAceptar.Enabled = false;
+            this.btnAceptar.Location = new System.Drawing.Point(149, 113);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(87, 33);
+            this.btnAceptar.TabIndex = 7;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -126,17 +127,14 @@
             this.txtActual.Location = new System.Drawing.Point(149, 31);
             this.txtActual.Name = "txtActual";
             this.txtActual.Properties.AutoHeight = false;
-            this.txtActual.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtActual.Properties.PasswordChar = '●';
             this.txtActual.Size = new System.Drawing.Size(169, 23);
             this.txtActual.TabIndex = 6;
-            this.txtActual.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtActual_ButtonClick);
             this.txtActual.TextChanged += new System.EventHandler(this.txtActual_TextChanged);
             // 
             // FrmUserPassword
             // 
-            this.AcceptButton = this.btnContraseña;
+            this.AcceptButton = this.btnAceptar;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,13 +147,13 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnContraseña);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtActual);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmUserPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "POS - Cambio de contraseña";
+            this.Text = "Cambio de contraseña";
             this.Load += new System.EventHandler(this.FrmUserPassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNueva.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRepetir.Properties)).EndInit();
@@ -167,7 +165,7 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton btnContraseña;
+        private DevExpress.XtraEditors.SimpleButton btnAceptar;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -176,6 +174,6 @@
         private DevExpress.XtraEditors.TextEdit txtNueva;
         private DevExpress.XtraEditors.TextEdit txtRepetir;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private DevExpress.XtraEditors.ButtonEdit txtActual;
+        private DevExpress.XtraEditors.TextEdit txtActual;
     }
 }

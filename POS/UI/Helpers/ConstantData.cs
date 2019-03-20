@@ -9,9 +9,19 @@ namespace UI.Helpers
     using BLL.Model;
     using BLL.ValueObjects;
     using System.Windows.Forms;
+    using System.Configuration;
     public static class ConstantData
     {
         public static UserModel Login = new UserModel();
+        public static string Enterprise = " - " + ConfigurationManager.AppSettings["Empresa"].ToString();
+        public static void MessageError(string message)
+        {
+            MessageBox.Show(message, "Error" + Enterprise, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        public static void MessageInformation(string message)
+        {
+            MessageBox.Show(message, "Información" + Enterprise, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         public static bool DeleteItem(string Entity, int Id)
         {
             bool result = false;
@@ -49,5 +59,6 @@ namespace UI.Helpers
             }
             return result;
         }
+
     }
 }

@@ -25,7 +25,7 @@ namespace UI
 {
     public partial class FrmHome : DevExpress.XtraEditors.XtraForm, IPages
     {
-        public ContainerModel Containers= new ContainerModel();
+        public ContainerModel Containers = new ContainerModel();
         public ConsultModel Consult = new ConsultModel();
         public FilterModel Filter = new FilterModel();
         public FrmHome()
@@ -247,6 +247,7 @@ namespace UI
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
+            Text += ConstantData.Enterprise;
             #region Eventos
             tvCompra.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             tvInventario.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);

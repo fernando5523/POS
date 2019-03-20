@@ -39,55 +39,77 @@ namespace UI
 
         private void CheckRecorder()
         {
-            string Dir = Path.GetTempPath() + "POS" + @"\" + txtUsuario.Text + ".txt";
-            if (File.Exists(Dir))
+            try
             {
-                ckRecordar.Checked = true;
+                string Dir = Path.GetTempPath() + "POS" + @"\" + txtUsuario.Text + ".txt";
+                if (File.Exists(Dir))
+                {
+                    ckRecordar.Checked = true;
 
-                Security Secure = new Security();
-                StreamReader Sr = new StreamReader(Dir);
-                string Text = Sr.ReadToEnd();
-                Sr.Close();
+                    Security Secure = new Security();
+                    StreamReader Sr = new StreamReader(Dir);
+                    string Text = Sr.ReadToEnd();
+                    Sr.Close();
 
-                txtContraseña.Text = Secure.Decrypt(Text);
+                    txtContraseña.Text = Secure.Decrypt(Text);
+                }
+                else
+                {
+                    ckRecordar.Checked = false;
+                    txtContraseña.Text = "";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ckRecordar.Checked = false;
-                txtContraseña.Text = "";
+                ConstantData.MessageError(ex.Message);
             }
-                
         }
 
         private void CreateTempRecorder(string UserName, string Password)
         {
-            string Dir = Path.GetTempPath() + "POS";
-            string FileName = UserName;
-
-            if (!File.Exists(Dir + "\\" + FileName + ".txt"))
+            try
             {
-                Directory.CreateDirectory(Dir);
-                StreamWriter Sw = new StreamWriter(Dir + @"\" + FileName + ".txt");
+                string Dir = Path.GetTempPath() + "POS";
+                string FileName = UserName;
 
-                Security Secure = new Security();
-                Sw.WriteLine(Secure.Encrypt(Password));
-                Sw.Close();
+                if (!File.Exists(Dir + "\\" + FileName + ".txt"))
+                {
+                    Directory.CreateDirectory(Dir);
+                    StreamWriter Sw = new StreamWriter(Dir + @"\" + FileName + ".txt");
+
+                    Security Secure = new Security();
+                    Sw.WriteLine(Secure.Encrypt(Password));
+                    Sw.Close();
+                }
             }
+            catch (Exception ex)
+            {
+                ConstantData.MessageError(ex.Message);
+            }
+
         }
 
         private void DeleteTempRecorder(string UserName)
         {
-            string Dir = Path.GetTempPath() + "POS";
-            string FileName = UserName;
+            try
+            {
+                string Dir = Path.GetTempPath() + "POS";
+                string FileName = UserName;
 
-            Dir = Dir + @"\" + FileName + ".txt";
-            if (File.Exists(Dir))
-                File.Delete(Dir);
+                Dir = Dir + @"\" + FileName + ".txt";
+                if (File.Exists(Dir))
+                    File.Delete(Dir);
+            }
+            catch (Exception ex)
+            {
+                ConstantData.MessageError(ex.Message);
+            }
         }
         #endregion
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            Text += ConstantData.Enterprise;
             #region Lista con los tipos de authentication
             DataTable Auth = new DataTable();
             Auth.Columns.Add("Id", typeof(int));
@@ -126,21 +148,29 @@ namespace UI
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            if(LueAutentificacion.ItemIndex == 0)
+            try
             {
-                UserModel login = User.GetLogin(txtUsuario.Text, txtContraseña.Text);
-                if(login.Active)
+                if (LueAutentificacion.ItemIndex == 0)
                 {
-                    if(ckRecordar.Checked == true)
-                        CreateTempRecorder(login.Name,login.Password);
-                    else
-                        DeleteTempRecorder(login.Name);
+                    UserModel login = User.GetLogin(txtUsuario.Text, txtContraseña.Text);
+                    if(login != null)
+                    {
+                        if (ckRecordar.Checked == true)
+                            CreateTempRecorder(login.Name, login.Password);
+                        else
+                            DeleteTempRecorder(login.Name);
 
-                    this.Hide();
-                    FrmHome Home = new FrmHome();
-                    ConstantData.Login = login;
-                    Home.Show();
+                        Hide();
+                        FrmHome Home = new FrmHome();
+                        ConstantData.Login = login;
+                        Home.Show();
+                    }else
+                        ConstantData.MessageInformation("El usuario o la contraseña no es correcto.");
                 }
+            }
+            catch (Exception ex)
+            {
+                ConstantData.MessageError(ex.Message);
             }
         }
     }

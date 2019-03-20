@@ -9,6 +9,6 @@ namespace DAL.Contracts
 {
     public interface IConsultRepository:IGenericRepository<Consult>
     {
-        Consult GetIdContainer(int idContainer);
+
     }
 }

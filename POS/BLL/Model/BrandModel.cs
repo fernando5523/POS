@@ -51,7 +51,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        brandRepository.Remove(brandDataModel.ID);
+                        brandRepository.Remove(brandDataModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -95,7 +95,7 @@ namespace BLL.Model
         public BrandModel GetId(int id)
         {
             BrandModel listBrand = null;
-            var brandDataModel = brandRepository.GetId(id);
+            var brandDataModel = brandRepository.Find(e => e.ID == id).FirstOrDefault();
             if (brandDataModel != null)
             {
                 listBrand = new BrandModel();

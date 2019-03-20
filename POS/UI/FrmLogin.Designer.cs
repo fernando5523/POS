@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.difTemas = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.components = new System.ComponentModel.Container();
+            this.difTemas = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -191,7 +192,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "POS - Login";
+            this.Text = "Inicio de sesión";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckRecordar.Properties)).EndInit();

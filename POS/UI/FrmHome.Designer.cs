@@ -362,31 +362,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.bmStatusMenu;
-            this.barDockControlTop.Size = new System.Drawing.Size(894, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(894, 48);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 541);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 542);
             this.barDockControlBottom.Manager = this.bmStatusMenu;
-            this.barDockControlBottom.Size = new System.Drawing.Size(894, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(894, 24);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
             this.barDockControlLeft.Manager = this.bmStatusMenu;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 490);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 494);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(894, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(894, 48);
             this.barDockControlRight.Manager = this.bmStatusMenu;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 490);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 494);
             // 
             // barButtonItem1
             // 
@@ -437,18 +437,18 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel1.ID = new System.Guid("d834598c-fd73-4213-a60a-97e9b5434611");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 51);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 48);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(274, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(274, 490);
+            this.dockPanel1.Size = new System.Drawing.Size(274, 494);
             this.dockPanel1.Text = "Módulos";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 30);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(265, 463);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(267, 461);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -467,9 +467,9 @@
             this.navBarGroup2});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 265;
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 267;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(265, 463);
+            this.navBarControl1.Size = new System.Drawing.Size(267, 461);
             this.navBarControl1.StoreDefaultPaintStyleName = true;
             this.navBarControl1.TabIndex = 5;
             this.navBarControl1.Text = "navBarControl1";
@@ -492,7 +492,7 @@
             this.navBarGroupControlContainer2.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer2.Controls.Add(this.tvInventario);
             this.navBarGroupControlContainer2.Name = "navBarGroupControlContainer2";
-            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(265, 268);
+            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(267, 240);
             this.navBarGroupControlContainer2.TabIndex = 4;
             // 
             // tvInventario
@@ -540,7 +540,7 @@
             treeNode3,
             treeNode11});
             this.tvInventario.SelectedImageIndex = 0;
-            this.tvInventario.Size = new System.Drawing.Size(265, 268);
+            this.tvInventario.Size = new System.Drawing.Size(267, 240);
             this.tvInventario.TabIndex = 0;
             // 
             // imgIcon
@@ -727,10 +727,10 @@
             this.xtcPages.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtcPages.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageAndTabControlHeader;
             this.xtcPages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtcPages.Location = new System.Drawing.Point(274, 51);
+            this.xtcPages.Location = new System.Drawing.Point(274, 48);
             this.xtcPages.Name = "xtcPages";
             this.xtcPages.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtcPages.Size = new System.Drawing.Size(620, 490);
+            this.xtcPages.Size = new System.Drawing.Size(620, 494);
             this.xtcPages.TabIndex = 5;
             // 
             // cmsMenu
@@ -860,7 +860,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "POS - Home";
+            this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHome_FormClosing);
             this.Load += new System.EventHandler(this.FrmHome_Load);

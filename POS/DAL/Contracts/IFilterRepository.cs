@@ -10,7 +10,6 @@ namespace DAL.Contracts
 {
     public interface IFilterRepository:IGenericRepository<Filter>
     {
-        Filter GetUser(int iduser, int idconsult);
-        DataTable Execute(string transactSql);
+        DataTable Execute(string sql);
     }
 }

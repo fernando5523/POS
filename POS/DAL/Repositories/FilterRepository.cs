@@ -11,70 +11,17 @@ namespace DAL.Repositories
     using System.Data.SqlClient;
     using DAL.Contracts;
     using DAL.Entities;
-    public class FilterRepository : MasterRepository, IFilterRepository
+    public class FilterRepository : GenericRepository<Filter>, IFilterRepository
     {
-        public bool Add(Filter entity)
+        public DataTable Execute(string sql)
         {
-            bool result = false;
+            var result = new DataTable();
             using (dbContext db = new dbContext())
             {
-                db.Filters.Add(entity);
-                db.SaveChanges();
-                result = true;
-            }
-            return result;
-        }
-
-        public bool Edit(Filter entity)
-        {
-            bool result = false;
-            using (dbContext db = new dbContext())
-            {
-                db.Filters.Add(entity);
-                db.Entry(entity).State = EntityState.Modified;
-                db.SaveChanges();
-                result = true;
-            }
-            return result;
-        }
-
-        public IEnumerable<Filter> GetAll()
-        {
-            IEnumerable<Filter> obj;
-            using (dbContext db = new dbContext())
-            {
-                obj = db.Filters;
-            }
-            return obj;
-        }
-
-        public Filter GetUser(int iduser, int idconsult)
-        {
-            Filter obj;
-            using(dbContext db = new dbContext())
-            {
-                obj = (from o in db.Filters
-                       where o.IdUser == iduser && o.IdConsult == idconsult
-                       select o).FirstOrDefault();
-            }
-            return obj;
-        }
-
-        public DataTable Execute(string transactSql)
-        {
-            parameters = new List<SqlParameter>();
-            return ExecuteReader(transactSql);
-        }
-
-        public bool Remove(int id)
-        {
-            bool result = false;
-            using (dbContext db = new dbContext())
-            {
-                var obj = db.Filters.Find(id);
-                db.Entry(obj).State = EntityState.Deleted;
-                db.SaveChanges();
-                result = true;
+                var cmd = db.Database.Connection.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.Connection.Open();
+                result.Load(cmd.ExecuteReader());
             }
             return result;
         }

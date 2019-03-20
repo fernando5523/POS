@@ -51,7 +51,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        categoryRepository.Remove(categoryDataModel.ID);
+                        categoryRepository.Remove(categoryDataModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -95,7 +95,7 @@ namespace BLL.Model
         public CategoryModel GetId(int id)
         {
             CategoryModel listCategory = null;
-            var categoryDataModel = categoryRepository.GetId(id);
+            var categoryDataModel = categoryRepository.Find(e => e.ID == id).FirstOrDefault();
             if (categoryDataModel != null)
             {
                 listCategory = new CategoryModel();

@@ -27,6 +27,15 @@ namespace TestRepository
         }
 
         [TestMethod]
+        public void Edit()
+        {
+            UserModel objectModel = new UserModel().GetId(2);
+            objectModel.Name = "teodoro.colque";
+            objectModel.State = EntityState.Modified;
+            objectModel.SaveChanges();
+        }
+
+        [TestMethod]
         public void Remove()
         {
             UserModel objectModel = new UserModel();
@@ -36,18 +45,9 @@ namespace TestRepository
         }
 
         [TestMethod]
-        public void Edit()
+        public void GetLogin()
         {
-            UserModel objectModel = new UserModel();
-            objectModel.Id = 4;
-            objectModel.Name = "teodoro.colque";
-            objectModel.State = EntityState.Modified;
-            objectModel.SaveChanges();
-        }
-
-        public void Find()
-        {
-
+            UserModel objectModel = new UserModel().GetLogin("administrador", "12");
         }
     }
 }

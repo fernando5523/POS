@@ -66,7 +66,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        consultRepository.Remove(consultDataModel.ID);
+                        consultRepository.Remove(consultDataModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -113,19 +113,22 @@ namespace BLL.Model
 
         public ConsultModel GetIdContainer(int idContainer)
         {
-            var consultDataModel = consultRepository.GetIdContainer(idContainer);
-            var listConsult = new ConsultModel();
-            listConsult.Id = consultDataModel.ID;
-            listConsult.IdContainer = consultDataModel.IdContainer;
-            listConsult.Principal = consultDataModel.Principal;
-            listConsult.Select = consultDataModel.Select;
-            listConsult.From = consultDataModel.From;
-            listConsult.Where = consultDataModel.Where;
-            listConsult.GroupBy = consultDataModel.GroupBy;
-            listConsult.Having = consultDataModel.Having;
-            listConsult.OrderBy = consultDataModel.OrderBy;
-            listConsult.IdUser = consultDataModel.IdUser;
-
+            ConsultModel listConsult = null;
+            var consultDataModel = consultRepository.Find(e => e.IdContainer == idContainer).FirstOrDefault();
+            if (consultDataModel != null)
+            {
+                listConsult = new ConsultModel();
+                listConsult.Id = consultDataModel.ID;
+                listConsult.IdContainer = consultDataModel.IdContainer;
+                listConsult.Principal = consultDataModel.Principal;
+                listConsult.Select = consultDataModel.Select;
+                listConsult.From = consultDataModel.From;
+                listConsult.Where = consultDataModel.Where;
+                listConsult.GroupBy = consultDataModel.GroupBy;
+                listConsult.Having = consultDataModel.Having;
+                listConsult.OrderBy = consultDataModel.OrderBy;
+                listConsult.IdUser = consultDataModel.IdUser;
+            }
             return listConsult;
         }
     }

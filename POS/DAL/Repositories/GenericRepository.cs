@@ -9,7 +9,7 @@ namespace DAL.Repositories
     using System.Linq.Expressions;
     using System.Data.Entity;
     using DAL.Contracts;
-    public abstract class GenericRepository<T> : IDisposable, IRepositoryGeneric<T> where T : class
+    public abstract class GenericRepository<T> : IDisposable, IGenericRepository<T> where T : class
     {
         dbContext db = new dbContext();
         public void Add(T entity)
@@ -20,7 +20,8 @@ namespace DAL.Repositories
 
         public void Remove(T entity)
         {
-            db.Set<T>().Remove(entity);
+            db.Entry(entity).State = EntityState.Deleted;
+            //db.Set<T>().Remove(entity);
             db.SaveChanges();
         }
 

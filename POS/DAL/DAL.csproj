@@ -58,7 +58,6 @@
     <Compile Include="Contracts\IContainerRepository.cs" />
     <Compile Include="Contracts\IFilterRepository.cs" />
     <Compile Include="Contracts\IGenericRepository.cs" />
-    <Compile Include="Contracts\IRepositoryGeneric.cs" />
     <Compile Include="Contracts\IUnitTemplateRepository.cs" />
     <Compile Include="Contracts\IUserRepository.cs" />
     <Compile Include="dbContext.cs" />
@@ -79,8 +78,6 @@
     <Compile Include="Repositories\ContainerRepository.cs" />
     <Compile Include="Repositories\FilterRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\MasterRepository.cs" />
-    <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\UnitTemplateRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Security.cs" />

@@ -9,6 +9,5 @@ namespace DAL.Contracts
     using DAL.Entities;
     public interface ICategoryRepository : IGenericRepository<Category>
     {
-        Category GetId(int id);
     }
 }

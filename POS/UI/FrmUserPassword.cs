@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL.Model;
-using UI.Helpers;
 
 namespace UI
 {
+    using BLL.Model;
+    using BLL.ValueObjects;
+    using UI.Helpers;
     public partial class FrmUserPassword:DevExpress.XtraEditors.XtraForm
     {
         public FrmUserPassword()
@@ -23,12 +24,10 @@ namespace UI
         private void ValidatePassword()
         {
             if(txtActual.Text == ConstantData.Login.Password && txtNueva.Text == txtRepetir.Text && txtNueva.Text != string.Empty && txtRepetir.Text != string.Empty)
-            {
-                btnContraseña.Enabled = true;
-            }
+                btnAceptar.Enabled = true;
             else
             {
-                btnContraseña.Enabled = false;
+                btnAceptar.Enabled = false;
                 txtActual.Text = ConstantData.Login.Password;
             }
         }
@@ -54,11 +53,20 @@ namespace UI
             ValidatePassword();
         }
 
-        private void txtActual_ButtonClick(object sender,DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(txtActual.Properties.PasswordChar.ToString() != "")
+            try
             {
-                //txtActual.Properties.PasswordChar;
+                UserModel objectModel = ConstantData.Login;
+                objectModel.Password = txtNueva.Text;
+                objectModel.State = EntityState.Modified;
+                ConstantData.MessageInformation(objectModel.SaveChanges());
+                ConstantData.Login = objectModel;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                ConstantData.MessageError(ex.Message);
             }
         }
     }

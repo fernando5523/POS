@@ -9,6 +9,6 @@ namespace DAL.Contracts
     using DAL.Entities;
     public interface IBrandRepository:IGenericRepository<Brand>
     {
-        Brand GetId(int id);
+
     }
 }

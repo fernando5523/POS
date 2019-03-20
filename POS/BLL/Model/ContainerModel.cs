@@ -56,7 +56,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        containerRepository.Remove(containerModel.ID);
+                        containerRepository.Remove(containerModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -100,13 +100,16 @@ namespace BLL.Model
 
         public ContainerModel GetContainerName(string name)
         {
-            var containerDataModel = containerRepository.GetContainerName(name);
-            ContainerModel listContainer = new ContainerModel();
-            listContainer.Id = containerDataModel.ID;
-            listContainer.Name = containerDataModel.Name;
-            listContainer.Description = containerDataModel.Description;
-            listContainer.Form = containerDataModel.Form;
-
+            ContainerModel listContainer = null; 
+            var containerDataModel = containerRepository.Find(e => e.Name == name).FirstOrDefault();
+            if (containerDataModel != null)
+            {
+                listContainer = new ContainerModel();
+                listContainer.Id = containerDataModel.ID;
+                listContainer.Name = containerDataModel.Name;
+                listContainer.Description = containerDataModel.Description;
+                listContainer.Form = containerDataModel.Form;
+            }
             return listContainer;
         }
     }

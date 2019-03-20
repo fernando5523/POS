@@ -59,7 +59,7 @@ namespace BLL.Model
                         message = "Registro guardado.";
                         break;
                     case EntityState.Deleted:
-                        codingRepository.Remove(codingDataModel.ID);
+                        codingRepository.Remove(codingDataModel);
                         message = "Registro eliminado.";
                         break;
                     case EntityState.Modified:
@@ -103,16 +103,20 @@ namespace BLL.Model
 
         public CodingModel GetEntity(string entity)
         {
-            var codingDataModel = codingRepository.GetEntity(entity);
-            var listCoding = new CodingModel();
-            listCoding.Id = codingDataModel.ID;
-            listCoding.Entity = codingDataModel.Entity;
-            listCoding.Text = codingDataModel.Text;
-            listCoding.Number = codingDataModel.Number;
-            listCoding.Numberlength = codingDataModel.NumberLength;
-            listCoding.Active = codingDataModel.Active;
-            listCoding.IdUser = codingDataModel.IdUser;
-            listCoding.Code = codingDataModel.Text + new string('0', codingDataModel.NumberLength - codingDataModel.Number.ToString().Length).ToString() + (codingDataModel.Number + 1).ToString();
+            CodingModel listCoding = null;
+            var codingDataModel = codingRepository.Find(e => e.Entity == entity).FirstOrDefault();
+            if (codingDataModel != null)
+            {
+                listCoding = new CodingModel();
+                listCoding.Id = codingDataModel.ID;
+                listCoding.Entity = codingDataModel.Entity;
+                listCoding.Text = codingDataModel.Text;
+                listCoding.Number = codingDataModel.Number;
+                listCoding.Numberlength = codingDataModel.NumberLength;
+                listCoding.Active = codingDataModel.Active;
+                listCoding.IdUser = codingDataModel.IdUser;
+                listCoding.Code = codingDataModel.Text + new string('0', codingDataModel.NumberLength - codingDataModel.Number.ToString().Length).ToString() + (codingDataModel.Number + 1).ToString();
+            }
             return listCoding;
         }
     }
