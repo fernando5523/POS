@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Comprobante de salida de inventario");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Comprobante de entrada de inventario");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Operaciones", new System.Windows.Forms.TreeNode[] {
@@ -88,8 +87,8 @@
             System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Usuario");
             System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Seguridad", new System.Windows.Forms.TreeNode[] {
             treeNode32});
-            this.dmPanel = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.bmStatusMenu = new DevExpress.XtraBars.BarManager(this.components);
+            this.dmPanel = new DevExpress.XtraBars.Docking.DockManager();
+            this.bmStatusMenu = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnFiltro = new DevExpress.XtraBars.BarButtonItem();
             this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
@@ -109,7 +108,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -117,11 +116,11 @@
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.nbcModuls = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer2 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvInventario = new System.Windows.Forms.TreeView();
-            this.imgIcon = new System.Windows.Forms.ImageList(this.components);
+            this.imgIcon = new System.Windows.Forms.ImageList();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tvCompra = new System.Windows.Forms.TreeView();
             this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
@@ -132,7 +131,7 @@
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.xtcPages = new DevExpress.XtraTab.XtraTabControl();
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.cmsFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsActualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -145,14 +144,14 @@
             this.mnuNuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuModificar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmTiempo = new System.Windows.Forms.Timer(this.components);
+            this.tmTiempo = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.dmPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bmStatusMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
-            this.navBarControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbcModuls)).BeginInit();
+            this.nbcModuls.SuspendLayout();
             this.navBarGroupControlContainer2.SuspendLayout();
             this.navBarGroupControlContainer1.SuspendLayout();
             this.navBarGroupControlContainer3.SuspendLayout();
@@ -445,34 +444,34 @@
             // 
             // dockPanel1_Container
             // 
-            this.dockPanel1_Container.Controls.Add(this.navBarControl1);
+            this.dockPanel1_Container.Controls.Add(this.nbcModuls);
             this.dockPanel1_Container.Location = new System.Drawing.Point(3, 30);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(267, 461);
             this.dockPanel1_Container.TabIndex = 0;
             // 
-            // navBarControl1
+            // nbcModuls
             // 
-            this.navBarControl1.ActiveGroup = this.navBarGroup3;
-            this.navBarControl1.Controls.Add(this.navBarGroupControlContainer1);
-            this.navBarControl1.Controls.Add(this.navBarGroupControlContainer3);
-            this.navBarControl1.Controls.Add(this.navBarGroupControlContainer4);
-            this.navBarControl1.Controls.Add(this.navBarGroupControlContainer2);
-            this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navBarControl1.Font = new System.Drawing.Font("Tahoma", 8.2F);
-            this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.nbcModuls.ActiveGroup = this.navBarGroup3;
+            this.nbcModuls.Controls.Add(this.navBarGroupControlContainer1);
+            this.nbcModuls.Controls.Add(this.navBarGroupControlContainer3);
+            this.nbcModuls.Controls.Add(this.navBarGroupControlContainer4);
+            this.nbcModuls.Controls.Add(this.navBarGroupControlContainer2);
+            this.nbcModuls.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nbcModuls.Font = new System.Drawing.Font("Tahoma", 8.2F);
+            this.nbcModuls.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
             this.navBarGroup4,
             this.navBarGroup3,
             this.navBarGroup2});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 267;
-            this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(267, 461);
-            this.navBarControl1.StoreDefaultPaintStyleName = true;
-            this.navBarControl1.TabIndex = 5;
-            this.navBarControl1.Text = "navBarControl1";
+            this.nbcModuls.Location = new System.Drawing.Point(0, 0);
+            this.nbcModuls.Name = "nbcModuls";
+            this.nbcModuls.OptionsNavPane.ExpandedWidth = 267;
+            this.nbcModuls.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
+            this.nbcModuls.Size = new System.Drawing.Size(267, 461);
+            this.nbcModuls.StoreDefaultPaintStyleName = true;
+            this.nbcModuls.TabIndex = 5;
+            this.nbcModuls.Text = "navBarControl1";
             // 
             // navBarGroup3
             // 
@@ -869,8 +868,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
-            this.navBarControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nbcModuls)).EndInit();
+            this.nbcModuls.ResumeLayout(false);
             this.navBarGroupControlContainer2.ResumeLayout(false);
             this.navBarGroupControlContainer1.ResumeLayout(false);
             this.navBarGroupControlContainer3.ResumeLayout(false);
@@ -898,7 +897,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl1;
+        private DevExpress.XtraNavBar.NavBarControl nbcModuls;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;

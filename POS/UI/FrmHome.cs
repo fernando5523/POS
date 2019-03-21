@@ -20,6 +20,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.Utils;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraNavBar;
 
 namespace UI
 {
@@ -248,6 +249,12 @@ namespace UI
         private void FrmHome_Load(object sender, EventArgs e)
         {
             Text += ConstantData.Enterprise;
+
+            //NavBarGroup helpGroup = nbcModuls.Groups.Add();
+            //helpGroup.Caption = "Help Topics";
+            //helpGroup.SmallImages = Image.FromFile("");
+            //helpGroup.ImageOptions.SmallImage = global::UI.Properties.Resources.MasterFilter_16x16;
+
             #region Eventos
             tvCompra.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             tvInventario.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);

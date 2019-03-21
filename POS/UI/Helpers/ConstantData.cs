@@ -10,6 +10,9 @@ namespace UI.Helpers
     using BLL.ValueObjects;
     using System.Windows.Forms;
     using System.Configuration;
+    using System.IO;
+    using System.Drawing;
+
     public static class ConstantData
     {
         public static UserModel Login = new UserModel();
@@ -21,6 +24,24 @@ namespace UI.Helpers
         public static void MessageInformation(string message)
         {
             MessageBox.Show(message, "Información" + Enterprise, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public static string GetBase64String(string imgPath)
+        {
+            byte[] imageBytes = File.ReadAllBytes(imgPath);
+            string base64String = Convert.ToBase64String(imageBytes);
+            return base64String;
+        }
+        public static Image GetBase64Image(string encoded)
+        {
+            byte[] imageBytes = Convert.FromBase64String(encoded);
+            Image img = null;
+            using(MemoryStream stmBitmap = new MemoryStream(imageBytes, 0, imageBytes.Length))
+            {
+                stmBitmap.Write(imageBytes, 0, imageBytes.Length);
+                img = Image.FromStream(stmBitmap);
+                stmBitmap.Close();
+            }
+            return img;
         }
         public static bool DeleteItem(string Entity, int Id)
         {

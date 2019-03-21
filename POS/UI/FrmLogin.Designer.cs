@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.difTemas = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.difTemas = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
