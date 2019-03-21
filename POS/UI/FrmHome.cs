@@ -250,10 +250,16 @@ namespace UI
         {
             Text += ConstantData.Enterprise;
 
-            //NavBarGroup helpGroup = nbcModuls.Groups.Add();
-            //helpGroup.Caption = "Help Topics";
-            //helpGroup.SmallImages = Image.FromFile("");
-            //helpGroup.ImageOptions.SmallImage = global::UI.Properties.Resources.MasterFilter_16x16;
+            TreeView tree = new TreeView();
+            tree.Name = "uno";
+            tree.Dock = DockStyle.Fill;
+
+            NavBarGroup helpGroup = nbcModuls.Groups.Add();
+            helpGroup.GroupStyle = NavBarGroupStyle.ControlContainer;
+            helpGroup.Caption = "Help Topics";
+            string img = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZ0RVh0VGl0bGUATGFiZWxzO0NoYXJ0O1BpZXSjLbQAAADWSURBVHheldI/CsJAEMXhAXtL/3SeJp2n8ACiggeQgE22VVsbLS1s7BW2EE8iSCAHGN8KA+Gxu8HiK99vCBtZn/c1eHBQgBhV/SnL0igLAW1poILhbHeKDkLQcMBcMe5PN7exXbZBKsDjAcZPqMKYKJPEWKGBwq6lSGJsXGeAx8TzNzOhMat5yEHBYAuaCeRfYXM4jjC4JAK+80d631evTMS1A+3rFpbPY6kc+esZQyARqSIXlVmAI3OYxAIctIBpEFkg0kMgcjEeqMGDgwIEEUEkBJiyL7yghmw8L6vkAAAAAElFTkSuQmCC";
+            helpGroup.ImageOptions.SmallImage = ConstantData.GetBase64Image(img);
+            helpGroup.ControlContainer.Controls.Add(tree);
 
             #region Eventos
             tvCompra.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
