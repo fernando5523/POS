@@ -48,6 +48,7 @@
     <Compile Include="Model\ConsultModel.cs" />
     <Compile Include="Model\ContainerModel.cs" />
     <Compile Include="Model\FilterModel.cs" />
+    <Compile Include="Model\ImageModel.cs" />
     <Compile Include="Model\UnitTemplateModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

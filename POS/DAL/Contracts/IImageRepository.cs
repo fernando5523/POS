@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Entities;
 
 namespace DAL.Contracts
 {
-    public interface IContainerRepository : IGenericRepository<Container>
+    using DAL.Entities;
+    public interface IImageRepository: IGenericRepository<Image>
     {
     }
 }

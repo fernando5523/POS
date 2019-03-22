@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
-    using System.Data.Entity;
-    using DAL.Contracts;
     using DAL.Entities;
-    public class ContainerRepository : GenericRepository<Container>, IContainerRepository
+    using DAL.Contracts;
+    public class ImageRepository: GenericRepository<Image>, IImageRepository
     {
+
     }
 }

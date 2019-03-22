@@ -11,7 +11,7 @@ namespace DAL.Repositories
     using DAL.Contracts;
     public abstract class GenericRepository<T> : IDisposable, IGenericRepository<T> where T : class
     {
-        dbContext db = new dbContext();
+        protected dbContext db = new dbContext();
         public void Add(T entity)
         {
             db.Set<T>().Add(entity);

@@ -8,7 +8,7 @@ namespace DAL.Entities
 {
     public class Container : DefaultProperties
     {
-        public int IdContainer { get; set; }
+        public Nullable<int> IdContainer { get; set; }
         public Nullable<int> IdImage { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }

@@ -29,6 +29,7 @@ namespace UI
         public ContainerModel Containers = new ContainerModel();
         public ConsultModel Consult = new ConsultModel();
         public FilterModel Filter = new FilterModel();
+        public ImageModel Images = new ImageModel();
         public FrmHome()
         {
             InitializeComponent();
@@ -73,6 +74,50 @@ namespace UI
         #endregion
 
         #region Métodos
+        private void LoadModule()
+        {
+            var Modules = Containers.GetContainerModule();
+            foreach(var item in Modules)
+            {
+                TreeView GroupView = new TreeView();
+                GroupView.Name = item.Name;
+                GroupView.Dock = DockStyle.Fill;
+                GroupView.BorderStyle = BorderStyle.None;
+                GroupView.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
+                LoadTreeView(item.Id, null, GroupView);
+
+                NavBarGroup GroupItem = nbcModuls.Groups.Add();
+                GroupItem.GroupStyle = NavBarGroupStyle.ControlContainer;
+                GroupItem.Name = item.Name;
+                GroupItem.Caption = item.Description;
+
+                if(item.IdImage != null)
+                {
+                    int idimage = (int)item.IdImage;
+                    var objects = Images.GetId(idimage);
+                    GroupItem.ImageOptions.SmallImage = ConstantData.GetBase64Image(objects.Chain);
+                }
+                GroupItem.ControlContainer.Controls.Add(GroupView);
+            }
+        }
+
+        private void LoadTreeView(int IdRoot, TreeNode Node, TreeView View)
+        {
+            var Operations = Containers.GetAll().Where(e => e.IdContainer == IdRoot).ToList();
+            foreach (var Operation in Operations)
+            {
+                TreeNode NewNode = new TreeNode();
+                NewNode.Name = Operation.Name;
+                NewNode.Text = Operation.Description;
+                NewNode.Tag = Operation.IsView;
+                if (Node == null)
+                    View.Nodes.Add(NewNode);
+                else
+                    Node.Nodes.Add(NewNode);
+                LoadTreeView(Operation.Id, NewNode, View);
+            }
+        }
+
         private void OpenForm(int id = 0)
         {
             ContainerModel containerDataModel = Containers.GetContainerName(xtcPages.SelectedTabPage.Name);
@@ -249,23 +294,8 @@ namespace UI
         private void FrmHome_Load(object sender, EventArgs e)
         {
             Text += ConstantData.Enterprise;
-
-            TreeView tree = new TreeView();
-            tree.Name = "uno";
-            tree.Dock = DockStyle.Fill;
-
-            NavBarGroup helpGroup = nbcModuls.Groups.Add();
-            helpGroup.GroupStyle = NavBarGroupStyle.ControlContainer;
-            helpGroup.Caption = "Help Topics";
-            string img = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZ0RVh0VGl0bGUATGFiZWxzO0NoYXJ0O1BpZXSjLbQAAADWSURBVHheldI/CsJAEMXhAXtL/3SeJp2n8ACiggeQgE22VVsbLS1s7BW2EE8iSCAHGN8KA+Gxu8HiK99vCBtZn/c1eHBQgBhV/SnL0igLAW1poILhbHeKDkLQcMBcMe5PN7exXbZBKsDjAcZPqMKYKJPEWKGBwq6lSGJsXGeAx8TzNzOhMat5yEHBYAuaCeRfYXM4jjC4JAK+80d631evTMS1A+3rFpbPY6kc+esZQyARqSIXlVmAI3OYxAIctIBpEFkg0kMgcjEeqMGDgwIEEUEkBJiyL7yghmw8L6vkAAAAAElFTkSuQmCC";
-            helpGroup.ImageOptions.SmallImage = ConstantData.GetBase64Image(img);
-            helpGroup.ControlContainer.Controls.Add(tree);
-
+            LoadModule();
             #region Eventos
-            tvCompra.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
-            tvInventario.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
-            tvVenta.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
-            tvConfiguracion.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
             xtcPages.CloseButtonClick += new EventHandler(xtraTabControl_CloseButtonClick);
             #endregion
 

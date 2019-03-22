@@ -20,6 +20,7 @@ namespace DAL
         public DbSet<Consult> Consults { get; set; }
         public DbSet<Container> Containers { get; set; }
         public DbSet<Coding> Codings { get; set; }
+        public DbSet<Image> Images { get; set; }
         
         //Schema Product
         public DbSet<Category> Categories { get; set; }
