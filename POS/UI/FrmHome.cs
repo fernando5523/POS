@@ -83,6 +83,7 @@ namespace UI
                 GroupView.Name = item.Name;
                 GroupView.Dock = DockStyle.Fill;
                 GroupView.BorderStyle = BorderStyle.None;
+                GroupView.ImageList = imgIcon;
                 GroupView.AfterSelect += new TreeViewEventHandler(treeview_AfterSelect);
                 LoadTreeView(item.Id, null, GroupView);
 
@@ -109,6 +110,7 @@ namespace UI
                 TreeNode NewNode = new TreeNode();
                 NewNode.Name = Operation.Name;
                 NewNode.Text = Operation.Description;
+                NewNode.ImageIndex = 0;
                 NewNode.Tag = Operation.IsView;
                 if (Node == null)
                     View.Nodes.Add(NewNode);
@@ -186,7 +188,7 @@ namespace UI
                 gView.OptionsBehavior.AutoPopulateColumns = true;
                 gView.OptionsView.ColumnAutoWidth = false;
                 gView.OptionsBehavior.Editable = false;
-                gView.OptionsView.ShowGroupPanel = false;
+                gView.OptionsView.ShowGroupPanel = true;
                 gView.OptionsView.ShowAutoFilterRow = true;
                 gView.DoubleClick += gridView_DoubleClick;
                 gView.KeyDown += GridView_KeyDown;
@@ -237,7 +239,7 @@ namespace UI
             string where;
             if (!string.IsNullOrWhiteSpace(consultDataModel.Where))
                 where = " AND " + filterDataModel.Condition;
-            if (string.IsNullOrWhiteSpace(filterDataModel.Condition))
+            if (filterDataModel == null)
                 where = "";
             else
                 where = " WHERE " + filterDataModel.Condition;
@@ -257,7 +259,7 @@ namespace UI
         private void treeview_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeView tree = (TreeView)sender;
-            if (e.Node.Tag.ToString() != "0")
+            if ((bool)e.Node.Tag)
                 LoadPage(tree.SelectedNode.Name, tree.SelectedNode.Text);
         }
 
@@ -304,7 +306,6 @@ namespace UI
             txtFecha.Caption = "Fecha : " + DateTime.Now.ToString("dd/MM/yyyy");
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }
-
 
         private void tmTiempo_Tick(object sender, EventArgs e)
         {

@@ -13,6 +13,7 @@ using DevExpress.Data.Filtering;
 using DevExpress.XtraGrid;
 using BLL.Model;
 using BLL.ValueObjects;
+using UI.Helpers;
 
 namespace UI
 {
@@ -46,34 +47,40 @@ namespace UI
             this.idconsult = consultDataModel.Id;
             string transactSql = consultDataModel.Select + " " + consultDataModel.From + " WHERE 0=1";
             fcFilter.SourceControl = Filter.Execute(transactSql);
-            fcFilter.FilterCriteria = CriteriaOperator.Parse(filterDataModel.ConditionDev);
+            if(filterDataModel != null)
+                fcFilter.FilterCriteria = CriteriaOperator.Parse(filterDataModel.ConditionDev);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            string condition = null;
+            string conditiondev = null;
             FilterModel filterDataModel = Filter.GetUser(iduser, idconsult);
-            string condition = CriteriaToWhereClauseHelper.GetMsSqlWhere(fcFilter.FilterCriteria);
-            string conditiondev = fcFilter.FilterCriteria != null ? fcFilter.FilterCriteria.LegacyToString() : "";
+            condition = CriteriaToWhereClauseHelper.GetMsSqlWhere(fcFilter.FilterCriteria);
+            conditiondev = fcFilter.FilterCriteria != null ? fcFilter.FilterCriteria.LegacyToString() : "";
 
-            if (filterDataModel.Id != 0)
+            //if (condition == null && conditiondev == null)
+            //    filterDataModel.State = EntityState.Deleted;
+
+            if (filterDataModel != null)
             {
                 filterDataModel.Condition = condition;
                 filterDataModel.ConditionDev = conditiondev;
                 filterDataModel.State = EntityState.Modified;
-                filterDataModel.SaveChanges();
             }
             else
             {
-                //filterDataModel.IdUser = iduser;
-                //filterDataModel.IdConsult = idconsult;
+                filterDataModel = new FilterModel();
+                filterDataModel.IdUser = iduser;
+                filterDataModel.IdConsult = idconsult;
                 filterDataModel.Condition = condition;
                 filterDataModel.ConditionDev = conditiondev;
                 filterDataModel.State = EntityState.Added;
-                filterDataModel.SaveChanges();
             }
+            filterDataModel.SaveChanges();
 
-            Pages.LoadPage(this.name, this.text);
-            this.Close();
+            Pages.LoadPage(name, text);
+            Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

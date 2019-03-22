@@ -95,7 +95,6 @@ namespace BLL.Model
         public FilterModel GetUser(int iduser, int idconsult)
         {
             FilterModel Filter = null;
-
             var filterDataModel = filterRepository.Find(e => e.IdUser == iduser && e.IdConsult == idconsult).FirstOrDefault();
             if (filterDataModel != null)
             {

@@ -93,7 +93,7 @@
             this.cbeActive.Name = "cbeActive";
             this.cbeActive.Properties.Caption = "Active";
             this.cbeActive.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.cbeActive.Size = new System.Drawing.Size(75, 20);
+            this.cbeActive.Size = new System.Drawing.Size(75, 19);
             this.cbeActive.TabIndex = 7;
             // 
             // btnCancelar
@@ -104,6 +104,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(73, 33);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -114,6 +115,7 @@
             this.btnAceptar.Size = new System.Drawing.Size(79, 33);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "&Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // FrmUser
             // 
@@ -128,8 +130,11 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmUser";
-            this.Text = "FrmUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "S";
+            this.Load += new System.EventHandler(this.FrmUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContraseña.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeActive.Properties)).EndInit();
