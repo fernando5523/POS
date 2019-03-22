@@ -58,7 +58,7 @@
             this.txtNombre.Location = new System.Drawing.Point(109, 31);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.AutoHeight = false;
-            this.txtNombre.Size = new System.Drawing.Size(196, 23);
+            this.txtNombre.Size = new System.Drawing.Size(164, 23);
             this.txtNombre.TabIndex = 4;
             // 
             // labelControl2
@@ -75,7 +75,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Properties.AutoHeight = false;
             this.txtContraseña.Properties.PasswordChar = '●';
-            this.txtContraseña.Size = new System.Drawing.Size(196, 23);
+            this.txtContraseña.Size = new System.Drawing.Size(164, 23);
             this.txtContraseña.TabIndex = 6;
             // 
             // labelControl1
@@ -89,7 +89,7 @@
             // cbeActive
             // 
             this.cbeActive.EditValue = true;
-            this.cbeActive.Location = new System.Drawing.Point(230, 89);
+            this.cbeActive.Location = new System.Drawing.Point(200, 89);
             this.cbeActive.Name = "cbeActive";
             this.cbeActive.Properties.Caption = "Active";
             this.cbeActive.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -99,7 +99,7 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(232, 114);
+            this.btnCancelar.Location = new System.Drawing.Point(200, 114);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(73, 33);
             this.btnCancelar.TabIndex = 9;
@@ -110,7 +110,7 @@
             // 
             this.btnAceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Appearance.Options.UseFont = true;
-            this.btnAceptar.Location = new System.Drawing.Point(147, 114);
+            this.btnAceptar.Location = new System.Drawing.Point(115, 114);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(79, 33);
             this.btnAceptar.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 164);
+            this.ClientSize = new System.Drawing.Size(316, 164);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cbeActive);
@@ -133,7 +133,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "S";
+            this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.FrmUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContraseña.Properties)).EndInit();

@@ -43,24 +43,22 @@ namespace UI.Helpers
             }
             return img;
         }
-        public static bool DeleteItem(string Entity, int Id)
+        public static string DeleteItem(string Entity, int Id)
         {
-            bool result = false;
-            try
-            {
+            string message = null;
                 switch (Entity)
                 {
                     case "Brand":
                         BrandModel Brand = new BrandModel();
                         Brand.Id = Id;
                         Brand.State = EntityState.Deleted;
-                        Brand.SaveChanges();
+                        message = Brand.SaveChanges();
                         break;
                     case "Category":
                         CategoryModel Category = new CategoryModel();
                         Category.Id = Id;
                         Category.State = EntityState.Deleted;
-                        Category.SaveChanges();
+                        message = Category.SaveChanges();
                         break;
                     case "UnitTemplate":
                         UnitTemplateModel UnitTemplate = new UnitTemplateModel();
@@ -68,18 +66,16 @@ namespace UI.Helpers
                         UnitTemplate.State = EntityState.Deleted;
                         UnitTemplate.SaveChanges();
                         break;
+                    case "User":
+                        UserModel UserTemplate = new UserModel();
+                        UserTemplate.Id = Id;
+                        UserTemplate.State = EntityState.Deleted;
+                        message = UserTemplate.SaveChanges();
+                        break;
                     default:
                         break;
                 }
-                result = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                result = false;
-            }
-            return result;
+            return message;
         }
-
     }
 }

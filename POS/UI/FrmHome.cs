@@ -42,34 +42,52 @@ namespace UI
         }
         public void EditCommand()
         {
-            if (ItemSelect().Count > 0)
+            if (xtcPages.SelectedTabPage != null)
             {
-                int id = ItemSelect()[0];
-                OpenForm(id);
+                if (ItemSelect().Count > 0)
+                {
+                    int id = ItemSelect()[0];
+                    OpenForm(id);
+                }
+                else
+                    ConstantData.MessageInformation("Es necesario seleccionar un item de la vista administrativa.");
             }
             else
-                MessageBox.Show("Es necesario seleccionar un item de la vista administrativa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ConstantData.MessageInformation("Es necesario seleccionar la operación que desea realizar.");
         }
         public void RemoveCommand()
         {
-            DialogResult Resultado = MessageBox.Show("Seguro que desea eliminar los items seleccionados?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (Resultado == DialogResult.Yes)
+            if (xtcPages.SelectedTabPage != null)
             {
-                List<int> items = ItemSelect();
-                foreach (int item in items)
-                    ItemDelete(item);
-                LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+                DialogResult Resultado = MessageBox.Show("Seguro que desea eliminar los items seleccionados?", "POS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Resultado == DialogResult.Yes)
+                {
+                    List<int> items = ItemSelect();
+                    foreach (int item in items)
+                        MessageBox.Show(ItemDelete(item));
+                    LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+                }
             }
+            else
+                ConstantData.MessageInformation("Es necesario seleccionar la operación que desea realizar.");
         }
         public void RefreshCommand()
         {
-            LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+            if (xtcPages.SelectedTabPage != null)
+                LoadPage(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text);
+            else
+                ConstantData.MessageInformation("Es necesario seleccionar la operación que desea realizar.");
         }
         public void FilterCommand()
         {
-            FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text, ConstantData.Login.Id);
-            Filtro.Pages = this;
-            Filtro.Show();
+            if (xtcPages.SelectedTabPage != null)
+            {
+                FrmFiltro Filtro = new FrmFiltro(xtcPages.SelectedTabPage.Name, xtcPages.SelectedTabPage.Text, ConstantData.Login.Id);
+                Filtro.Pages = this;
+                Filtro.Show();
+            }
+            else
+                ConstantData.MessageInformation("Es necesario seleccionar la operación que desea realizar.");
         }
         #endregion
 
@@ -122,19 +140,24 @@ namespace UI
 
         private void OpenForm(int id = 0)
         {
-            ContainerModel containerDataModel = Containers.GetContainerName(xtcPages.SelectedTabPage.Name);
-            var _formName = (from t in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
-                             where t.Name.Equals(containerDataModel.Form)
-                             select t.FullName).Single();
-            var _form = (FormRepository)Activator.CreateInstance(Type.GetType(_formName));
-            if (_form != null)
+            if (xtcPages.SelectedTabPage != null)
             {
-                _form.Id = id;
-                _form.Page = this;
-                _form.NamePage = xtcPages.SelectedTabPage.Name;
-                _form.TextPage = xtcPages.SelectedTabPage.Text;
-                _form.Show();
+                ContainerModel containerDataModel = Containers.GetContainerName(xtcPages.SelectedTabPage.Name);
+                var _formName = (from t in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+                                 where t.Name.Equals(containerDataModel.Form)
+                                 select t.FullName).Single();
+                var _form = (FormRepository)Activator.CreateInstance(Type.GetType(_formName));
+                if (_form != null)
+                {
+                    _form.Id = id;
+                    _form.Page = this;
+                    _form.NamePage = xtcPages.SelectedTabPage.Name;
+                    _form.TextPage = xtcPages.SelectedTabPage.Text;
+                    _form.Show();
+                }
             }
+            else
+                ConstantData.MessageInformation("Es necesario seleccionar la operación que desea realizar.");
         }
 
         private List<int> ItemSelect()
@@ -154,7 +177,7 @@ namespace UI
             return items;
         }
 
-        public bool ItemDelete(int Id)
+        public string ItemDelete(int Id)
         {
             string entidad = xtcPages.SelectedTabPage.Name;
             return ConstantData.DeleteItem(entidad, Id);
@@ -234,15 +257,15 @@ namespace UI
             //Obtenemos el contenedor, consulta y el filtro
             ContainerModel containerDataModel = Containers.GetContainerName(name);
             ConsultModel consultDataModel = Consult.GetIdContainer(containerDataModel.Id);
-            FilterModel filterDataModel = Filter.GetUser(ConstantData.Login.Id, consultDataModel.Id);
+            FilterModel FilterObject = Filter.GetUser(ConstantData.Login.Id, consultDataModel.Id);
 
             string where;
             if (!string.IsNullOrWhiteSpace(consultDataModel.Where))
-                where = " AND " + filterDataModel.Condition;
-            if (filterDataModel == null)
+                where = " AND " + FilterObject.Condition;
+            if (FilterObject == null)
                 where = "";
             else
-                where = " WHERE " + filterDataModel.Condition;
+                where = " WHERE " + FilterObject.Condition;
 
             string transactSql = consultDataModel.Select + " " + consultDataModel.From + " " + where + " " + consultDataModel.GroupBy + " " + consultDataModel.Having + " " + consultDataModel.OrderBy;
             return Filter.Execute(transactSql);

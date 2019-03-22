@@ -61,24 +61,28 @@ namespace UI
 
             //if (condition == null && conditiondev == null)
             //    filterDataModel.State = EntityState.Deleted;
-
-            if (filterDataModel != null)
+            if (condition != "" && conditiondev != "")
             {
-                filterDataModel.Condition = condition;
-                filterDataModel.ConditionDev = conditiondev;
-                filterDataModel.State = EntityState.Modified;
+                if (filterDataModel != null)
+                {
+                    filterDataModel.Condition = condition;
+                    filterDataModel.ConditionDev = conditiondev;
+                    filterDataModel.State = EntityState.Modified;
+                }
+                else
+                {
+                    filterDataModel = new FilterModel();
+                    filterDataModel.IdUser = iduser;
+                    filterDataModel.IdConsult = idconsult;
+                    filterDataModel.Condition = condition;
+                    filterDataModel.ConditionDev = conditiondev;
+                    filterDataModel.State = EntityState.Added;
+                }
             }
             else
-            {
-                filterDataModel = new FilterModel();
-                filterDataModel.IdUser = iduser;
-                filterDataModel.IdConsult = idconsult;
-                filterDataModel.Condition = condition;
-                filterDataModel.ConditionDev = conditiondev;
-                filterDataModel.State = EntityState.Added;
-            }
-            filterDataModel.SaveChanges();
+                filterDataModel.State = EntityState.Deleted;
 
+            filterDataModel.SaveChanges();
             Pages.LoadPage(name, text);
             Close();
         }
