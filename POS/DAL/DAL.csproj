@@ -56,6 +56,7 @@
     <Compile Include="Contracts\ICodingRepository.cs" />
     <Compile Include="Contracts\IConsultRepository.cs" />
     <Compile Include="Contracts\IContainerRepository.cs" />
+    <Compile Include="Contracts\IControlRepository.cs" />
     <Compile Include="Contracts\IFilterRepository.cs" />
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Contracts\IImageRepository.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Entities\Coding.cs" />
     <Compile Include="Entities\Consult.cs" />
     <Compile Include="Entities\Container.cs" />
+    <Compile Include="Entities\Control.cs" />
     <Compile Include="Entities\DefaultProperties.cs" />
     <Compile Include="Entities\Filter.cs" />
     <Compile Include="Entities\Image.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Repositories\CodingRepository.cs" />
     <Compile Include="Repositories\ConsultRepository.cs" />
     <Compile Include="Repositories\ContainerRepository.cs" />
+    <Compile Include="Repositories\ControlRepository.cs" />
     <Compile Include="Repositories\FilterRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\ImageRepository.cs" />

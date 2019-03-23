@@ -120,7 +120,7 @@ namespace UI
             }
         }
 
-        private void LoadTreeView(int IdRoot, TreeNode Node, TreeView View)
+        private void LoadTreeView(int? IdRoot, TreeNode Node, TreeView View)
         {
             var Operations = Containers.GetAll().Where(e => e.IdContainer == IdRoot).ToList();
             foreach (var Operation in Operations)
@@ -193,8 +193,12 @@ namespace UI
                     xtcPages.SelectedTabPage = xtcPages.TabPages[i];
 
                     XtraTabPage con = (XtraTabPage)this.Controls["xtcPages"].Controls[xtcPages.SelectedTabPage.Name];
+
+                    #region GridControl
                     GridControl grid = (GridControl)con.Controls[xtcPages.SelectedTabPage.Name];
                     grid.DataSource = LoadView(name);
+                    #endregion
+
                     exist = true;
                 }
             }
@@ -205,6 +209,10 @@ namespace UI
                 Page.Name = name;
                 Page.Text = text;
 
+                #region TreeView
+                #endregion
+
+                #region GridControl
                 //Creamos el control tipo lista para el contenedor
                 GridView gView = new GridView();
                 gView.OptionsBehavior.ReadOnly = true;
@@ -234,7 +242,7 @@ namespace UI
                     gView.Columns["Id"].Visible = false;
                 gView.OptionsSelection.MultiSelect = true;
 
-                #region Número de columna
+                //Número de columna
                 //GridColumn colCounter = gView.Columns.AddVisible("Nro.");
                 //colCounter.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
                 //colCounter.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;

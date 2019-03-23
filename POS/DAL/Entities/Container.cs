@@ -10,6 +10,7 @@ namespace DAL.Entities
     {
         public Nullable<int> IdContainer { get; set; }
         public Nullable<int> IdImage { get; set; }
+        public Nullable<int> IdControl { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

@@ -21,6 +21,7 @@ namespace DAL
         public DbSet<Container> Containers { get; set; }
         public DbSet<Coding> Codings { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<Control> Controls { get; set; }
         
         //Schema Product
         public DbSet<Category> Categories { get; set; }

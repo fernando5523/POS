@@ -16,6 +16,7 @@ namespace BLL.Model
         private int id;
         private int? idcontainer;
         private int? idimage;
+        private int? idcontrol;
         private string code;
         private string name;
         private string description;
@@ -31,6 +32,7 @@ namespace BLL.Model
         public int Id { get => id; set => id = value; }
         public int? IdContainer { get => idcontainer; set => idcontainer = value; }
         public int? IdImage { get => idimage; set => idimage = value; }
+        public int? IdControl { get => idcontrol; set => idcontrol = value; }
         public string Code { get => code; set => code = value; }
         public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
@@ -55,6 +57,7 @@ namespace BLL.Model
                 containerModel.ID = Id;
                 containerModel.IdContainer = IdContainer;
                 containerModel.IdImage = IdImage;
+                containerModel.IdControl = IdControl;
                 containerModel.Code = Code;
                 containerModel.Name = Name;
                 containerModel.Description = Description;
@@ -105,6 +108,7 @@ namespace BLL.Model
                     Id = item.ID,
                     IdContainer = item.IdContainer,
                     IdImage = item.IdImage,
+                    IdControl = item.IdControl,
                     Code = item.Code,
                     Name = item.Name,
                     Description = item.Description,
@@ -129,6 +133,7 @@ namespace BLL.Model
                 listContainer.Id = containerDataModel.ID;
                 listContainer.IdContainer = containerDataModel.IdContainer;
                 listContainer.IdImage = containerDataModel.IdImage;
+                listContainer.IdControl = containerDataModel.IdControl;
                 listContainer.Code = containerDataModel.Code;
                 listContainer.Name = containerDataModel.Name;
                 listContainer.Description = containerDataModel.Description;
@@ -145,7 +150,7 @@ namespace BLL.Model
         public List<ContainerModel> GetContainerModule()
         {
             List<ContainerModel> listContainer = null;
-            var containerDataModel = containerRepository.Find(e => e.Active == true && e.IsView == false && e.Level == 0).OrderByDescending(e => e.Sort);
+            var containerDataModel = containerRepository.Find(e => e.Active == true && e.IsView == false && e.Level == 0).OrderBy(e => e.Sort);
             if (containerDataModel != null)
             {
                 listContainer = new List<ContainerModel>();
@@ -156,6 +161,7 @@ namespace BLL.Model
                         Id = item.ID,
                         IdContainer = item.IdContainer,
                         IdImage = item.IdImage,
+                        IdControl = item.IdControl,
                         Code = item.Code,
                         Name = item.Name,
                         Description = item.Description,
