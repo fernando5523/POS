@@ -21,10 +21,13 @@ INSERT INTO Containers VALUES(NULL, 4, NULL, 'C001', 'Configuration', 'Gestión d
 INSERT INTO Containers VALUES(NULL, 3, NULL, 'C002', 'Inventory', 'Gestión de inventarios', 0, NULL, 3, 0, 1, 1)
 INSERT INTO Containers VALUES(NULL, 2, NULL, 'C003', 'Purchase', 'Gestión de compras', 0, NULL, 2, 0, 1, 1)
 INSERT INTO Containers VALUES(NULL, 1, NULL, 'C004', 'Sales', 'Gestión de ventas', 0, NULL, 1, 0, 1, 1)
-INSERT INTO Containers VALUES(1, NULL, NULL, 'C005', 'Security', 'Seguridad', 1, NULL, 1, 0, 1, 1)
+INSERT INTO Containers VALUES(1, NULL, NULL, 'C005', 'Security', 'Seguridad', 1, NULL, 2, 0, 1, 1)
 INSERT INTO Containers VALUES(5, NULL, 1, 'C006', 'User', 'Usuarios', 2, 'FrmUser', 1, 1, 1, 1)
-INSERT INTO Containers VALUES(1, NULL, NULL, 'C007', 'Container', 'Contenedor', 1, 'FrmContainer', 1, 1, 1, 1)
+INSERT INTO Containers VALUES(1, NULL, NULL, 'C007', 'Configuration', 'Configuración', 1, NULL, 1, 0, 1, 1)
+INSERT INTO Containers VALUES(7, NULL, 1, 'C008', 'Container', 'Contenedor', 1, 'FrmContainer', 1, 1, 1, 1)
+INSERT INTO Containers VALUES(7, NULL, 1, 'C009', 'Coding', 'Codificación', 1, 'FrmCoding', 2, 1, 1, 1)
 
 --Objects Consults
 INSERT INTO Consults VALUES(6, 1, 'SELECT Id, Activo, Nombre, Contraseña', 'FROM eUsers', NULL, NULL, NULL, NULL, 1)
-INSERT INTO Consults VALUES(7, 1, 'SELECT Id, Activo, [Contenedor padre], Codigo, Nombre, Descripcion, Nivel, Formulario, Orden, [Es vista], [Ultima modificacion]', 'FROM eContainer', NULL, NULL, NULL, NULL, 1)
+INSERT INTO Consults VALUES(8, 1, 'SELECT Id, Activo, [Contenedor padre], Codigo, Nombre, Descripcion, Nivel, Formulario, Orden, [Es vista], [Ultima modificacion]', 'FROM eContainers', NULL, NULL, NULL, NULL, 1)
+INSERT INTO Consults VALUES(9, 1, 'SELECT Id, Activo, Contenedor, Texto, Número, [Logitud número], [Ultima modificacion]', 'FROM eCodings', NULL, NULL, NULL, NULL, 1)

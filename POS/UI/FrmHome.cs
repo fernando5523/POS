@@ -221,6 +221,7 @@ namespace UI
                 gView.OptionsBehavior.Editable = false;
                 gView.OptionsView.ShowGroupPanel = true;
                 gView.OptionsView.ShowAutoFilterRow = true;
+                gView.OptionsView.ShowFooter = true;
                 gView.DoubleClick += gridView_DoubleClick;
                 gView.KeyDown += GridView_KeyDown;
 

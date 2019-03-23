@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace UI
 {
     using UI.Repository;
-    public partial class FrmContainer : DevExpress.XtraEditors.XtraForm
+    public partial class FrmContainer : FormRepository
     {
         public FrmContainer()
         {

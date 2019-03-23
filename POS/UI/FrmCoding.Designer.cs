@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDescription = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtText = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNumberLength = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cbeActive = new DevExpress.XtraEditors.CheckEdit();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAceptar = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            this.txtContainer = new DevExpress.XtraEditors.LookUpEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberLength.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeActive.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContainer.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl4
@@ -59,29 +59,21 @@
             this.labelControl4.TabIndex = 1;
             this.labelControl4.Text = "Propiedades de condificación";
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(142, 31);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Properties.AutoHeight = false;
-            this.txtDescription.Size = new System.Drawing.Size(160, 23);
-            this.txtDescription.TabIndex = 4;
-            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(44, 35);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(36, 13);
+            this.labelControl2.Size = new System.Drawing.Size(57, 13);
             this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Entidad";
+            this.labelControl2.Text = "Contenedor";
             // 
-            // textEdit1
+            // txtText
             // 
-            this.textEdit1.Location = new System.Drawing.Point(142, 60);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.AutoHeight = false;
-            this.textEdit1.Size = new System.Drawing.Size(160, 23);
-            this.textEdit1.TabIndex = 6;
+            this.txtText.Location = new System.Drawing.Point(142, 60);
+            this.txtText.Name = "txtText";
+            this.txtText.Properties.AutoHeight = false;
+            this.txtText.Size = new System.Drawing.Size(160, 23);
+            this.txtText.TabIndex = 6;
             // 
             // labelControl1
             // 
@@ -91,13 +83,13 @@
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Texto";
             // 
-            // textEdit2
+            // txtNumber
             // 
-            this.textEdit2.Location = new System.Drawing.Point(142, 89);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.AutoHeight = false;
-            this.textEdit2.Size = new System.Drawing.Size(160, 23);
-            this.textEdit2.TabIndex = 8;
+            this.txtNumber.Location = new System.Drawing.Point(142, 89);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Properties.AutoHeight = false;
+            this.txtNumber.Size = new System.Drawing.Size(160, 23);
+            this.txtNumber.TabIndex = 8;
             // 
             // labelControl3
             // 
@@ -107,13 +99,13 @@
             this.labelControl3.TabIndex = 7;
             this.labelControl3.Text = "Número";
             // 
-            // textEdit3
+            // txtNumberLength
             // 
-            this.textEdit3.Location = new System.Drawing.Point(142, 118);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.AutoHeight = false;
-            this.textEdit3.Size = new System.Drawing.Size(160, 23);
-            this.textEdit3.TabIndex = 10;
+            this.txtNumberLength.Location = new System.Drawing.Point(142, 118);
+            this.txtNumberLength.Name = "txtNumberLength";
+            this.txtNumberLength.Properties.AutoHeight = false;
+            this.txtNumberLength.Size = new System.Drawing.Size(160, 23);
+            this.txtNumberLength.TabIndex = 10;
             // 
             // labelControl5
             // 
@@ -141,6 +133,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(73, 33);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -151,22 +144,33 @@
             this.btnAceptar.Size = new System.Drawing.Size(79, 33);
             this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "&Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // txtContainer
+            // 
+            this.txtContainer.Location = new System.Drawing.Point(142, 34);
+            this.txtContainer.Name = "txtContainer";
+            this.txtContainer.Properties.AutoHeight = false;
+            this.txtContainer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtContainer.Size = new System.Drawing.Size(160, 23);
+            this.txtContainer.TabIndex = 14;
             // 
             // FrmCoding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 224);
+            this.ClientSize = new System.Drawing.Size(360, 226);
+            this.Controls.Add(this.txtContainer);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cbeActive);
-            this.Controls.Add(this.textEdit3);
+            this.Controls.Add(this.txtNumberLength);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txtText);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -174,11 +178,12 @@
             this.Name = "FrmCoding";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Codificación";
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.FrmCoding_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberLength.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeActive.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContainer.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,16 +192,16 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txtDescription;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtText;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtNumber;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtNumberLength;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.CheckEdit cbeActive;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.SimpleButton btnAceptar;
+        private DevExpress.XtraEditors.LookUpEdit txtContainer;
     }
 }

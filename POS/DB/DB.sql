@@ -17,19 +17,22 @@ ALTER TABLE dbo.Users ADD CONSTRAINT Fk_Users_Users FOREIGN KEY ( IdUser ) REFER
 
 CREATE TABLE dbo.Codings ( 
 	Id                   int NOT NULL   IDENTITY,
-	Entity               varchar(50)    ,
+	IdContainer          int NOT NULL   ,
 	Text                 varchar(20)    ,
 	Number               int NOT NULL   ,
 	NumberLength         int NOT NULL   ,
 	Active               bit NOT NULL   ,
 	IdUser               int NOT NULL   ,
-	CONSTRAINT Pk_Coding_Id PRIMARY KEY  ( Id ),
-	CONSTRAINT Idx_Codings_Entity UNIQUE ( Entity ) 
+	CONSTRAINT Pk_Coding_Id PRIMARY KEY  ( Id )
  );
 
 CREATE  INDEX Idx_Coding_IdUser ON dbo.Codings ( IdUser );
 
+CREATE  INDEX Idx_Codings_Entity ON dbo.Codings ( IdContainer );
+
 ALTER TABLE dbo.Codings ADD CONSTRAINT Fk_Coding_User FOREIGN KEY ( IdUser ) REFERENCES dbo.Users( Id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE dbo.Codings ADD CONSTRAINT Fk_Codings_Containers FOREIGN KEY ( IdContainer ) REFERENCES dbo.Containers( Id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 CREATE TABLE dbo.Images ( 
 	Id                   int NOT NULL   IDENTITY,
@@ -156,4 +159,3 @@ CREATE  INDEX Idx_UsersRols_IdRols ON dbo.UsersRols ( IdRol );
 ALTER TABLE dbo.UsersRols ADD CONSTRAINT Fk_UsersRols_Users FOREIGN KEY ( IdUser ) REFERENCES dbo.Users( Id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 ALTER TABLE dbo.UsersRols ADD CONSTRAINT Fk_UsersRols_Rols FOREIGN KEY ( IdRol ) REFERENCES dbo.Rols( Id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
-

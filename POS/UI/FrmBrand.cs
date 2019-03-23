@@ -39,12 +39,12 @@ namespace UI
         {
             if (Id == 0)
             {
-                var codingRepository = new CodingModel().GetEntity("Brand");
-                brandRepository = new BrandModel();
-                brandRepository.Code = codingRepository.Code;
-                codingRepository.Number += 1;
-                codingRepository.State = EntityState.Added;
-                codingRepository.SaveChanges();
+                //var codingRepository = new CodingModel().GetEntity("Brand");
+                //brandRepository = new BrandModel();
+                //brandRepository.Code = codingRepository.Code;
+                //codingRepository.Number += 1;
+                //codingRepository.State = EntityState.Added;
+                //codingRepository.SaveChanges();
             }
             brandRepository.Description = txtDescription.Text.Trim();
             brandRepository.Active = cbeActive.Checked;

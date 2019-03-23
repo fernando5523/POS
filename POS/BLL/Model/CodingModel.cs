@@ -15,7 +15,7 @@ namespace BLL.Model
     {
         private int id;
         private string code;
-        private string entity;
+        private int idcontainer;
         private string text;
         private int number;
         private int numberlength;
@@ -26,7 +26,7 @@ namespace BLL.Model
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
         public string Code { get => code; private set => code = value;}
-        public string Entity { get => entity; set => entity = value; }
+        public int IdContainer { get => idcontainer; set => idcontainer = value; }
         public string Text { get => text; set => text = value; }
         public int Number { get => number; set => number = value; }
         public int Numberlength { get => numberlength; set => numberlength = value; }
@@ -45,7 +45,7 @@ namespace BLL.Model
             {
                 var codingDataModel = new Coding();
                 codingDataModel.ID = Id;
-                codingDataModel.Entity = Entity;
+                codingDataModel.IdContainer = IdContainer;
                 codingDataModel.Text = Text;
                 codingDataModel.Number = Number;
                 codingDataModel.NumberLength = Numberlength;
@@ -90,7 +90,7 @@ namespace BLL.Model
                 listCoding.Add(new CodingModel
                 {
                     Id = item.ID,
-                    Entity = item.Entity,
+                    IdContainer = item.IdContainer,
                     Text = item.Text,
                     Number = item.Number,
                     Numberlength = item.NumberLength,
@@ -101,15 +101,15 @@ namespace BLL.Model
             return listCoding;
         }
 
-        public CodingModel GetEntity(string entity)
+        public CodingModel GetId(int id)
         {
             CodingModel listCoding = null;
-            var codingDataModel = codingRepository.Find(e => e.Entity == entity).FirstOrDefault();
+            var codingDataModel = codingRepository.Find(e => e.ID == id).FirstOrDefault();
             if (codingDataModel != null)
             {
                 listCoding = new CodingModel();
                 listCoding.Id = codingDataModel.ID;
-                listCoding.Entity = codingDataModel.Entity;
+                listCoding.IdContainer = codingDataModel.IdContainer;
                 listCoding.Text = codingDataModel.Text;
                 listCoding.Number = codingDataModel.Number;
                 listCoding.Numberlength = codingDataModel.NumberLength;

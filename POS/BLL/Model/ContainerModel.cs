@@ -176,5 +176,24 @@ namespace BLL.Model
             }
             return listContainer;
         }
+
+        public List<ContainerModel> GetContainerCombo()
+        {
+            List<ContainerModel> listContainer = null;
+            var containerDataModel = containerRepository.Find(e => e.IsView == true);
+            if (containerDataModel != null)
+            {
+                listContainer = new List<ContainerModel>();
+                foreach (Container item in containerDataModel)
+                {
+                    listContainer.Add(new ContainerModel
+                    {
+                        Id = item.ID,
+                        Description = item.Description,
+                    });
+                }
+            }
+            return listContainer;
+        }
     }
 }

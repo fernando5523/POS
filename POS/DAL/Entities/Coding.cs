@@ -8,7 +8,7 @@ namespace DAL.Entities
 {
     public class Coding : DefaultProperties
     {
-        public string Entity { get; set; }
+        public int  IdContainer { get; set; }
         public string Text { get; set; }
         public int Number { get; set; }
         public int NumberLength { get; set; }
