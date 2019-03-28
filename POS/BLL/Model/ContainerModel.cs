@@ -26,7 +26,9 @@ namespace BLL.Model
         private bool isview;
         private bool active;
         private int userid;
+        private List<ConsultModel> consult;
         private IContainerRepository containerRepository;
+        private ConsultModel consultModel;
 
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
@@ -42,10 +44,12 @@ namespace BLL.Model
         public bool IsView { get => isview; set => isview = value; }
         public bool Active { get => active; set => active = value; }
         public int UserID { get => userid; set => userid = value; }
+        public List<ConsultModel> Consult { get => consult; set => consult = value; }
 
         public ContainerModel()
         {
             containerRepository = new ContainerRepository();
+            consultModel = new ConsultModel();
         }
 
         public string SaveChanges()
@@ -167,6 +171,7 @@ namespace BLL.Model
                 listContainer.IsView = containerDataModel.IsView;
                 listContainer.Active = containerDataModel.Active;
                 listContainer.UserID = containerDataModel.UserID;
+                listContainer.Consult = consultModel.GetAll().Where(e => e.ContainerID == id).ToList();
             }
             return listContainer;
         }

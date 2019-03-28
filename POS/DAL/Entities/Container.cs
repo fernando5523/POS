@@ -19,7 +19,7 @@ namespace DAL.Entities
         public int Sort { get; set; }
         public bool IsView { get; set; }
         public bool Active { get; set; }
-        public virtual IList<Consult> Consult { get; set; }
+        public virtual List<Consult> Consult { get; set; }
         public virtual Image Image { get; set; }
         public virtual Control Control { get; set; }
         public virtual User User { get; set; }

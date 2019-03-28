@@ -355,6 +355,7 @@ namespace UI
 
         private void tmTiempo_Tick(object sender, EventArgs e)
         {
+            txtFecha.Caption = "Fecha : " + DateTime.Now.ToString("dd/MM/yyyy");
             txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
         }
 

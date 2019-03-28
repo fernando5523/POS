@@ -38,6 +38,7 @@
             this.cbeActive = new DevExpress.XtraEditors.CheckEdit();
             this.gcConsultas = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
             this.btnModificar = new DevExpress.XtraEditors.SimpleButton();
             this.btnEliminar = new DevExpress.XtraEditors.SimpleButton();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbeActive.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcConsultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFormulario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNivel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrden.Properties)).BeginInit();
@@ -142,6 +144,8 @@
             this.gcConsultas.Location = new System.Drawing.Point(44, 145);
             this.gcConsultas.MainView = this.gridView1;
             this.gcConsultas.Name = "gcConsultas";
+            this.gcConsultas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
             this.gcConsultas.Size = new System.Drawing.Size(852, 296);
             this.gcConsultas.TabIndex = 22;
             this.gcConsultas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -151,6 +155,11 @@
             // 
             this.gridView1.GridControl = this.gcConsultas;
             this.gridView1.Name = "gridView1";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // btnNuevo
             // 
@@ -179,6 +188,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(79, 33);
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCancelar
             // 
@@ -295,6 +305,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbeActive.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcConsultas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFormulario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNivel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrden.Properties)).EndInit();
@@ -328,5 +339,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtOrden;
         private DevExpress.XtraEditors.CheckEdit cbeVista;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
     }
 }
