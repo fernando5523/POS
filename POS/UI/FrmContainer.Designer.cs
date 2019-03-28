@@ -40,7 +40,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
-            this.btnModificar = new DevExpress.XtraEditors.SimpleButton();
             this.btnEliminar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAceptar = new DevExpress.XtraEditors.SimpleButton();
@@ -171,19 +170,10 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(129, 447);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(79, 33);
-            this.btnModificar.TabIndex = 24;
-            this.btnModificar.Text = "Modificar";
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(214, 447);
+            this.btnEliminar.Location = new System.Drawing.Point(129, 447);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(79, 33);
             this.btnEliminar.TabIndex = 25;
@@ -284,7 +274,6 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.gcConsultas);
             this.Controls.Add(this.cbeActive);
@@ -328,7 +317,6 @@
         private DevExpress.XtraGrid.GridControl gcConsultas;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btnNuevo;
-        private DevExpress.XtraEditors.SimpleButton btnModificar;
         private DevExpress.XtraEditors.SimpleButton btnEliminar;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.SimpleButton btnAceptar;

@@ -14,11 +14,12 @@ namespace UI
     using UI.Helpers;
     using BLL.Model;
     using BLL.ValueObjects;
+    using DevExpress.XtraGrid.Columns;
+
     public partial class FrmContainer : FormRepository
     {
         private ContainerModel containerRepository;
-        private BindingList<ConsultModel> dataGrid;
-        private List<ConsultModel> DeleteRecords = new List<ConsultModel>();
+        private List<int> DeleteRecords = new List<int>();
         private List<ConsultModel> UpdateRecords = new List<ConsultModel>();
         private List<ConsultModel> CreateRecords = new List<ConsultModel>();
         public FrmContainer()
@@ -32,6 +33,7 @@ namespace UI
             {
                 containerRepository = new ContainerModel().GetId(Id);
                 DataTable dt = new DataTable();
+                dt.Columns.Add("Temp", typeof(string));
                 dt.Columns.Add("State", typeof(EntityState));
                 dt.Columns.Add("Id", typeof(int));
                 dt.Columns.Add("ContainerID", typeof(int));
@@ -42,7 +44,7 @@ namespace UI
                 dt.Columns.Add("GroupBy", typeof(string));
                 dt.Columns.Add("Having", typeof(string));
                 dt.Columns.Add("OrderBy", typeof(string));
-                dt.Columns.Add("UserID", typeof(int));
+                dt.Columns.Add("UserID", typeof(string));
 
                 gridView1.OptionsBehavior.ReadOnly = false;
                 gridView1.OptionsBehavior.AutoPopulateColumns = true;
@@ -54,12 +56,11 @@ namespace UI
                 gridView1.OptionsSelection.MultiSelect = true;
                 gridView1.OptionsView.ShowIndicator = true;
 
-                dataGrid = new BindingList<ConsultModel>(containerRepository.Consult);
-
-                foreach (ConsultModel item in containerRepository.Consult)
+                foreach(var item in containerRepository.Consult)
                 {
                     DataRow row = dt.NewRow();
-                    row["State"] = EntityState.Modified;
+                    row["Temp"] = "NoTemp";
+                    row["State"] = EntityState.None;
                     row["Id"] = item.Id;
                     row["ContainerID"] = item.ContainerID;
                     row["Principal"] = item.Principal;
@@ -72,13 +73,13 @@ namespace UI
                     row["UserID"] = item.UserID;
                     dt.Rows.Add(row);
                 }
+                gcConsultas.DataSource = dt;
 
-                gcConsultas.DataSource = dataGrid;
-
-                //gridView1.Columns["State"].Visible = true;
-                //gridView1.Columns["Id"].Visible = false;
-                //gridView1.Columns["ContainerID"].Visible = false;
-                //gridView1.Columns["UserID"].Visible = false;
+                gridView1.Columns["Temp"].Visible = true;
+                gridView1.Columns["State"].Visible = true;
+                gridView1.Columns["Id"].Visible = true;
+                gridView1.Columns["ContainerID"].Visible = true;
+                gridView1.Columns["UserID"].Visible = true;
 
                 if (containerRepository != null)
                 {
@@ -105,24 +106,27 @@ namespace UI
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            //DataTable dt = (DataTable)gcConsultas.DataSource;
-            //DataRow row = dt.NewRow();
-            //row["State"] = EntityState.Added;
-            //dt.Rows.Add(row);
-            //gcConsultas.DataSource = dt;
-            gridView1.AddNewRow();
+            DataTable table = (DataTable)gcConsultas.DataSource;
+            DataRow row = table.NewRow();
+            row["Temp"] = "Temp";
+            row["State"] = EntityState.Added;
+            row["Id"] = 0;
+            row["ContainerID"] = Id;
+            table.Rows.Add(row);
+            gcConsultas.DataSource = table;
+            //gridView1.AddNewRow();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int[] selRows = gridView1.GetSelectedRows();
-            foreach(int i in selRows)
+            foreach (int i in selRows)
             {
-                DataRowView selRow = (DataRowView)gcConsultas.MainView.GetRow(i);
-                ConsultModel consultData = new ConsultModel();
-                consultData.Id = (int)selRow["Id"];
-                DeleteRecords.Add(consultData);
+                var item = (DataRowView)gcConsultas.MainView.GetRow(i);
+                if ((int)item.Row["Id"] != 0)
+                    DeleteRecords.Add((int)item["Id"]);
             }
+
             gridView1.DeleteSelectedRows();
         }
     }

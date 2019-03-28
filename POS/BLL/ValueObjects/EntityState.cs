@@ -10,6 +10,7 @@ namespace BLL.ValueObjects
     {
         Added,
         Deleted,
-        Modified
+        Modified,
+        None
     }
 }
