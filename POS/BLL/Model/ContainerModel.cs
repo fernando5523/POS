@@ -14,9 +14,9 @@ namespace BLL.Model
     public class ContainerModel
     {
         private int id;
-        private int? idcontainer;
-        private int? idimage;
-        private int? idcontrol;
+        private int? containerid;
+        private int? imageid;
+        private int? controlid;
         private string code;
         private string name;
         private string description;
@@ -25,14 +25,14 @@ namespace BLL.Model
         private int sort;
         private bool isview;
         private bool active;
-        private int iduser;
+        private int userid;
         private IContainerRepository containerRepository;
 
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
-        public int? IdContainer { get => idcontainer; set => idcontainer = value; }
-        public int? IdImage { get => idimage; set => idimage = value; }
-        public int? IdControl { get => idcontrol; set => idcontrol = value; }
+        public int? ContainerID { get => containerid; set => containerid = value; }
+        public int? ImageID { get => imageid; set => imageid = value; }
+        public int? ControlID { get => controlid; set => controlid = value; }
         public string Code { get => code; set => code = value; }
         public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
@@ -41,7 +41,7 @@ namespace BLL.Model
         public int Sort { get => sort; set => sort = value; }
         public bool IsView { get => isview; set => isview = value; }
         public bool Active { get => active; set => active = value; }
-        public int IdUser { get => iduser; set => iduser = value; }
+        public int UserID { get => userid; set => userid = value; }
 
         public ContainerModel()
         {
@@ -55,9 +55,9 @@ namespace BLL.Model
             {
                 var containerModel = new Container();
                 containerModel.ID = Id;
-                containerModel.IdContainer = IdContainer;
-                containerModel.IdImage = IdImage;
-                containerModel.IdControl = IdControl;
+                containerModel.ContainerID = ContainerID;
+                containerModel.ImageID = ImageID;
+                containerModel.ControlID = ControlID;
                 containerModel.Code = Code;
                 containerModel.Name = Name;
                 containerModel.Description = Description;
@@ -66,7 +66,7 @@ namespace BLL.Model
                 containerModel.Sort = Sort;
                 containerModel.IsView = IsView;
                 containerModel.Active = Active;
-                containerModel.IdUser = IdUser;
+                containerModel.UserID = UserID;
 
                 switch (State)
                 {
@@ -106,9 +106,9 @@ namespace BLL.Model
                 listContainer.Add(new ContainerModel
                 {
                     Id = item.ID,
-                    IdContainer = item.IdContainer,
-                    IdImage = item.IdImage,
-                    IdControl = item.IdControl,
+                    ContainerID = item.ContainerID,
+                    ImageID = item.ImageID,
+                    ControlID = item.ControlID,
                     Code = item.Code,
                     Name = item.Name,
                     Description = item.Description,
@@ -117,7 +117,7 @@ namespace BLL.Model
                     Sort = item.Sort,
                     IsView = item.IsView,
                     Active = item.Active,
-                    IdUser = item.IdUser
+                    UserID = item.UserID
                 });
             }
             return listContainer;
@@ -131,9 +131,9 @@ namespace BLL.Model
             {
                 listContainer = new ContainerModel();
                 listContainer.Id = containerDataModel.ID;
-                listContainer.IdContainer = containerDataModel.IdContainer;
-                listContainer.IdImage = containerDataModel.IdImage;
-                listContainer.IdControl = containerDataModel.IdControl;
+                listContainer.ContainerID = containerDataModel.ContainerID;
+                listContainer.ImageID = containerDataModel.ImageID;
+                listContainer.ControlID = containerDataModel.ControlID;
                 listContainer.Code = containerDataModel.Code;
                 listContainer.Name = containerDataModel.Name;
                 listContainer.Description = containerDataModel.Description;
@@ -142,7 +142,31 @@ namespace BLL.Model
                 listContainer.sort = containerDataModel.Sort;
                 listContainer.IsView = containerDataModel.IsView;
                 listContainer.Active = containerDataModel.Active;
-                listContainer.IdUser = containerDataModel.IdUser;
+                listContainer.UserID = containerDataModel.UserID;
+            }
+            return listContainer;
+        }
+
+        public ContainerModel GetId(int id)
+        {
+            ContainerModel listContainer = null;
+            var containerDataModel = containerRepository.Find(e => e.ID == id).FirstOrDefault();
+            if (containerDataModel != null)
+            {
+                listContainer = new ContainerModel();
+                listContainer.Id = containerDataModel.ID;
+                listContainer.ContainerID = containerDataModel.ContainerID;
+                listContainer.ImageID = containerDataModel.ImageID;
+                listContainer.ControlID = containerDataModel.ControlID;
+                listContainer.Code = containerDataModel.Code;
+                listContainer.Name = containerDataModel.Name;
+                listContainer.Description = containerDataModel.Description;
+                listContainer.Level = containerDataModel.Level;
+                listContainer.Form = containerDataModel.Form;
+                listContainer.sort = containerDataModel.Sort;
+                listContainer.IsView = containerDataModel.IsView;
+                listContainer.Active = containerDataModel.Active;
+                listContainer.UserID = containerDataModel.UserID;
             }
             return listContainer;
         }
@@ -159,9 +183,9 @@ namespace BLL.Model
                     listContainer.Add(new ContainerModel
                     {
                         Id = item.ID,
-                        IdContainer = item.IdContainer,
-                        IdImage = item.IdImage,
-                        IdControl = item.IdControl,
+                        ContainerID = item.ContainerID,
+                        ImageID = item.ImageID,
+                        ControlID = item.ControlID,
                         Code = item.Code,
                         Name = item.Name,
                         Description = item.Description,
@@ -170,7 +194,7 @@ namespace BLL.Model
                         Sort = item.Sort,
                         IsView = item.IsView,
                         Active = item.Active,
-                        IdUser = item.IdUser
+                        UserID = item.UserID
                     });
                 }
             }

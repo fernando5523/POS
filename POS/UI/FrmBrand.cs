@@ -24,35 +24,49 @@ namespace UI
 
         private void FrmBrand_Load(object sender, EventArgs e)
         {
-            brandRepository = new BrandModel().GetId(Id);
-            if (brandRepository != null)
+            try
             {
-                brandRepository.State = EntityState.Modified;
-                txtCode.Text = brandRepository.Code;
-                txtDescription.Text = brandRepository.Description;
-                cbeActive.Checked = brandRepository.Active;
-                txtDescription.Focus();
+                brandRepository = new BrandModel().GetId(Id);
+                if (brandRepository != null)
+                {
+                    brandRepository.State = EntityState.Modified;
+                    txtCode.Text = brandRepository.Code;
+                    txtDescription.Text = brandRepository.Description;
+                    cbeActive.Checked = brandRepository.Active;
+                    txtDescription.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Id == 0)
+            try
             {
-                //var codingRepository = new CodingModel().GetEntity("Brand");
-                //brandRepository = new BrandModel();
-                //brandRepository.Code = codingRepository.Code;
-                //codingRepository.Number += 1;
-                //codingRepository.State = EntityState.Added;
-                //codingRepository.SaveChanges();
+                if (Id == 0)
+                {
+                    //var codingRepository = new CodingModel().GetEntity("Brand");
+                    //brandRepository = new BrandModel();
+                    //brandRepository.Code = codingRepository.Code;
+                    //codingRepository.Number += 1;
+                    //codingRepository.State = EntityState.Added;
+                    //codingRepository.SaveChanges();
+                }
+                brandRepository.Description = txtDescription.Text.Trim();
+                brandRepository.Active = cbeActive.Checked;
+                brandRepository.UserID = ConstantData.Login.Id;
+
+                brandRepository.SaveChanges();
+                Page.LoadPage(NamePage, TextPage);
+                Close();
             }
-            brandRepository.Description = txtDescription.Text.Trim();
-            brandRepository.Active = cbeActive.Checked;
-            brandRepository.IdUser = ConstantData.Login.Id;
-            
-            brandRepository.SaveChanges();
-            Page.LoadPage(NamePage, TextPage);
-            Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

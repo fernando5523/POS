@@ -25,6 +25,10 @@ namespace UI.Helpers
         {
             MessageBox.Show(message, "Información" + Enterprise, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public static void MessageQuestion(string message)
+        {
+            MessageBox.Show(message, "Información" + Enterprise, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         public static string GetBase64String(string imgPath)
         {
             byte[] imageBytes = File.ReadAllBytes(imgPath);

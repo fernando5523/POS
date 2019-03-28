@@ -17,7 +17,7 @@ namespace BLL.Model
         private string code;
         private string description;
         private bool active;
-        private int iduser;
+        private int userid;
 
         private IBrandRepository brandRepository;
         public EntityState State { private get; set; }
@@ -25,7 +25,7 @@ namespace BLL.Model
         public string Code { get => code; set => code = value; }
         public string Description { get => description; set => description = value; }
         public bool Active { get => active; set => active = value; }
-        public int IdUser { get => iduser; set => iduser = value; }
+        public int UserID { get => userid; set => userid = value; }
 
         public BrandModel()
         {
@@ -42,7 +42,7 @@ namespace BLL.Model
                 brandDataModel.Code = Code;
                 brandDataModel.Description = Description;
                 brandDataModel.Active = Active;
-                brandDataModel.IdUser = IdUser;
+                brandDataModel.UserID = UserID;
 
                 switch (State)
                 {
@@ -86,7 +86,7 @@ namespace BLL.Model
                     Code = item.Code,
                     Description = item.Description,
                     Active = item.Active,
-                    IdUser = item.IdUser
+                    UserID = item.UserID
                 });
             }
             return listBrand;
@@ -103,7 +103,7 @@ namespace BLL.Model
                 listBrand.Code = brandDataModel.Code;
                 listBrand.Description = brandDataModel.Description;
                 listBrand.Active = brandDataModel.Active;
-                listBrand.IdUser = brandDataModel.IdUser;
+                listBrand.UserID = brandDataModel.UserID;
             }
             return listBrand;
         }

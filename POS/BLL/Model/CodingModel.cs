@@ -15,23 +15,23 @@ namespace BLL.Model
     {
         private int id;
         private string code;
-        private int idcontainer;
+        private int containerid;
         private string text;
         private int number;
         private int numberlength;
         private bool active;
-        private int iduser;
+        private int userid;
         private ICodingRepository codingRepository;
 
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
         public string Code { get => code; private set => code = value;}
-        public int IdContainer { get => idcontainer; set => idcontainer = value; }
+        public int ContainerID { get => containerid; set => containerid = value; }
         public string Text { get => text; set => text = value; }
         public int Number { get => number; set => number = value; }
         public int Numberlength { get => numberlength; set => numberlength = value; }
         public bool Active { get => active; set => active = value; }
-        public int IdUser { get => iduser; set => iduser = value; }
+        public int UserID { get => userid; set => userid = value; }
 
         public CodingModel()
         {
@@ -45,12 +45,12 @@ namespace BLL.Model
             {
                 var codingDataModel = new Coding();
                 codingDataModel.ID = Id;
-                codingDataModel.IdContainer = IdContainer;
+                codingDataModel.ContainerID = ContainerID;
                 codingDataModel.Text = Text;
                 codingDataModel.Number = Number;
                 codingDataModel.NumberLength = Numberlength;
                 codingDataModel.Active = Active;
-                codingDataModel.IdUser = IdUser;
+                codingDataModel.UserID = UserID;
 
                 switch (State)
                 {
@@ -90,12 +90,12 @@ namespace BLL.Model
                 listCoding.Add(new CodingModel
                 {
                     Id = item.ID,
-                    IdContainer = item.IdContainer,
+                    ContainerID = item.ContainerID,
                     Text = item.Text,
                     Number = item.Number,
                     Numberlength = item.NumberLength,
                     Active = item.Active,
-                    IdUser = item.IdUser
+                    UserID = item.UserID
                 });
             }
             return listCoding;
@@ -109,12 +109,12 @@ namespace BLL.Model
             {
                 listCoding = new CodingModel();
                 listCoding.Id = codingDataModel.ID;
-                listCoding.IdContainer = codingDataModel.IdContainer;
+                listCoding.ContainerID = codingDataModel.ContainerID;
                 listCoding.Text = codingDataModel.Text;
                 listCoding.Number = codingDataModel.Number;
                 listCoding.Numberlength = codingDataModel.NumberLength;
                 listCoding.Active = codingDataModel.Active;
-                listCoding.IdUser = codingDataModel.IdUser;
+                listCoding.UserID = codingDataModel.UserID;
                 listCoding.Code = codingDataModel.Text + new string('0', codingDataModel.NumberLength - codingDataModel.Number.ToString().Length).ToString() + (codingDataModel.Number + 1).ToString();
             }
             return listCoding;

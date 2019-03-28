@@ -40,51 +40,68 @@ namespace UI
 
         private void FrmFiltro_Load(object sender, EventArgs e)
         {
-            ContainerModel containerDataModel = Containers.GetContainerName(name);
-            ConsultModel consultDataModel = Consult.GetIdContainer(containerDataModel.Id);
-            FilterModel filterDataModel = Filter.GetUser(iduser, consultDataModel.Id);
+            try
+            {
+                ContainerModel containerDataModel = Containers.GetContainerName(name);
+                ConsultModel consultDataModel = Consult.GetIdContainer(containerDataModel.Id);
+                FilterModel filterDataModel = Filter.GetUser(iduser, consultDataModel.Id);
 
-            this.idconsult = consultDataModel.Id;
-            string transactSql = consultDataModel.Select + " " + consultDataModel.From + " WHERE 0=1";
-            fcFilter.SourceControl = Filter.Execute(transactSql);
-            if(filterDataModel != null)
-                fcFilter.FilterCriteria = CriteriaOperator.Parse(filterDataModel.ConditionDev);
+                this.idconsult = consultDataModel.Id;
+                string transactSql = consultDataModel.Select + " " + consultDataModel.From + " WHERE 0=1";
+                fcFilter.SourceControl = Filter.Execute(transactSql);
+                if (filterDataModel != null)
+                    fcFilter.FilterCriteria = CriteriaOperator.Parse(filterDataModel.ConditionDev);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string condition = null;
-            string conditiondev = null;
-            FilterModel filterDataModel = Filter.GetUser(iduser, idconsult);
-            condition = CriteriaToWhereClauseHelper.GetMsSqlWhere(fcFilter.FilterCriteria);
-            conditiondev = fcFilter.FilterCriteria != null ? fcFilter.FilterCriteria.LegacyToString() : "";
-
-            //if (condition == null && conditiondev == null)
-            //    filterDataModel.State = EntityState.Deleted;
-            if (condition != "" && conditiondev != "")
+            try
             {
+                string condition = null;
+                string conditiondev = null;
+                FilterModel filterDataModel = Filter.GetUser(iduser, idconsult);
+                condition = CriteriaToWhereClauseHelper.GetMsSqlWhere(fcFilter.FilterCriteria);
+                conditiondev = fcFilter.FilterCriteria != null ? fcFilter.FilterCriteria.LegacyToString() : "";
+
+                //if (condition == null && conditiondev == null)
+                //    filterDataModel.State = EntityState.Deleted;
+                if (condition != "" && conditiondev != "")
+                {
+                    if (filterDataModel != null)
+                    {
+                        filterDataModel.Condition = condition;
+                        filterDataModel.ConditionDev = conditiondev;
+                        filterDataModel.State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        filterDataModel = new FilterModel();
+                        filterDataModel.UserID = iduser;
+                        filterDataModel.ConsultID = idconsult;
+                        filterDataModel.Condition = condition;
+                        filterDataModel.ConditionDev = conditiondev;
+                        filterDataModel.State = EntityState.Added;
+                    }
+                }
+                else if (filterDataModel != null)
+                    filterDataModel.State = EntityState.Deleted;
+
                 if (filterDataModel != null)
                 {
-                    filterDataModel.Condition = condition;
-                    filterDataModel.ConditionDev = conditiondev;
-                    filterDataModel.State = EntityState.Modified;
+                    filterDataModel.SaveChanges();
+                    Pages.LoadPage(name, text);
                 }
-                else
-                {
-                    filterDataModel = new FilterModel();
-                    filterDataModel.IdUser = iduser;
-                    filterDataModel.IdConsult = idconsult;
-                    filterDataModel.Condition = condition;
-                    filterDataModel.ConditionDev = conditiondev;
-                    filterDataModel.State = EntityState.Added;
-                }
+                Close();
             }
-            else
-                filterDataModel.State = EntityState.Deleted;
-
-            filterDataModel.SaveChanges();
-            Pages.LoadPage(name, text);
-            Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

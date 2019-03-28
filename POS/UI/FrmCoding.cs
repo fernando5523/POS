@@ -24,26 +24,33 @@ namespace UI
 
         private void FrmCoding_Load(object sender, EventArgs e)
         {
-            var containerList = new ContainerModel().GetContainerCombo();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Id");
-            dt.Columns.Add("Contenedor");
-            foreach(var item in containerList)
-                dt.Rows.Add(item.Id, item.Description);
-
-            txtContainer.Properties.DataSource = dt;
-            txtContainer.Properties.DisplayMember = "Contenedor";
-            txtContainer.Properties.ValueMember = "Id";
-
-            codingRepository = new CodingModel().GetId(Id);
-            if (codingRepository != null)
+            try
             {
-                codingRepository.State = EntityState.Modified;
-                txtContainer.ItemIndex = codingRepository.IdContainer;
-                txtText.Text = codingRepository.Text;
-                txtNumber.Text = codingRepository.Number.ToString();
-                txtNumberLength.Text = codingRepository.Numberlength.ToString();
-                cbeActive.Checked = codingRepository.Active;
+                var containerList = new ContainerModel().GetContainerCombo();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Id");
+                dt.Columns.Add("Contenedor");
+                foreach (var item in containerList)
+                    dt.Rows.Add(item.Id, item.Description);
+
+                txtContainer.Properties.DataSource = dt;
+                txtContainer.Properties.DisplayMember = "Contenedor";
+                txtContainer.Properties.ValueMember = "Id";
+
+                codingRepository = new CodingModel().GetId(Id);
+                if (codingRepository != null)
+                {
+                    codingRepository.State = EntityState.Modified;
+                    txtContainer.ItemIndex = codingRepository.ContainerID;
+                    txtText.Text = codingRepository.Text;
+                    txtNumber.Text = codingRepository.Number.ToString();
+                    txtNumberLength.Text = codingRepository.Numberlength.ToString();
+                    cbeActive.Checked = codingRepository.Active;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -55,21 +62,28 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(Id == 0)
+            try
             {
-                codingRepository = new CodingModel();
-                codingRepository.State = EntityState.Added;
-            }
-            codingRepository.IdContainer = Convert.ToInt32(txtContainer.ItemIndex);
-            codingRepository.Text = txtText.Text;
-            codingRepository.Number = Convert.ToInt32(txtNumber.Text);
-            codingRepository.Numberlength = Convert.ToInt32(txtNumberLength.Text);
-            codingRepository.Active = cbeActive.Checked;
-            codingRepository.IdUser = ConstantData.Login.Id;
-            codingRepository.SaveChanges();
+                if (Id == 0)
+                {
+                    codingRepository = new CodingModel();
+                    codingRepository.State = EntityState.Added;
+                }
+                codingRepository.ContainerID = Convert.ToInt32(txtContainer.ItemIndex);
+                codingRepository.Text = txtText.Text;
+                codingRepository.Number = Convert.ToInt32(txtNumber.Text);
+                codingRepository.Numberlength = Convert.ToInt32(txtNumberLength.Text);
+                codingRepository.Active = cbeActive.Checked;
+                codingRepository.UserID = ConstantData.Login.Id;
+                codingRepository.SaveChanges();
 
-            Page.LoadPage(NamePage, TextPage);
-            Close();
+                Page.LoadPage(NamePage, TextPage);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

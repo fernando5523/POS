@@ -45,6 +45,11 @@
             this.btnAceptar = new DevExpress.XtraEditors.SimpleButton();
             this.txtFormulario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNivel = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtOrden = new DevExpress.XtraEditors.TextEdit();
+            this.cbeVista = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
@@ -52,6 +57,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcConsultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFormulario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNivel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrden.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeVista.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl4
@@ -77,7 +85,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(44, 31);
+            this.labelControl1.Location = new System.Drawing.Point(44, 35);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(33, 13);
             this.labelControl1.TabIndex = 15;
@@ -123,7 +131,7 @@
             this.cbeActive.Name = "cbeActive";
             this.cbeActive.Properties.Caption = "Active";
             this.cbeActive.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.cbeActive.Size = new System.Drawing.Size(75, 19);
+            this.cbeActive.Size = new System.Drawing.Size(75, 20);
             this.cbeActive.TabIndex = 21;
             // 
             // gcConsultas
@@ -152,6 +160,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(79, 33);
             this.btnNuevo.TabIndex = 23;
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -179,6 +188,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(79, 33);
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -207,11 +217,58 @@
             this.labelControl5.TabIndex = 28;
             this.labelControl5.Text = "Formulario";
             // 
+            // txtNivel
+            // 
+            this.txtNivel.Location = new System.Drawing.Point(326, 31);
+            this.txtNivel.Name = "txtNivel";
+            this.txtNivel.Properties.AutoHeight = false;
+            this.txtNivel.Size = new System.Drawing.Size(60, 23);
+            this.txtNivel.TabIndex = 30;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(287, 35);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(23, 13);
+            this.labelControl6.TabIndex = 31;
+            this.labelControl6.Text = "Nivel";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(402, 35);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(30, 13);
+            this.labelControl7.TabIndex = 33;
+            this.labelControl7.Text = "Orden";
+            // 
+            // txtOrden
+            // 
+            this.txtOrden.Location = new System.Drawing.Point(438, 31);
+            this.txtOrden.Name = "txtOrden";
+            this.txtOrden.Properties.AutoHeight = false;
+            this.txtOrden.Size = new System.Drawing.Size(60, 23);
+            this.txtOrden.TabIndex = 32;
+            // 
+            // cbeVista
+            // 
+            this.cbeVista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbeVista.Location = new System.Drawing.Point(730, 120);
+            this.cbeVista.Name = "cbeVista";
+            this.cbeVista.Properties.Caption = "Es vista";
+            this.cbeVista.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.cbeVista.Size = new System.Drawing.Size(75, 20);
+            this.cbeVista.TabIndex = 34;
+            // 
             // FrmContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 492);
+            this.Controls.Add(this.cbeVista);
+            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.txtOrden);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.txtNivel);
             this.Controls.Add(this.txtFormulario);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.btnAceptar);
@@ -231,6 +288,7 @@
             this.Name = "FrmContainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contenedor";
+            this.Load += new System.EventHandler(this.FrmContainer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
@@ -238,6 +296,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcConsultas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFormulario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNivel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrden.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeVista.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +323,10 @@
         private DevExpress.XtraEditors.SimpleButton btnAceptar;
         private DevExpress.XtraEditors.TextEdit txtFormulario;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtNivel;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtOrden;
+        private DevExpress.XtraEditors.CheckEdit cbeVista;
     }
 }

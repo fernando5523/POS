@@ -15,16 +15,16 @@ namespace BLL.Model
     public class FilterModel
     {
         private int id;
-        private int iduser;
-        private int idconsult;
+        private int userid;
+        private int consultid;
         private string condition;
         private string conditiondev;
         private IFilterRepository filterRepository;
 
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
-        public int IdUser { get => iduser; set => iduser = value; }
-        public int IdConsult { get => idconsult; set => idconsult = value; }
+        public int UserID { get => userid; set => userid = value; }
+        public int ConsultID { get => consultid; set => consultid = value; }
         public string Condition { get => condition; set => condition = value; }
         public string ConditionDev { get => conditiondev; set => conditiondev = value; }
 
@@ -40,8 +40,8 @@ namespace BLL.Model
             {
                 var filterDataModel = new Filter();
                 filterDataModel.ID = Id;
-                filterDataModel.IdUser = IdUser;
-                filterDataModel.IdConsult = IdConsult;
+                filterDataModel.UserID = UserID;
+                filterDataModel.ConsultID = ConsultID;
                 filterDataModel.Condition = Condition;
                 filterDataModel.ConditionDev = ConditionDev;
 
@@ -83,8 +83,8 @@ namespace BLL.Model
                 listFilter.Add(new FilterModel
                 {
                     Id = item.ID,
-                    IdUser = item.IdUser,
-                    IdConsult = item.IdConsult,
+                    UserID = item.UserID,
+                    ConsultID = item.ConsultID,
                     Condition = item.Condition,
                     ConditionDev = item.ConditionDev
                 });
@@ -95,13 +95,13 @@ namespace BLL.Model
         public FilterModel GetUser(int iduser, int idconsult)
         {
             FilterModel Filter = null;
-            var filterDataModel = filterRepository.Find(e => e.IdUser == iduser && e.IdConsult == idconsult).FirstOrDefault();
+            var filterDataModel = filterRepository.Find(e => e.UserID == iduser && e.ConsultID == idconsult).FirstOrDefault();
             if (filterDataModel != null)
             {
                 Filter = new FilterModel();
                 Filter.Id = filterDataModel.ID;
-                Filter.iduser = filterDataModel.IdUser;
-                Filter.IdConsult = filterDataModel.IdConsult;
+                Filter.UserID = filterDataModel.UserID;
+                Filter.ConsultID = filterDataModel.ConsultID;
                 Filter.Condition = filterDataModel.Condition;
                 Filter.ConditionDev = filterDataModel.ConditionDev;
             }

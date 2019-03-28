@@ -19,7 +19,7 @@ namespace BLL.Model
         private string name;
         private string password;
         private bool active;
-        private int? iduser;
+        private int? userid;
 
         private IUserRepository userRepository;
         public EntityState State { private get; set; }
@@ -39,7 +39,7 @@ namespace BLL.Model
 
         [Required(ErrorMessage = "El iduser es un campo requerido.")]
         [RegularExpression("([0-9]+)", ErrorMessage = "Solo esta permitido valores númericos.")]
-        public int? IdUser { get => iduser; set => iduser = value; }
+        public int? UserID { get => userid; set => userid = value; }
 
         public UserModel()
         {
@@ -56,7 +56,7 @@ namespace BLL.Model
                 userDataModel.Name = Name;
                 userDataModel.Password = Password;
                 userDataModel.Active = Active;
-                userDataModel.IdUser = IdUser;
+                userDataModel.UserID = UserID;
 
                 switch (State)
                 {
@@ -100,7 +100,7 @@ namespace BLL.Model
                     Name = item.Name,
                     Password = item.Password,
                     Active = item.Active,
-                    IdUser = item.IdUser
+                    UserID = item.UserID
                 });
             }
             return listUsers;
@@ -117,7 +117,7 @@ namespace BLL.Model
                 Login.name = userDataModel.Name;
                 Login.password = userDataModel.Password;
                 Login.active = userDataModel.Active;
-                Login.IdUser = userDataModel.IdUser;
+                Login.UserID = userDataModel.UserID;
             }
             return Login;
         }
@@ -133,7 +133,7 @@ namespace BLL.Model
                 objects.name = userDataModel.Name;
                 objects.password = userDataModel.Password;
                 objects.active = userDataModel.Active;
-                objects.IdUser = userDataModel.IdUser;
+                objects.UserID = userDataModel.UserID;
             }
             return objects;
         }

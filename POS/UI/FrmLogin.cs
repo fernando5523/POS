@@ -109,36 +109,57 @@ namespace UI
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            Text += ConstantData.Enterprise;
-            #region Lista con los tipos de authentication
-            DataTable Auth = new DataTable();
-            Auth.Columns.Add("Id", typeof(int));
-            Auth.Columns.Add("Name", typeof(string));
+            try
+            {
+                Text += ConstantData.Enterprise;
+                #region Lista con los tipos de authentication
+                DataTable Auth = new DataTable();
+                Auth.Columns.Add("Id", typeof(int));
+                Auth.Columns.Add("Name", typeof(string));
 
-            Auth.Rows.Add(0, "Microsoft SQL Server");
-            //Auth.Rows.Add(1, "Windows Active Directory");
+                Auth.Rows.Add(0, "Microsoft SQL Server");
+                //Auth.Rows.Add(1, "Windows Active Directory");
 
-            LueAutentificacion.Properties.DataSource = Auth;
-            LueAutentificacion.Properties.DisplayMember = "Name";
-            LueAutentificacion.Properties.ValueMember = "Id";
-            LueAutentificacion.EditValue = 0;
+                LueAutentificacion.Properties.DataSource = Auth;
+                LueAutentificacion.Properties.DisplayMember = "Name";
+                LueAutentificacion.Properties.ValueMember = "Id";
+                LueAutentificacion.EditValue = 0;
 
-            LookUpColumnInfoCollection Col = LueAutentificacion.Properties.Columns;
-            Col.Add(new LookUpColumnInfo("Id", "Id", 20));
-            Col["Id"].Visible = false;
-            Col.Add(new LookUpColumnInfo("Name", "Name", 100));
-            #endregion
+                LookUpColumnInfoCollection Col = LueAutentificacion.Properties.Columns;
+                Col.Add(new LookUpColumnInfo("Id", "Id", 20));
+                Col["Id"].Visible = false;
+                Col.Add(new LookUpColumnInfo("Name", "Name", 100));
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-            CheckFields();
-            CheckRecorder();
+            try
+            {
+                CheckFields();
+                CheckRecorder();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
-            CheckFields();
+            try
+            {
+                CheckFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace BLL.Model
     public class ConsultModel
     {
         private int id;
-        private int idcontainer;
+        private int containerid;
         private bool principal;
         private string select;
         private string from;
@@ -22,12 +22,12 @@ namespace BLL.Model
         private string groupby;
         private string having;
         private string orderby;
-        private int iduser;
+        private int userid;
         private IConsultRepository consultRepository;
 
         public EntityState State { private get; set; }
         public int Id { get => id; set => id = value; }
-        public int IdContainer { get => idcontainer; set => idcontainer = value; }
+        public int ContainerID { get => containerid; set => containerid = value; }
         public bool Principal { get => principal; set => principal = value; }
         public string Select { get => select; set => select = value; }
         public string From { get => from; set => from = value; }
@@ -35,7 +35,7 @@ namespace BLL.Model
         public string GroupBy { get => groupby; set => groupby = value; }
         public string Having { get => having; set => having = value; }
         public string OrderBy { get => orderby; set => orderby = value; }
-        public int IdUser { get => iduser; set => iduser = value; }
+        public int UserID { get => userid; set => userid = value; }
 
         public ConsultModel()
         {
@@ -49,7 +49,7 @@ namespace BLL.Model
             {
                 var consultDataModel = new Consult();
                 consultDataModel.ID = Id;
-                consultDataModel.IdContainer = IdContainer;
+                consultDataModel.ContainerID = ContainerID;
                 consultDataModel.Principal = Principal;
                 consultDataModel.Select = Select;
                 consultDataModel.From = From;
@@ -57,7 +57,7 @@ namespace BLL.Model
                 consultDataModel.GroupBy = GroupBy;
                 consultDataModel.Having = Having;
                 consultDataModel.OrderBy = OrderBy;
-                consultDataModel.IdUser = IdUser;
+                consultDataModel.UserID = UserID;
 
                 switch (State)
                 {
@@ -97,7 +97,7 @@ namespace BLL.Model
                 listConsult.Add(new ConsultModel
                 {
                     Id = item.ID,
-                    IdContainer = item.IdContainer,
+                    ContainerID = item.ContainerID,
                     Principal = item.Principal,
                     Select = item.Select,
                     From = item.From,
@@ -105,7 +105,7 @@ namespace BLL.Model
                     GroupBy = item.GroupBy,
                     Having = item.Having,
                     OrderBy = item.OrderBy,
-                    IdUser = item.IdUser
+                    UserID = item.UserID
                 });
             }
             return listConsult;
@@ -114,12 +114,12 @@ namespace BLL.Model
         public ConsultModel GetIdContainer(int idContainer)
         {
             ConsultModel listConsult = null;
-            var consultDataModel = consultRepository.Find(e => e.IdContainer == idContainer).FirstOrDefault();
+            var consultDataModel = consultRepository.Find(e => e.ContainerID == idContainer).FirstOrDefault();
             if (consultDataModel != null)
             {
                 listConsult = new ConsultModel();
                 listConsult.Id = consultDataModel.ID;
-                listConsult.IdContainer = consultDataModel.IdContainer;
+                listConsult.ContainerID = consultDataModel.ContainerID;
                 listConsult.Principal = consultDataModel.Principal;
                 listConsult.Select = consultDataModel.Select;
                 listConsult.From = consultDataModel.From;
@@ -127,7 +127,7 @@ namespace BLL.Model
                 listConsult.GroupBy = consultDataModel.GroupBy;
                 listConsult.Having = consultDataModel.Having;
                 listConsult.OrderBy = consultDataModel.OrderBy;
-                listConsult.IdUser = consultDataModel.IdUser;
+                listConsult.UserID = consultDataModel.UserID;
             }
             return listConsult;
         }

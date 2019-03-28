@@ -8,8 +8,10 @@ SELECT
 	, Activo = Users.Active
 	, Nombre = Users.Name
 	, Contraseña = Users.Password
+	, [Ultima modificación] = UserModified.Name
 FROM
-	Users;
+	Users
+	LEFT JOIN Users AS UserModified ON Users.UserID = UserModified.Id;
 GO
 
 CREATE VIEW eContainers
@@ -25,11 +27,11 @@ SELECT
 	, Formulario = ISNULL(Containers.Form, '')
 	, Orden = Containers.Sort
 	, [Es vista] = Containers.IsView
-	, [Ultima modificacion] = Users.Name
+	, [Ultima modificación] = Users.Name
 FROM
 	Containers
-	INNER JOIN Users ON Containers.IdUser = Users.Id
-	LEFT JOIN Containers AS FatherContainer ON Containers.IdContainer = FatherContainer.Id;
+	INNER JOIN Users ON Containers.UserID = Users.Id
+	LEFT JOIN Containers AS FatherContainer ON Containers.ContainerID = FatherContainer.Id;
 GO
 
 CREATE VIEW eCodings
@@ -41,9 +43,9 @@ SELECT
 	, Texto = Codings.Text
 	, [Número] = Codings.Number
 	, [Logitud número] = Codings.NumberLength
-	, [Ultima modificacion] = Users.Name
+	, [Ultima modificación] = Users.Name
 FROM
 	Codings
-	INNER JOIN Users ON Codings.IdUser = Users.Id
-	INNER JOIN Containers ON Codings.IdContainer = Containers.Id;
+	INNER JOIN Users ON Codings.UserID = Users.Id
+	INNER JOIN Containers ON Codings.ContainerID = Containers.Id;
 GO

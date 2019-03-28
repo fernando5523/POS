@@ -25,14 +25,21 @@ namespace UI
 
         private void FrmUser_Load(object sender, EventArgs e)
         {
-            userRepository = new UserModel().GetId(Id);
-            if (userRepository != null)
+            try
             {
-                userRepository.State = EntityState.Modified;
-                txtNombre.Text = userRepository.Name;
-                txtContraseña.Text = userRepository.Password;
-                cbeActive.Checked = userRepository.Active;
-                txtNombre.Focus();
+                userRepository = new UserModel().GetId(Id);
+                if (userRepository != null)
+                {
+                    userRepository.State = EntityState.Modified;
+                    txtNombre.Text = userRepository.Name;
+                    txtContraseña.Text = userRepository.Password;
+                    cbeActive.Checked = userRepository.Active;
+                    txtNombre.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -45,20 +52,27 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Id == 0)
+            try
             {
-                userRepository = new UserModel();
-                userRepository.State = EntityState.Added;
+                if (Id == 0)
+                {
+                    userRepository = new UserModel();
+                    userRepository.State = EntityState.Added;
+                }
+
+                userRepository.Name = txtNombre.Text.Trim();
+                userRepository.Password = txtContraseña.Text;
+                userRepository.Active = cbeActive.Checked;
+                userRepository.UserID = ConstantData.Login.Id;
+                userRepository.SaveChanges();
+
+                Page.LoadPage(NamePage, TextPage);
+                Close();
             }
-
-            userRepository.Name = txtNombre.Text.Trim();
-            userRepository.Password = txtContraseña.Text;
-            userRepository.Active = cbeActive.Checked;
-            userRepository.IdUser = ConstantData.Login.Id;
-            userRepository.SaveChanges();
-
-            Page.LoadPage(NamePage, TextPage);
-            Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

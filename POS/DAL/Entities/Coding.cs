@@ -8,10 +8,12 @@ namespace DAL.Entities
 {
     public class Coding : DefaultProperties
     {
-        public int  IdContainer { get; set; }
+        public int  ContainerID { get; set; }
         public string Text { get; set; }
         public int Number { get; set; }
         public int NumberLength { get; set; }
         public bool Active { get; set; }
+
+        public virtual Container Container { get; set; }
     }
 }

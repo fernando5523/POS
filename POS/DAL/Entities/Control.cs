@@ -12,5 +12,7 @@ namespace DAL.Entities
         public string Code { get; set; }
         public string Name { get; set; }
         public bool Active { get; set; }
+
+        public virtual IList<Container> Containers { get; set; }
     }
 }

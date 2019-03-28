@@ -48,7 +48,7 @@ namespace BLL.Model
                 unittemplateDataModel.Abbreviation = Abbreviation;
                 unittemplateDataModel.Factor = Factor;
                 unittemplateDataModel.Description = Description;
-                unittemplateDataModel.IdUser = IdUser;
+                unittemplateDataModel.UserID = IdUser;
                 switch (State)
                 {
                     case EntityState.Added:
@@ -93,7 +93,7 @@ namespace BLL.Model
                     Abbreviation = item.Abbreviation,
                     Factor = item.Factor,
                     Description = item.Description,
-                    IdUser = item.IdUser
+                    IdUser = item.UserID
                 });
             }
             return listUnitTemplate;
@@ -111,7 +111,7 @@ namespace BLL.Model
                 returnModel.Abbreviation = item.Abbreviation;
                 returnModel.Factor = item.Factor;
                 returnModel.Description = item.Description;
-                returnModel.IdUser = item.IdUser;
+                returnModel.IdUser = item.UserID;
             }
             return returnModel;
         }

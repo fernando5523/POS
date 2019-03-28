@@ -110,9 +110,9 @@ namespace UI
                 GroupItem.Name = item.Name;
                 GroupItem.Caption = item.Description;
 
-                if(item.IdImage != null)
+                if(item.ImageID != null)
                 {
-                    int idimage = (int)item.IdImage;
+                    int idimage = (int)item.ImageID;
                     var objects = Images.GetId(idimage);
                     GroupItem.ImageOptions.SmallImage = ConstantData.GetBase64Image(objects.Chain);
                 }
@@ -122,7 +122,7 @@ namespace UI
 
         private void LoadTreeView(int? IdRoot, TreeNode Node, TreeView View)
         {
-            var Operations = Containers.GetAll().Where(e => e.IdContainer == IdRoot).ToList();
+            var Operations = Containers.GetAll().Where(e => e.ContainerID == IdRoot).ToList();
             foreach (var Operation in Operations)
             {
                 TreeNode NewNode = new TreeNode();
@@ -321,22 +321,36 @@ namespace UI
 
         private void btnUsuario_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FrmUserPassword UserPassword = new FrmUserPassword();
-            UserPassword.ShowDialog();
+            try
+            {
+                FrmUserPassword UserPassword = new FrmUserPassword();
+                UserPassword.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
-            Text += ConstantData.Enterprise;
-            LoadModule();
-            #region Eventos
-            xtcPages.CloseButtonClick += new EventHandler(xtraTabControl_CloseButtonClick);
-            #endregion
+            try
+            {
+                Text += ConstantData.Enterprise;
+                LoadModule();
+                #region Eventos
+                xtcPages.CloseButtonClick += new EventHandler(xtraTabControl_CloseButtonClick);
+                #endregion
 
-            //Footer
-            btnUsuario.Caption = "Usuario :" + ConstantData.Login.Name;
-            txtFecha.Caption = "Fecha : " + DateTime.Now.ToString("dd/MM/yyyy");
-            txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
+                //Footer
+                btnUsuario.Caption = "Usuario :" + ConstantData.Login.Name;
+                txtFecha.Caption = "Fecha : " + DateTime.Now.ToString("dd/MM/yyyy");
+                txtHora.Caption = "Hora : " + DateTime.Now.ToString("HH:mm:ss");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tmTiempo_Tick(object sender, EventArgs e)
@@ -346,52 +360,122 @@ namespace UI
 
         private void btnActualizar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            RefreshCommand();
+            try
+            {
+                RefreshCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            RemoveCommand();
+            try
+            {
+                RemoveCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            NewCommand();
+            try
+            {
+                NewCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnModificar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            EditCommand();
+            try
+            {
+                EditCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnFiltro_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FilterCommand();
+            try
+            {
+                FilterCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmsFiltro_Click(object sender, EventArgs e)
         {
-            FilterCommand();
+            try
+            {
+                FilterCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmsActualizar_Click(object sender, EventArgs e)
         {
-            RefreshCommand();
+            try
+            {
+                RefreshCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmsNuevo_Click(object sender, EventArgs e)
         {
-            NewCommand();
+            try
+            {
+                NewCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmsEliminar_Click(object sender, EventArgs e)
         {
-            RemoveCommand();
+            try
+            {
+                RemoveCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmsModificar_Click(object sender, EventArgs e)
         {
-            EditCommand();
+            try
+            {
+                EditCommand();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

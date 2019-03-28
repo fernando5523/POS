@@ -8,7 +8,7 @@ namespace DAL.Entities
 {
     public class Consult : DefaultProperties
     {
-        public int IdContainer { get; set; }
+        public int ContainerID { get; set; }
         public bool Principal { get; set; }
         public string Select { get; set; }
         public string From { get; set; }
@@ -16,5 +16,6 @@ namespace DAL.Entities
         public string GroupBy { get; set; }
         public string Having { get; set; }
         public string OrderBy { get; set; }
+        public virtual Container Container { get; set; }
     }
 }

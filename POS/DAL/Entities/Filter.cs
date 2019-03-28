@@ -8,7 +8,7 @@ namespace DAL.Entities
 {
     public class Filter : DefaultProperties
     {
-        public int IdConsult{ get; set; }
+        public int ConsultID{ get; set; }
         public string Condition { get; set; }
         public string ConditionDev { get; set; }
     }

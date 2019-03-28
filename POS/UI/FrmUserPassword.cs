@@ -35,22 +35,51 @@ namespace UI
 
         private void FrmUserPassword_Load(object sender,EventArgs e)
         {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             txtActual.Text = ConstantData.Login.Password;
         }
 
         private void txtNueva_TextChanged(object sender,EventArgs e)
         {
-            ValidatePassword();
+            try
+            {
+                ValidatePassword();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtActual_TextChanged(object sender,EventArgs e)
         {
-            ValidatePassword();
+            try
+            {
+                ValidatePassword();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtRepetir_TextChanged(object sender,EventArgs e)
         {
-            ValidatePassword();
+            try
+            {
+                ValidatePassword();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

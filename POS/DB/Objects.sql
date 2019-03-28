@@ -1,7 +1,10 @@
 USE RetailPOS;
 GO
+
 --Objects Users
-INSERT INTO Users VALUES('Administrador', '12345', 1, NULL)
+INSERT INTO Users VALUES('root', '12345', 1, NULL)
+INSERT INTO Users VALUES('administrador', '12345', 1, 1)
+INSERT INTO Users VALUES('fernando.colque', '12345', 1, 2)
 
 --Objects Images
 INSERT INTO Images VALUES('Sale', 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZ0RVh0VGl0bGUATGFiZWxzO0NoYXJ0O1BpZXSjLbQAAADWSURBVHheldI/CsJAEMXhAXtL/3SeJp2n8ACiggeQgE22VVsbLS1s7BW2EE8iSCAHGN8KA+Gxu8HiK99vCBtZn/c1eHBQgBhV/SnL0igLAW1poILhbHeKDkLQcMBcMe5PN7exXbZBKsDjAcZPqMKYKJPEWKGBwq6lSGJsXGeAx8TzNzOhMat5yEHBYAuaCeRfYXM4jjC4JAK+80d631evTMS1A+3rFpbPY6kc+esZQyARqSIXlVmAI3OYxAIctIBpEFkg0kMgcjEeqMGDgwIEEUEkBJiyL7yghmw8L6vkAAAAAElFTkSuQmCC')
@@ -28,6 +31,6 @@ INSERT INTO Containers VALUES(7, NULL, 1, 'C008', 'Container', 'Contenedor', 1, 
 INSERT INTO Containers VALUES(7, NULL, 1, 'C009', 'Coding', 'Codificación', 1, 'FrmCoding', 2, 1, 1, 1)
 
 --Objects Consults
-INSERT INTO Consults VALUES(6, 1, 'SELECT Id, Activo, Nombre, Contraseña', 'FROM eUsers', NULL, NULL, NULL, NULL, 1)
-INSERT INTO Consults VALUES(8, 1, 'SELECT Id, Activo, [Contenedor padre], Codigo, Nombre, Descripcion, Nivel, Formulario, Orden, [Es vista], [Ultima modificacion]', 'FROM eContainers', NULL, NULL, NULL, NULL, 1)
-INSERT INTO Consults VALUES(9, 1, 'SELECT Id, Activo, Contenedor, Texto, Número, [Logitud número], [Ultima modificacion]', 'FROM eCodings', NULL, NULL, NULL, NULL, 1)
+INSERT INTO Consults VALUES(6, 1, 'SELECT Id, Activo, Nombre, Contraseña, [Ultima modificación]', 'FROM eUsers', NULL, NULL, NULL, NULL, 1)
+INSERT INTO Consults VALUES(8, 1, 'SELECT Id, Activo, [Contenedor padre], Codigo, Nombre, Descripcion, Nivel, Formulario, Orden, [Es vista], [Ultima modificación]', 'FROM eContainers', NULL, NULL, NULL, NULL, 1)
+INSERT INTO Consults VALUES(9, 1, 'SELECT Id, Activo, Contenedor, Texto, Número, [Logitud número], [Ultima modificación]', 'FROM eCodings', NULL, NULL, NULL, NULL, 1)

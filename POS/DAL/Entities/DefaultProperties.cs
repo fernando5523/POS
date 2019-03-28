@@ -9,6 +9,6 @@ namespace DAL.Entities
     public class DefaultProperties
     {
         public int ID { get; set; }
-        public int IdUser { get; set; }
+        public int UserID { get; set; }
     }
 }

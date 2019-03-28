@@ -8,7 +8,7 @@ namespace DAL.Entities
 {
     public class Rol : DefaultProperties
     {
-        public int IdContainer { get; set; }
+        public int ContainerID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public bool Create { get; set; }
