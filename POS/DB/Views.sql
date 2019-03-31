@@ -49,3 +49,5 @@ FROM
 	INNER JOIN Users ON Codings.UserID = Users.Id
 	INNER JOIN Containers ON Codings.ContainerID = Containers.Id;
 GO
+
+SELECT * FROM CONSULTS
