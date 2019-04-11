@@ -15,6 +15,8 @@ namespace UI
     using BLL.Model;
     using BLL.ValueObjects;
     using DevExpress.XtraGrid.Columns;
+    using DevExpress.XtraGrid.Views.Grid;
+    using DevExpress.XtraGrid.Views.BandedGrid;
 
     public partial class FrmContainer : FormRepository
     {
@@ -34,7 +36,7 @@ namespace UI
                 containerRepository = new ContainerModel().GetId(Id);
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Temp", typeof(string));
-                dt.Columns.Add("State", typeof(EntityState));
+                dt.Columns.Add("State", typeof(string));
                 dt.Columns.Add("Id", typeof(int));
                 dt.Columns.Add("ContainerID", typeof(int));
                 dt.Columns.Add("Principal", typeof(bool));
@@ -60,7 +62,7 @@ namespace UI
                 {
                     DataRow row = dt.NewRow();
                     row["Temp"] = "NoTemp";
-                    row["State"] = EntityState.None;
+                    row["State"] = "";
                     row["Id"] = item.Id;
                     row["ContainerID"] = item.ContainerID;
                     row["Principal"] = item.Principal;
@@ -109,7 +111,7 @@ namespace UI
             DataTable table = (DataTable)gcConsultas.DataSource;
             DataRow row = table.NewRow();
             row["Temp"] = "Temp";
-            row["State"] = EntityState.Added;
+            row["State"] = "";
             row["Id"] = 0;
             row["ContainerID"] = Id;
             table.Rows.Add(row);
@@ -128,6 +130,43 @@ namespace UI
             }
 
             gridView1.DeleteSelectedRows();
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            BandedGridView view = sender as BandedGridView;
+            if (view == null) return;
+            string column = e.Column.Name;
+            int index = e.RowHandle;
+            string value = e.Value.ToString();
+            view.SetRowCellValue(e.RowHandle, view.Columns["State"], "Modified");
+            
+            //int[] selRows = gridView1.GetSelectedRows();
+            //foreach (int i in selRows)
+            //{
+            //    var item = (DataRowView)gcConsultas.MainView.GetRow(i);
+            //    if ((int)item.Row["Id"] != 0)
+            //    {
+            //        ConsultModel Objects = new ConsultModel();
+            //        Objects.Id = (int)item["Id"];
+            //        Objects.ContainerID = (int)item["ContainerID"];
+            //        Objects.Principal = (bool)item["Principal"];
+            //        Objects.Select = item["Select"].ToString();
+            //        Objects.From = item["From"].ToString();
+            //        Objects.Where = item["Where"].ToString();
+            //        Objects.GroupBy = item["GroupBy"].ToString();
+            //        Objects.Having = item["Having"].ToString();
+            //        Objects.OrderBy = item["OrderBy"].ToString();
+            //        Objects.UserID = ConstantData.Login.Id;
+
+            //        UpdateRecords.Add(Objects);
+            //    }
+            //}
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
